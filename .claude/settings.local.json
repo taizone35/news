@@ -26,7 +26,10 @@
       "Bash(curl -s -L -m 15 \"https://www.mizuho-rt.co.jp/publication/\" -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\")",
       "Bash(curl -s -L -m 15 -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/125.0.0.0 Safari/537.36\" -H \"Accept: text/html\" -H \"Accept-Language: ja,en;q=0.9\" \"https://www.mizuhobank.co.jp/corporate/mhri/research/index.html\")",
       "Bash(curl -s -L -m 15 -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/125.0.0.0 Safari/537.36\" \"https://www.mizuhobank.co.jp/corporate/mhri/research/report/index.html\")",
-      "WebSearch"
+      "WebSearch",
+      "Bash(curl -s -L -m 15 -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" \"https://goodway.co.jp/news/feed\")",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -L -m 30 -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" \"https://www.meti.go.jp/press/index.html\")"
     ]
   }
 }
