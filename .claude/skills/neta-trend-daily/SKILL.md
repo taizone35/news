@@ -33,6 +33,7 @@ description: "トレンドネタ収集"
 - https://www.jri.co.jp/report/ - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site jri`
 - https://goodway.co.jp/news - **RSSフィード**で取得: `curl https://goodway.co.jp/news/feed`
 - https://www.murc.jp/news/news_release/ - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site murc`
+- https://qiita.com/
 
 **日本市場（はてブIT）**
 - https://b.hatena.ne.jp/hotentry/it
@@ -50,8 +51,20 @@ description: "トレンドネタ収集"
 - **元記事URLではなくHNのコメントページURLを使用すること**（コメントも確認できるようにするため）
 - **タイトルは日本語に翻訳して出力**
 
-**グローバル（IT News）**
--https://techcrunch.com/
+**グローバル（News）**
+- https://techcrunch.com/
+- https://www.theverge.com/technology
+- https://boringcashcow.com/report
+- https://boringcashcow.com/interview
+- https://www.indiehackers.com
+- https://bootstrappers.com
+- https://blog.hubspot.com/trends
+- https://www.tinystartups.com
+- https://microsaashq.com
+- https://www.producthunt.com
+- https://www.crunchbase.com
+- https://www.kickstarter.com/?lang=ja
+- 各記事の**タイトル、元記事URL**を取得
 - **タイトルは日本語に翻訳して出力**
 
 **セキュリティ（追加ソース）**
@@ -114,6 +127,7 @@ OSS/個人開発系（4サブレッド）:
   - AI関連（開発ツール、セキュリティ、倫理）
   - セキュリティ関連（脆弱性、攻撃手法、防御策）
   - OSS/個人開発関連（成功事例、マーケティング、収益化）
+  - 金融関連（経済動向、投資、暗号資産、銀行）
   - キャリア関連（外資転職、リモートワーク、副業）
   - JavaScript/TypeScript関連（新技術、ツール、フレームワーク）
 
@@ -155,7 +169,7 @@ OSS/個人開発系（4サブレッド）:
 | [タイトル](元記事URL) | XXX users | ★★★/★★/★ | AI/開発/キャリア等 | 発信に活用できるポイント |
 
 **興味度の定義**:
-- ★★★: 興味領域に直接関連（AI×セキュリティ、OSS、個人開発、キャリアなど）
+- ★★★: 興味領域に直接関連（AI×セキュリティ、OSS、個人開発、キャリア、金融など）
 - ★★: 間接的に関連（技術トレンド全般、エンジニアリング文化）
 - ★: 一般的なIT/技術ニュース
 

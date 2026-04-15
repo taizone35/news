@@ -1,6 +1,8 @@
 ## 基本情報
 
-- Hiroto Kaneko（金子 皓音）
+- Taizo Kaneko（金子 泰三）/ GitHub: taizone35
+- X: @taizone35 
+
 
 ## 回答スタイル
 
