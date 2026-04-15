@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:b.hatena.ne.jp)",
+      "WebFetch(domain:www.aikido.dev)",
+      "WebFetch(domain:www.wiz.io)",
+      "Bash(curl -s -H 'User-Agent: neta-trend-collector/1.0 \\(trend analysis tool\\)' 'https://old.reddit.com/r/__TRACKED_VAR__/hot.json?t=day&limit=10')",
+      "WebFetch(domain:news.ycombinator.com)",
+      "WebFetch(domain:techcrunch.com)",
+      "WebFetch(domain:www.cao.go.jp)",
+      "WebFetch(domain:www.meti.go.jp)",
+      "WebFetch(domain:www.soumu.go.jp)",
+      "WebFetch(domain:www.kantei.go.jp)",
+      "WebFetch(domain:goodway.co.jp)",
+      "WebFetch(domain:www.mizuhobank.co.jp)",
+      "WebFetch(domain:www.murc.jp)",
+      "Bash(curl -s -L -m 30 -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/125.0.0.0 Safari/537.36\" -H \"Accept: text/html,application/xhtml+xml\" -H \"Accept-Language: ja,en;q=0.9\" \"https://www.mizuhobank.co.jp/release/index.html\")",
+      "Bash(curl -s -L -m 30 -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/125.0.0.0 Safari/537.36\" -H \"Accept: text/html,application/xhtml+xml\" -H \"Accept-Language: ja,en;q=0.9\" \"https://goodway.co.jp/news\")",
+      "Bash(curl -s -L -m 30 -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/125.0.0.0 Safari/537.36\" -H \"Accept: text/html,application/xhtml+xml\" -H \"Accept-Language: ja,en;q=0.9\" \"https://www.meti.go.jp/press/index.html\")",
+      "Bash(curl -s -L -m 30 -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/125.0.0.0 Safari/537.36\" -H \"Accept: text/html,application/xhtml+xml\" -H \"Accept-Language: ja,en;q=0.9\" \"https://www.murc.jp/news/news_release/\")",
+      "Bash(curl -s -L -m 15 -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" \"https://www.murc.jp/feed/\")",
+      "Bash(python3 -c \" import sys, re, html content = sys.stdin.read\\(\\) titles = re.findall\\(r'<title><!\\\\[CDATA\\\\[\\(.*?\\)\\\\]\\\\]></title>', content\\) if not titles: titles = re.findall\\(r'<title>\\(.*?\\)</title>', content\\) links = re.findall\\(r'<link>\\(.*?\\)</link>', content\\) for i, \\(t, l\\) in enumerate\\(zip\\(titles[1:], links[1:]\\)\\): if i >= 5: break t = html.unescape\\(t.strip\\(\\)\\) print\\(f'{i+1}. [{t}]\\({l.strip\\(\\)}\\)'\\) \")",
+      "Bash(python3 -c \" import sys, json try: data = json.loads\\(sys.stdin.read\\(\\)\\) for i, item in enumerate\\(data[:5]\\): title = item['title']['rendered'] link = item['link'] print\\(f'{i+1}. [{title}]\\({link}\\)'\\) except: pass \")",
+      "Bash(node *)",
+      "Bash(curl -s -L -m 15 \"https://www.mizuho-rt.co.jp/publication/report/index.html\" -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\")",
+      "Bash(curl -s -L -m 15 \"https://www.mizuho-rt.co.jp/publication/\" -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\")",
+      "Bash(curl -s -L -m 15 -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/125.0.0.0 Safari/537.36\" -H \"Accept: text/html\" -H \"Accept-Language: ja,en;q=0.9\" \"https://www.mizuhobank.co.jp/corporate/mhri/research/index.html\")",
+      "Bash(curl -s -L -m 15 -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/125.0.0.0 Safari/537.36\" \"https://www.mizuhobank.co.jp/corporate/mhri/research/report/index.html\")",
+      "WebSearch"
+    ]
+  }
+}
