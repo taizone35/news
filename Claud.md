@@ -41,9 +41,7 @@
 
 | プロジェクト | 概要                  | GitHub                                        |
 | ------------ | --------------------- | --------------------------------------------- |
-| pdfme        | PDF生成ライブラリ     | https://github.com/pdfme/pdfme                |
-| app.pdfme    | pdfmeクラウドサービス | https://playground.pdfme.com     |
-| labelmake.jp | PDFラベル作成サービス | https://github.com/XXX|
+| news        | newsデータ     | https://github.com/taizone35/news                |
 
 ## ラベル一覧
 
@@ -51,7 +49,7 @@ Tech, Life, Youtube
 
 ## GitHub Project
 
-https://github.com/users/hand-dot/projects/X
+https://github.com/users/taizone35/projects/1
 
 ---
 
@@ -60,4 +58,4 @@ https://github.com/users/hand-dot/projects/X
 **所属企業は公開しない方針**
 
 - NG: 所属企業名の明示、企業固有のプロダクト名
-- OK: 「外資ITテック企業」「外資ITエンジニア」「Developer Advocate」（企業名なしで）
+- OK: 「ITテック企業」「Developer Advocate」（企業名なしで）
