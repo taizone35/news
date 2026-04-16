@@ -70,7 +70,9 @@
       "WebFetch(domain:tinystartups.beehiiv.com)",
       "Bash(curl -s -H \"User-Agent: neta-trend-collector/1.0 \\(trend analysis tool\\)\" \"https://old.reddit.com/r/javascript/hot.json?t=day&limit=10\")",
       "Bash(curl -s -H \"User-Agent: neta-trend-collector/1.0 \\(trend analysis tool\\)\" \"https://old.reddit.com/r/cscareerquestions/hot.json?t=day&limit=10\")",
-      "Bash(curl -s -H \"User-Agent: neta-trend-collector/1.0 \\(trend analysis tool\\)\" \"https://old.reddit.com/r/productivity/hot.json?t=day&limit=10\")"
+      "Bash(curl -s -H \"User-Agent: neta-trend-collector/1.0 \\(trend analysis tool\\)\" \"https://old.reddit.com/r/productivity/hot.json?t=day&limit=10\")",
+      "Bash(curl -s \"https://goodway.co.jp/news/feed\")",
+      "Bash(curl -s --max-time 30 \"https://www.mizuho-rt.co.jp/publication/index.html\")"
     ]
   }
 }

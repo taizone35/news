@@ -5,7 +5,8 @@ description: "トレンドネタ収集"
 
 # トレンドネタ収集
 
-はてなブックマークIT人気エントリーとHacker Newsの人気記事を収集し、`ideas/daily/YYYYMMDD-trend.md` に保存する。
+はてなブックマークIT人気エントリーとHacker Newsの人気記事を収集し、過去にピックアップした記事は除外した上で、`ideas/daily/YYYYMMDD-trend.md` に保存する。
+アクセスエラーとなったサイトは、次回以降もアクセスエラーになる可能性が高いため、除外理由を記載し、リストから除外する。
 
 ## 実行手順
 
@@ -53,7 +54,7 @@ description: "トレンドネタ収集"
 
 **グローバル（News）**
 - https://techcrunch.com/
-- https://www.theverge.com/technology
+- https://www.theverge.com/tech
 - https://boringcashcow.com/report
 - https://boringcashcow.com/interview
 - https://www.indiehackers.com
