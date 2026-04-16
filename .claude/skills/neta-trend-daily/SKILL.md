@@ -29,6 +29,14 @@ description: "トレンドネタ収集"
 - https://www.soumu.go.jp/menu_kyotsuu/whatsnew/index.html
 - https://www.kantei.go.jp/jp/tyoukanpress/index.html
 
+**X関連（参考情報）**
+- 以下のアカウントの最新投稿を **WebSearch** で把握する（例: 「@mr_grayhair site:x.com 2026年4月」）
+- [@mr_grayhair](https://x.com/mr_grayhair)
+- [@horiemon_cross](https://x.com/horiemon_cross)
+- [@takapon_jp](https://x.com/takapon_jp)
+- [@digital_jpn](https://x.com/digital_jpn)
+- **注意**: X は個別投稿 URL を正確に取得できないため、URL はアカウントページ (`https://x.com/アカウント名`) で代替してよい。投稿内容の概要が把握できればよい
+
 **リサーチ**
 - みずほリサーチ&テクノロジーズ: **WebSearch**で「みずほリサーチ&テクノロジーズ 最新レポート site:mizuho-rt.co.jp」を検索して取得（WAFでWebFetch/curl不可）
 - https://www.jri.co.jp/report/ - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site jri`
@@ -221,14 +229,31 @@ OSS/個人開発系（4サブレッド）:
 
 ## 注意事項
 
+### タイトルの正確性（最重要）
+
+- **タイトルはソースページに表示されている原文をそのまま転記すること。言い換え・要約・意訳は禁止**
+  - 悪い例: 「絶対に押さないで！新入社員に贈る5選」（原文にない表現を創作）
+  - 良い例: 「闇雲に使わないで！新入社員に知るべき新常識5つ！」（原文そのまま）
+- **Hacker News・Reddit のタイトル翻訳では、原題に含まれない情報を追加してはならない**
+  - 悪い例: 「Wacli -- WhatsApp CLI: 同期・検索・送信」（原題は "Wacli – WhatsApp CLI" のみ。機能説明を勝手に追加している）
+  - 良い例: 「Wacli -- WhatsApp CLI」（原題の直訳のみ）
+- **翻訳時は原題のトーン（皮肉、推量など）を保持すること**
+  - 悪い例: 「すべての未来は嘘になる -- 新しい仕事の形」（"I Guess" の推量トーンが消失、"New Jobs" を意訳しすぎ）
+  - 良い例: 「すべての未来は嘘、なのだろう: 新しい仕事」（原題 "The Future of Everything Is Lies, I Guess: New Jobs" に忠実）
+- **サブエージェントに収集を委任する場合も、上記ルールをプロンプトに明記すること**
+
+### URL の正確性
+
 - WebFetchツールを使用して情報を取得
 - **すべての記事にURLリンクを必ず含める（リンクなしは不可）**
 - **はてブは元記事のURLを必ず取得**（はてブページURLではなく）
 - **Hacker NewsはHNコメントページURL（`item?id=`形式）を使用**（元記事URLではなく）
-- **Hacker Newsのタイトルは日本語に翻訳**
 - **RedditはRedditコメントページの完全URL（`https://www.reddit.com/r/subreddit/comments/...`形式）を使用**
-- **Redditのタイトルは日本語に翻訳**
 - Reddit APIレート制限に注意（1分あたり60リクエスト程度）
+- **個別記事の URL が取得できないソースは収集対象に含めないこと**。汎用 URL（アカウントトップページ、ニュース一覧ページなど）で代替してはならない
+
+### その他
+
 - 投票数（ups）/コメント数が高い記事を優先
 - ポイント数/ブックマーク数が高い記事は特に注目
 - 出力ファイルのYYYYMMDDは実行日の日付を使用
