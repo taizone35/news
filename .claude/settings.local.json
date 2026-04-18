@@ -98,7 +98,17 @@
       "WebFetch(domain:www8.cao.go.jp)",
       "WebFetch(domain:www.jri.co.jp)",
       "WebFetch(domain:tech-blog.tabelog.com)",
-      "WebFetch(domain:ics.media)"
+      "WebFetch(domain:ics.media)",
+      "WebFetch(domain:x.com)",
+      "Bash(grep -E \"\\\\.py$|\\\\.js$|\\\\.ts$|\\\\.json$|\\\\.md$\")",
+      "Bash(sort -t'|' -k3 -n -r)",
+      "WebFetch(domain:onecapital.jp)",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" \"https://onecapital.jp/explore-content\" -o /tmp/onecapital.html)",
+      "Read(//tmp/**)",
+      "Bash(curl -sIL -A \"Mozilla/5.0\" \"https://onecapital.jp/explore-content\")",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" \"https://onecapital.jp/explore-content\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

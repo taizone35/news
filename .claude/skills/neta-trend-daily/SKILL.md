@@ -5,7 +5,7 @@ description: "トレンドネタ収集"
 
 # トレンドネタ収集
 
-はてなブックマークIT人気エントリーとHacker Newsの人気記事を収集し、過去にピックアップした記事は除外した上で、`ideas/daily/YYYYMMDD-trend.md` に保存する。
+有名サイトやはてなブックマークIT人気エントリーとHacker Newsの人気記事を収集し、過去にピックアップした記事は除外した上で、`ideas/daily/YYYYMMDD-trend.md` に保存する。
 アクセスエラーとなったサイトは、次回以降もアクセスエラーになる可能性が高いため、除外理由を記載し、リストから除外する。
 
 ## 実行手順
@@ -42,7 +42,12 @@ description: "トレンドネタ収集"
 - https://www.jri.co.jp/report/ - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site jri`
 - https://goodway.co.jp/news - **RSSフィード**で取得: `curl https://goodway.co.jp/news/feed`
 - https://www.murc.jp/news/news_release/ - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site murc`
+- https://onecapital.jp/explore-content - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site onecapital` (B2B SaaS/AI特化VCのPerspectives記事と投資先News)
 - https://qiita.com/
+- https://prtimes.jp/main/html/newarrival
+- https://researchmap.jp/press_releases/press_releases/index.xml
+- https://www.ivs.events/news
+- https://morningpitch.com/news/
 
 **日本市場（はてブIT）**
 - https://b.hatena.ne.jp/hotentry/it
@@ -163,6 +168,18 @@ OSS/個人開発系（4サブレッド）:
 ### 3. 出力
 
 **まず「ネタ収集完了。」というメッセージを返してから、結果を `ideas/daily/YYYYMMDD-trend.md` に保存。**
+
+### 4. コミット・プッシュ
+
+保存後、`ideas/daily/YYYYMMDD-trend.md` を git で main ブランチにコミットし、 origin にプッシュする。
+
+```bash
+git add ideas/daily/YYYYMMDD-trend.md
+git commit -m "Add: YYYY-MM-DD トレンドレポート収集"
+git push origin main
+```
+
+コミットメッセージは日本語で統一する。
 
 以下のフォーマットで出力：
 

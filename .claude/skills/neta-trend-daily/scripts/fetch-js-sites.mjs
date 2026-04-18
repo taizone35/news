@@ -81,6 +81,43 @@ const SITES = {
       });
     },
   },
+
+  onecapital: {
+    name: "One Capital (ExploreContent)",
+    url: "https://onecapital.jp/explore-content",
+    extract: async (page) => {
+      await page.waitForSelector("a", { timeout: 15000 }).catch(() => {});
+      await page.waitForTimeout(3000);
+      return page.evaluate(() => {
+        const items = [];
+        const links = document.querySelectorAll("a");
+        for (const a of links) {
+          const title = (a.innerText || a.textContent || "")
+            .trim()
+            .replace(/\s+/g, " ");
+          const href = a.href;
+          if (
+            title &&
+            title.length > 5 &&
+            title.length < 200 &&
+            href &&
+            !href.includes("javascript:") &&
+            // 個別記事のみ（perspectives/ or news/<slug>）
+            (/\/perspectives\/[^/]+$/.test(href) ||
+              /\/news\/[^/]+$/.test(href))
+          ) {
+            items.push({ title, url: href });
+          }
+        }
+        const seen = new Set();
+        return items.filter((item) => {
+          if (seen.has(item.url)) return false;
+          seen.add(item.url);
+          return true;
+        }).slice(0, 10);
+      });
+    },
+  },
 };
 
 async function fetchSite(browser, siteKey) {
