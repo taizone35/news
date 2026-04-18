@@ -44,6 +44,9 @@ description: "トレンドネタ収集"
 - https://www.murc.jp/news/news_release/ - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site murc`
 - https://onecapital.jp/explore-content - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site onecapital` (B2B SaaS/AI特化VCのPerspectives記事と投資先News)
 - https://www.abeam.com/jp/ja/news/ - **WebFetch**で取得 (アビームコンサルティングのプレスリリース、AI/FinTech/自治体/SAP 関連話題)
+- https://pitchbook.com/news - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site pitchbook` (VC/PE/M&A 動向、Cloudflare ボット対策あり curl/WebFetch 不可)
+- https://www.wired.com/ - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site wired` (セキュリティ/AI/カルチャーの深掘り記事、WebFetch ブロックあり)
+- https://www.techmeme.com/ - **WebFetch**で取得 (テック業界アグリゲーター、Bloomberg/WSJ/Wired/FT など取得困難サイトの記事を元記事 URL 付きで集約)
 - https://qiita.com/
 - https://prtimes.jp/main/html/newarrival
 - https://researchmap.jp/press_releases/press_releases/index.xml
@@ -184,6 +187,13 @@ git push origin main
 
 以下のフォーマットで出力：
 
+**サマリの必須化**: 全てのエントリー（注目トピック・全エントリー両方）で、2-3 文のサマリを必ず記載する。サマリは以下の要素を含める：
+
+- **何が起きたか / 何の記事か** (事実ベース)
+- **なぜ注目すべきか / 論点は何か** (論点・示唆)
+
+記事本文が取得できない場合は、タイトルとコンテキストから推測可能な範囲で記述し、末尾に `(タイトルからの推測)` と明記する。
+
 ```markdown
 # トレンドネタ: YYYY-MM-DD
 
@@ -202,7 +212,8 @@ git push origin main
 
 ### 全エントリー
 
-1. [タイトル](元記事URL) (XXX users) - 概要
+1. [タイトル](元記事URL) (XXX users)
+   - **サマリ**: 何が書かれているか (2-3 文)。何が主張されて、なぜ注目すべきか。
 2. ...
 
 ## Hacker News（グローバル）
@@ -215,7 +226,9 @@ git push origin main
 
 ### 全エントリー
 
-1. [タイトル](HNコメントページURL) (XXXpt) - 概要
+1. [原題](HNコメントページURL) (XXXpt)
+   - **翻訳**: 日本語タイトル (原題に忠実な直訳)
+   - **サマリ**: 記事の要点 (2-3 文)。HN コメントで論じられている論点も含める。
 2. ...
 
 ## Reddit（13サブレッド）
@@ -229,20 +242,19 @@ git push origin main
 ### カテゴリ別エントリー
 
 #### セキュリティ系
-1. [タイトル](RedditコメントページURL) (XXX ups, XXX comments) - r/netsec - 概要
+1. [原題](RedditコメントページURL) (XXX ups, XXX comments) - r/netsec
+   - **翻訳**: 日本語タイトル
+   - **サマリ**: 投稿の要点 (2-3 文)。Reddit のコメントで起きている議論の方向性も含める。
 2. ...
 
 #### AI系
-1. [タイトル](RedditコメントページURL) (XXX ups, XXX comments) - r/OpenAI - 概要
-2. ...
+(同上フォーマット)
 
 #### OSS/個人開発系
-1. [タイトル](RedditコメントページURL) (XXX ups, XXX comments) - r/opensource - 概要
-2. ...
+(同上フォーマット)
 
 #### キャリア/実践系
-1. [タイトル](RedditコメントページURL) (XXX ups, XXX comments) - r/cscareerquestions - 概要
-2. ...
+(同上フォーマット)
 ```
 
 ## 注意事項

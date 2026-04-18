@@ -82,6 +82,79 @@ const SITES = {
     },
   },
 
+  pitchbook: {
+    name: "PitchBook News",
+    url: "https://pitchbook.com/news",
+    extract: async (page) => {
+      await page.waitForSelector("a", { timeout: 15000 }).catch(() => {});
+      await page.waitForTimeout(3000);
+      return page.evaluate(() => {
+        const items = [];
+        const links = document.querySelectorAll("a");
+        for (const a of links) {
+          const title = (a.innerText || a.textContent || "")
+            .trim()
+            .replace(/\s+/g, " ");
+          const href = a.href;
+          if (
+            title &&
+            title.length > 10 &&
+            title.length < 200 &&
+            href &&
+            !href.includes("javascript:") &&
+            /\/news\/articles\/[^/]+$/.test(href)
+          ) {
+            items.push({ title, url: href });
+          }
+        }
+        const seen = new Set();
+        return items.filter((item) => {
+          if (seen.has(item.url)) return false;
+          seen.add(item.url);
+          return true;
+        }).slice(0, 10);
+      });
+    },
+  },
+
+  wired: {
+    name: "Wired",
+    url: "https://www.wired.com/",
+    waitUntil: "domcontentloaded",
+    timeout: 45000,
+    extract: async (page) => {
+      await page.waitForSelector("a", { timeout: 15000 }).catch(() => {});
+      await page.waitForTimeout(3000);
+      return page.evaluate(() => {
+        const items = [];
+        const links = document.querySelectorAll("a");
+        for (const a of links) {
+          const title = (a.innerText || a.textContent || "")
+            .trim()
+            .replace(/\s+/g, " ");
+          const href = a.href;
+          if (
+            title &&
+            title.length > 15 &&
+            title.length < 200 &&
+            href &&
+            !href.includes("javascript:") &&
+            // 記事URLは /story/<slug> または /story/<slug>/ 形式
+            /\/story\/[^/]+\/?$/.test(href)
+          ) {
+            items.push({ title, url: href });
+          }
+        }
+        const seen = new Set();
+        return items.filter((item) => {
+          if (seen.has(item.url)) return false;
+          seen.add(item.url);
+          return true;
+        }).slice(0, 10);
+      });
+    },
+  },
+
   onecapital: {
     name: "One Capital (ExploreContent)",
     url: "https://onecapital.jp/explore-content",
@@ -135,7 +208,10 @@ async function fetchSite(browser, siteKey) {
 
   const page = await context.newPage();
   try {
-    await page.goto(site.url, { waitUntil: "networkidle", timeout: 30000 });
+    await page.goto(site.url, {
+      waitUntil: site.waitUntil || "networkidle",
+      timeout: site.timeout || 30000,
+    });
     const items = await site.extract(page);
     return { site: siteKey, name: site.name, url: site.url, items };
   } catch (err) {
