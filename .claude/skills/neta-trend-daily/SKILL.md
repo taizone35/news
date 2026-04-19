@@ -28,6 +28,8 @@ description: "トレンドネタ収集"
 - https://www.meti.go.jp/press/index.html
 - https://www.soumu.go.jp/menu_kyotsuu/whatsnew/index.html
 - https://www.kantei.go.jp/jp/tyoukanpress/index.html
+- https://www.fsa.go.jp/ - **RSSフィード**で取得: `curl https://www.fsa.go.jp/fsaNewsListAll_rss2.xml` (金融庁、金融行政・監督指針・行政処分・審議会等)
+- https://www.fsa.go.jp/choutatu/choutatu_j/nyusatu_menu.html - **RSSフィード**で取得: `curl https://www.fsa.go.jp/fsaProcurementList_rss2.xml` (金融庁入札公告、機器購入など運用案件が大半のため、研究・調査委託系の案件のみ抽出して政策関心領域の兆候として扱う)
 
 **X関連（参考情報）**
 - 以下のアカウントの最新投稿を **grok MCP** (`mcp__grok__search_posts`) で把握する。grok MCP は X (旧 Twitter) のリアルタイム情報取得に強く、WebSearch より投稿本文を正確に取得できる
@@ -37,6 +39,7 @@ description: "トレンドネタ収集"
 - [@horiemon_cross](https://x.com/horiemon_cross)
 - [@takapon_jp](https://x.com/takapon_jp)
 - [@digital_jpn](https://x.com/digital_jpn)
+- [@uemura_HR](https://x.com/@uemura_HR)
 - **注意**: X は個別投稿 URL を正確に取得できないため、URL はアカウントページ (`https://x.com/アカウント名`) で代替してよい。投稿内容の概要が把握できればよい
 - grok MCP が利用できない場合のフォールバックとして **WebSearch** を使用する
 
