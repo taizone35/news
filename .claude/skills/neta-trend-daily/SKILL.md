@@ -44,6 +44,7 @@ description: "トレンドネタ収集"
 - みずほリサーチ&テクノロジーズ: **WebSearch**で「みずほリサーチ&テクノロジーズ 最新レポート site:mizuho-rt.co.jp」を検索して取得（WAFでWebFetch/curl不可）
 - https://www.jri.co.jp/report/ - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site jri`
 - https://goodway.co.jp/news - **RSSフィード**で取得: `curl https://goodway.co.jp/news/feed`
+- https://zenn.dev/p/mkj - **RSSフィード**で取得: `curl https://zenn.dev/p/mkj/feed` (松尾研究所テックブログ、LLM 事後学習や Reasoning モデル等の AI 研究寄り記事)
 - https://www.murc.jp/news/news_release/ - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site murc`
 - https://onecapital.jp/explore-content - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site onecapital` (B2B SaaS/AI特化VCのPerspectives記事と投資先News)
 - https://www.abeam.com/jp/ja/news/ - **WebFetch**で取得 (アビームコンサルティングのプレスリリース、AI/FinTech/自治体/SAP 関連話題)
