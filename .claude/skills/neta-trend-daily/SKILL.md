@@ -30,12 +30,15 @@ description: "トレンドネタ収集"
 - https://www.kantei.go.jp/jp/tyoukanpress/index.html
 
 **X関連（参考情報）**
-- 以下のアカウントの最新投稿を **WebSearch** で把握する（例: 「@mr_grayhair site:x.com 2026年4月」）
+- 以下のアカウントの最新投稿を **grok MCP** (`mcp__grok__search_posts`) で把握する。grok MCP は X (旧 Twitter) のリアルタイム情報取得に強く、WebSearch より投稿本文を正確に取得できる
+- 推奨呼び出し: `handles=["mr_grayhair"]`, `start_date` と `end_date` で直近 1 週間程度に絞り込む。個別投稿本文が必要な場合は `mcp__grok__search_threads` も併用する
+- クエリ例: `query="from:mr_grayhair"`, `handles=["mr_grayhair"]`, `start_date="YYYY-MM-DD"`, `end_date="YYYY-MM-DD"`
 - [@mr_grayhair](https://x.com/mr_grayhair)
 - [@horiemon_cross](https://x.com/horiemon_cross)
 - [@takapon_jp](https://x.com/takapon_jp)
 - [@digital_jpn](https://x.com/digital_jpn)
 - **注意**: X は個別投稿 URL を正確に取得できないため、URL はアカウントページ (`https://x.com/アカウント名`) で代替してよい。投稿内容の概要が把握できればよい
+- grok MCP が利用できない場合のフォールバックとして **WebSearch** を使用する
 
 **リサーチ**
 - みずほリサーチ&テクノロジーズ: **WebSearch**で「みずほリサーチ&テクノロジーズ 最新レポート site:mizuho-rt.co.jp」を検索して取得（WAFでWebFetch/curl不可）
