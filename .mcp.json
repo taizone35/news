@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "grok": {
+      "command": "uvx",
+      "args": ["grok-mcp"],
+      "env": {
+        "XAI_API_KEY": "${XAI_API_KEY}"
+      }
+    }
+  }
+}
