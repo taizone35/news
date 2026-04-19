@@ -22,8 +22,8 @@
 
 - スキル/ツール名を指定 → WebSearch等より優先
 - YouTube URL → gemini-youtube最優先
-- X URL（x.com/user/status/xxx） → grok-search最優先
-- 「Xで」「リアルな声」等 → grok-search
+- X URL（x.com/user/status/xxx） → grok MCP（mcp__grok__*）最優先
+- 「Xで」「リアルな声」等 → grok MCP（mcp__grok__search_posts / mcp__grok__search_threads）
 - カスタムスキル失敗時のみ汎用ツールにフォールバック
 
 ## コンテンツワークフロー
