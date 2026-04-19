@@ -24,12 +24,15 @@ description: "トレンドネタ収集"
 
 以下のサイトから最新のトレンド情報を取得：
 **国関連**
-- https://www.cao.go.jp/press/houdou.html
+- https://www.cao.go.jp/press/houdou.html - **RSSフィード**で取得: `curl https://www.cao.go.jp/rss/news.rdf` (内閣府 報道発表新着情報)
 - https://www.meti.go.jp/press/index.html
 - https://www.soumu.go.jp/menu_kyotsuu/whatsnew/index.html
 - https://www.kantei.go.jp/jp/tyoukanpress/index.html
 - https://www.fsa.go.jp/ - **RSSフィード**で取得: `curl https://www.fsa.go.jp/fsaNewsListAll_rss2.xml` (金融庁、金融行政・監督指針・行政処分・審議会等)
 - https://www.fsa.go.jp/choutatu/choutatu_j/nyusatu_menu.html - **RSSフィード**で取得: `curl https://www.fsa.go.jp/fsaProcurementList_rss2.xml` (金融庁入札公告、機器購入など運用案件が大半のため、研究・調査委託系の案件のみ抽出して政策関心領域の兆候として扱う)
+- https://www.jetro.go.jp/biznews.html - **RSSフィード**で取得: `curl https://www.jetro.go.jp/rss/biznews.xml` (ジェトロ ビジネス短信、海外ビジネスニュース)
+- https://www.jetro.go.jp/biz/special.html - **RSSフィード**で取得: `curl https://www.jetro.go.jp/rss/areareports.xml` (ジェトロ 地域・分析レポート / 特集記事)
+- https://www.cas.go.jp/topics.html - **WebFetch**で取得 (内閣官房新着情報、RSS なし。政府横断テーマの政策動向)
 
 **X関連（参考情報）**
 - 以下のアカウントの最新投稿を **grok MCP** (`mcp__grok__search_posts`) で把握する。grok MCP は X (旧 Twitter) のリアルタイム情報取得に強く、WebSearch より投稿本文を正確に取得できる
@@ -47,6 +50,7 @@ description: "トレンドネタ収集"
 - みずほリサーチ&テクノロジーズ: **WebSearch**で「みずほリサーチ&テクノロジーズ 最新レポート site:mizuho-rt.co.jp」を検索して取得（WAFでWebFetch/curl不可）
 - https://www.jri.co.jp/report/ - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site jri`
 - https://goodway.co.jp/news - **RSSフィード**で取得: `curl https://goodway.co.jp/news/feed`
+- https://zenn.dev - **RSSフィード**で取得: `curl https://zenn.dev/feed` (Zenn トレンド全体、日本のエンジニア向け技術記事の人気トップ)
 - https://zenn.dev/p/mkj - **RSSフィード**で取得: `curl https://zenn.dev/p/mkj/feed` (松尾研究所テックブログ、LLM 事後学習や Reasoning モデル等の AI 研究寄り記事)
 - https://www.murc.jp/news/news_release/ - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site murc`
 - https://onecapital.jp/explore-content - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site onecapital` (B2B SaaS/AI特化VCのPerspectives記事と投資先News)
@@ -59,6 +63,22 @@ description: "トレンドネタ収集"
 - https://researchmap.jp/press_releases/press_releases/index.xml
 - https://www.ivs.events/news
 - https://morningpitch.com/news/
+
+**日本テック企業ブログ**
+- https://blog.smartbank.co.jp - **RSSフィード**で取得: `curl https://blog.smartbank.co.jp/feed` (スマートバンク Tech Blog、AI 家計簿アプリ「ワンバンク」の開発運用知見。Ruby/Rails、プロダクト開発事例)
+- https://techblog.lycorp.co.jp/ja - **RSSフィード**で取得: `curl https://techblog.lycorp.co.jp/ja/feed/index.xml` (LINE ヤフー Tech Blog、大規模インフラ・AI/MCP・データ基盤・アプリ開発の実例)
+- https://goodpatch.com/blog - **RSSフィード**で取得: `curl https://goodpatch.com/blog/feed` (Goodpatch Blog、UI/UX デザイン・プロダクトデザイン・組織デザイン知見)
+
+**PM / 個人ブログ**
+- https://pm-ai-insights.com - **RSSフィード**で取得: `curl https://pm-ai-insights.com/feed/` (PM x LLM STUDIO、現役 PdM による PM × 生成 AI 活用発信。更新頻度は低めで直近数ヶ月分まとめて確認)
+- https://blog.takaumada.com - **RSSフィード**で取得: `curl https://blog.takaumada.com/feed` (田所雅之氏ブログ、スタートアップ・起業論)
+
+**金融専門メディア**
+- https://www.nikkinonline.com - **WebFetch**で取得 (ニッキン ONLINE、日本金融通信社の銀行・信金・保険業界ニュース。RSS 提供なし、トップページから日次で掲載本数を確認)
+- https://www.ncblibrary.com - **WebFetch**で取得 (NCB Library、金融・決済業界の解説メディア。RSS 提供なし)
+
+**シンクタンク (追加)**
+- https://www.mri.co.jp/news/index.html - **WebFetch** (Chrome 相当の User-Agent 必須) で取得 (三菱総合研究所 ニュース一覧、CloudFront ボット対策あり curl 既定 UA では 404 を返すため注意。プレスリリース・事業受託・協業発表)
 
 **日本市場（はてブIT）**
 - https://b.hatena.ne.jp/hotentry/it
