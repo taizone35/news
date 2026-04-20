@@ -54,6 +54,7 @@ description: "トレンドネタ収集"
 **リサーチ**
 - みずほリサーチ&テクノロジーズ: **WebSearch**で「みずほリサーチ&テクノロジーズ 最新レポート site:mizuho-rt.co.jp」を検索して取得（WAFでWebFetch/curl不可）
 - https://www.jri.co.jp/report/ - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site jri`
+- https://www.theverge.com/tech - **Playwrightスクリプト**で取得: `node .claude/skills/neta-trend-daily/scripts/fetch-js-sites.mjs --site theverge` (WebFetch ブロック済み、 Playwright では domcontentloaded + スクロール誘発で記事一覧が取れる)
 - https://goodway.co.jp/news - **RSSフィード**で取得: `curl https://goodway.co.jp/news/feed`
 - https://zenn.dev - **RSSフィード**で取得: `curl https://zenn.dev/feed` (Zenn トレンド全体、日本のエンジニア向け技術記事の人気トップ)
 - https://zenn.dev/p/mkj - **RSSフィード**で取得: `curl https://zenn.dev/p/mkj/feed` (松尾研究所テックブログ、LLM 事後学習や Reasoning モデル等の AI 研究寄り記事)

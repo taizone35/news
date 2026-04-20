@@ -191,6 +191,64 @@ const SITES = {
       });
     },
   },
+
+  theverge: {
+    name: "The Verge Tech",
+    url: "https://www.theverge.com/tech",
+    waitUntil: "domcontentloaded",
+    timeout: 45000,
+    extract: async (page) => {
+      await page.waitForTimeout(5000);
+      // 遅延ロードを発火させるため最下部までスクロール
+      await page.evaluate(async () => {
+        await new Promise((resolve) => {
+          let y = 0;
+          const step = () => {
+            window.scrollBy(0, 800);
+            y += 800;
+            if (y < document.body.scrollHeight) {
+              setTimeout(step, 150);
+            } else {
+              resolve();
+            }
+          };
+          step();
+        });
+      });
+      await page.waitForTimeout(2000);
+      return page.evaluate(() => {
+        const items = [];
+        const links = document.querySelectorAll("a");
+        for (const a of links) {
+          const title = (a.innerText || a.textContent || "")
+            .trim()
+            .replace(/\s+/g, " ");
+          const href = a.href;
+          if (
+            title &&
+            title.length > 15 &&
+            title.length < 200 &&
+            href &&
+            !href.includes("javascript:") &&
+            // The Verge の現行記事 URL は /<category>/<id>/<slug> または直下 /<id>/<slug>
+            /theverge\.com\/[a-z0-9-]+\/\d{6,}\//.test(href)
+          ) {
+            items.push({ title, url: href });
+          }
+        }
+        const seen = new Set();
+        return items.filter((item) => {
+          if (seen.has(item.url)) return false;
+          seen.add(item.url);
+          return true;
+        }).slice(0, 10);
+      });
+    },
+  },
+
+  // NCB Library: 会員ログイン必須のため Playwright でも記事一覧取得不可
+  // METI (www.meti.go.jp): curl / WebFetch / Playwright すべて接続段階で遮断され取得不可
+  // これらは自動化対象から外し、 WebSearch 等で URL / タイトルのみを収集する運用とする
 };
 
 async function fetchSite(browser, siteKey) {
