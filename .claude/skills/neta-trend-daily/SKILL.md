@@ -205,12 +205,37 @@ OSS/個人開発系（4サブレッド）:
 
 **まず「ネタ収集完了。」というメッセージを返してから、結果を `ideas/daily/YYYYMMDD-trend.md` に保存。**
 
-### 4. コミット・プッシュ
+### 3.1. README.md 同期 (GitHub トップページ表示用)
 
-保存後、`ideas/daily/YYYYMMDD-trend.md` を git で main ブランチにコミットし、 origin にプッシュする。
+最新レポートをリポジトリトップに表示するため、 `ideas/daily/YYYYMMDD-trend.md` の内容を `README.md` にも反映する。 `README.md` は先頭の固定ヘッダー (プロジェクト概要 + 最新レポートへの案内 + `---` 区切り) に続けて、当日のレポート本文をそのまま連結する。
 
 ```bash
-git add ideas/daily/YYYYMMDD-trend.md
+{
+  cat <<'EOF'
+# news -- トレンドネタ日次レポート
+
+本リポジトリは、有名サイト・はてブ IT 人気エントリー・Hacker News・Reddit 13 サブレッドなどから日次のトレンドを収集し、興味領域と突き合わせてサマリ付きで公開するものです。
+
+- 日次レポート本体: [ideas/daily/](ideas/daily)
+- 収集スキル: [.claude/skills/neta-trend-daily/SKILL.md](.claude/skills/neta-trend-daily/SKILL.md)
+
+以下は**最新日のレポートを常時コピーして表示**するセクションです ( 自動同期 ) 。
+
+---
+
+EOF
+  cat ideas/daily/YYYYMMDD-trend.md
+} > README.md
+```
+
+README.md はスキル実行のたびに上書きされるので、ヘッダー以外の手編集は避ける。
+
+### 4. コミット・プッシュ
+
+保存後、 `ideas/daily/YYYYMMDD-trend.md` と `README.md` の両方を git で main ブランチにコミットし、 origin にプッシュする。
+
+```bash
+git add ideas/daily/YYYYMMDD-trend.md README.md
 git commit -m "Add: YYYY-MM-DD トレンドレポート収集"
 git push origin main
 ```

@@ -1,0 +1,746 @@
+# news -- トレンドネタ日次レポート
+
+本リポジトリは、有名サイト・はてブ IT 人気エントリー・Hacker News・Reddit 13 サブレッドなどから日次のトレンドを収集し、興味領域と突き合わせてサマリ付きで公開するものです。
+
+- 日次レポート本体: [ideas/daily/](ideas/daily)
+- 収集スキル: [.claude/skills/neta-trend-daily/SKILL.md](.claude/skills/neta-trend-daily/SKILL.md)
+
+以下は**最新日のレポートを常時コピーして表示**するセクションです ( 自動同期 ) 。
+
+---
+
+# トレンドネタ: 2026-04-20
+
+## はてブ IT (日本市場)
+
+### 注目トピック
+
+| タイトル | ブクマ数 | 興味度 | カテゴリ | メモ |
+|---------|---------|--------|---------|------|
+| [Vercel April 2026 security incident](https://vercel.com/kb/bulletin/vercel-april-2026-security-incident) | 27 users | ★★★ | Web セキュリティ / サプライチェーン | 第三者 AI ツール Context.ai 経由で従業員 Google Workspace が乗っ取り、環境変数流出 |
+| [サプライチェーンアタック対策と dependabot 活用](https://songmu.jp/riji/entry/2026-04-19-supply-chain-security-with-dependabot.html) | 84 users | ★★★ | Web セキュリティ | cooldown で 7 日間の minimum release age を設け、悪性依存を弾く実践 |
+| [1 日で作るサプライチェーン攻撃対策！運用死しないコスト「ほぼゼロ」の通信監視](https://zenn.dev/aeyesec/articles/32fb05ddd1c3f7) | 42 users | ★★★ | Web セキュリティ | Route 53 Resolver ログ + VPC Flow Logs + Athena で未承認外向き通信を検知 |
+| [Google API キーの脆弱性により 13 時間で約 900 万円請求される事案が発生](https://qiita.com/miruky/items/fde2d0747358cd7870d7) | 262 users | ★★★ | クラウドセキュリティ | Firebase API キーに Gemini 認証が付与され「制限なし」で放流、制限・上限設定の必須性 |
+| [Claude Code で実際に起きたセキュリティ事故 7 選と防止策](https://qiita.com/masa_ClaudeCodeLab/items/8c22966fbd3c125c53dc) | 296 users | ★★★ | AI × セキュリティ | 環境変数流出・本番 DB 削除・rm -rf 等 7 事故、`.gitignore` と `settings.json` 禁止コマンド運用 |
+| [AI コーディングツール 1 億 5000 万 DL の根幹 MCP に設計欠陥](https://xenospectrum.com/mcp-stdio-design-flaw-anthropic/) | 45 users | ★★★ | AI × セキュリティ | MCP stdio で OS コマンドが実行される、Anthropic は仕様と主張 |
+| [Spotify など、AI 乗っ取り問題が深刻化 著名ジャズミュージシャンら相次ぎ被害報告](https://www.musicman.co.jp/business/721835) | 97 users | ★★★ | AI × コンテンツ | 無断アップ楽曲の削除に 72 時間、オプトインのベータ版で守り切れない |
+| [プロンプトの再現性を AI に自動チューニングさせる方法](https://zenn.dev/mizchi/articles/empirical-prompt-tuning) | 420 users | ★★★ | AI 開発 | 別 AI に評価・不明瞭点をレポートさせ、初稿 50 点から 80 ～ 90 点に引き上げ |
+| [Claude Code で日常のタスクを 45 個自動化した東大院生の全記録](https://zenn.dev/shunya_sudo/articles/claude-code-45-automation-tasks) | 400 users | ★★★ | AI 個人活用 | 月 15,000 円で 45 個の cron ジョブ、判断は AI・最終決定は人間という原則 |
+| [「AI を使えばアプリが作れる」ってホント？文系が 10 ヶ月やってみた](https://www.gizmodo.jp/2026/04/ai_coding_10_month.html) | 526 users | ★★★ | AI × 個人開発 | 初期は非エンジニアでも可、複雑要件には月 1 ～ 3 万円の課金と学習が必須 |
+| [アプリで儲けようとしている人に、アプリ開発歴 15 年から言いたいこと](https://anond.hatelabo.jp/20260419113552) | 178 users | ★★★ | 個人開発 / SaaS | 個人開発で稼ぐのは 1000 人に 1 人、従業員・フリーランスなら普通に稼げるの現実論 |
+| [クソバズワード「ハーネスエンジニアリング」と向き合う](https://qiita.com/retore/items/3688cf515c14f7471ed4) | 148 users | ★★ | AI 開発 / 用語批評 | モデル以外の全てで LLM を制御する技法、既存実践に名前を付けただけとの批評 |
+| [安全なコンテナイメージを作るための新しい業界標準: Docker Hardened Images](https://www.docswell.com/s/tadashi0713/KR82N3-docker-3shake-webinar) | 116 users | ★★★ | Web セキュリティ | 1000 以上の CVE ほぼゼロイメージ、Critical/High 修正 SLA 7 日保証 |
+| [gh コマンドでエージェントスキルをインストール・管理できるようになった](https://azukiazusa.dev/blog/gh-agent-skill-management/) | 66 users | ★★★ | AI 開発ツール | `gh skill` で検索 / install / 管理、コミット pin でサプライチェーン軽減 |
+| [ソフトウェアや知能が安くなったときに起きること](https://blog.takaumada.com/entry/ai-and-deeptech) | 1164 users | ★★★ | キャリア / 経済 | 照明史を引き合いに、価値はソフトから現実実装・ディープテックへ移ると論じる |
+
+**興味度の定義**:
+- ★★★: 興味領域に直接関連 (AI × セキュリティ、OSS、個人開発、キャリア、金融など)
+- ★★: 間接的に関連 (技術トレンド全般、エンジニアリング文化)
+- ★: 一般的な IT / 技術ニュース
+
+### カテゴリ別全エントリー
+
+#### IT 総合
+
+1. [思い切った慶應義塾　全教職員に Notion 導入で 168 年分の知的資産を AI に食わせるプロジェクトが始動](https://news.yahoo.co.jp/articles/c465be8fe8c52668a13fb7cc6c5e789e15c511b5) (164 users)
+   - **サマリ**: 慶應義塾が全教職員に Notion を導入し、168 年分の学内ドキュメントを集約して AI に学習させるプロジェクトを開始しました。人と AI が同じ信頼コンテキストを共有することで、教育・研究支援の底上げを狙います (本文未取得、タイトルからの推測) 。
+2. [Claude Code × Obsidian Vault で作る「何でも相談」プロジェクト](https://qiita.com/htani0817/items/0cb5e8f91fa64fb9ba8c) (43 users)
+   - **サマリ**: Claude Code と Obsidian Vault を組み合わせ、フォルダ構成、`CLAUDE.md`、 MCP 設定を全公開した個人ナレッジベースの構築事例です。AI と対話可能なセカンドブレインの実装パターンを具体化しています (本文未取得、タイトルからの推測) 。
+3. [Why Japan has such good railways](https://worksinprogress.co/issue/why-japan-has-such-good-railways/) (47 users)
+   - **サマリ**: Works in Progress Magazine による日本の鉄道の良さを制度・歴史・技術の観点から分析する英語記事です (本文未取得、タイトルからの推測) 。
+4. [登壇支援の「その先」は四つある、エンジニアの頑張りを一度で終わらせない技術広報の仕事](https://blog.kushii.net/archives/2026/04/20/105639) (7 users)
+   - **サマリ**: 技術広報が単発の登壇支援で終わらせず、登壇資産を再利用する 4 つの方向を整理した実務記事です (本文未取得、タイトルからの推測) 。
+5. [ソフトウェアや知能が安くなったときに起きること](https://blog.takaumada.com/entry/ai-and-deeptech) (1164 users)
+   - **サマリ**: 馬田隆明氏が照明史を例に、AI で限界費用が下がると「これまでコスト的に見合わなかった場所」へ用途が拡張すると論じる評論です。価値の軸がソフト単体から現実実装・ディープテックへ移ると展望しています。
+
+#### プログラミング
+
+1. [Perry -- TypeScript → Native](https://www.perryts.com/) (132 users)
+   - **サマリ**: TypeScript から直接ネイティブコードへコンパイルする実験的処理系 Perry の公開ページです (本文未取得、タイトルからの推測) 。
+2. [無料でデータベースで動くアプリを自作できる「NocoDB」](https://gigazine.net/news/20260418-nocodb/) (105 users)
+   - **サマリ**: セルフホスト可能な Airtable 代替の OSS。既存 DB に接続でき、グリッド・カンバン・カレンダーなど複数ビューでデータを操作できるノーコードツールで、データ所有権がユーザー側にある点が差別化です。
+3. [構文認識で Git コンフリクトを自動解決する Mergiraf が良さげかも](https://kawarimidoll.com/posts/202604191/) (92 users)
+   - **サマリ**: テキスト行レベルではなく構文木を理解してコンフリクトを解決する Mergiraf を紹介する記事です。既存のマージツールより安全にリベースや merge が通せる可能性を示唆しています (本文未取得、タイトルからの推測) 。
+4. [Node.js における単一バイナリ配布 (SEA: Single Executable Application) の実装と変遷](https://blog.asial.co.jp/6686/) (9 users)
+   - **サマリ**: Node.js の SEA は v19.7.0 で実験導入され、v25.5.0 の `--build-sea` コマンド追加で blob 生成から注入までがワンコマンドに。既存資産を活かした単一バイナリ配布が容易になり、配布運用が大幅に簡素化されています。
+5. [Android CLI and skills: Build Android apps 3x faster using any agent](https://android-developers.googleblog.com/2026/04/build-android-apps-3x-faster-using-any-agent.html) (14 users)
+   - **サマリ**: Google が Android 開発用 CLI とスキルを公開し、エージェント経由で Android アプリ開発が 3 倍高速になると主張する公式ブログです (本文未取得、タイトルからの推測) 。
+6. [2026 年 3 月に Baseline になった Reporting API を活用してフロントエンドの Observability を高める](https://blog.inorinrinrin.com/entry/2026/04/18/232104) (67 users)
+   - **サマリ**: Reporting API が Baseline 入りしたことで、 CSP 違反や Deprecation などをブラウザから送信させる実装パターンが使える状態になりました。フロントエンド観測性の底上げ手段を具体化しています (本文未取得、タイトルからの推測) 。
+7. [aube](https://aube.en.dev/) (17 users)
+   - **サマリ**: aube と名付けられた開発関連サービスのランディングページで、新プロダクトとして話題になっています (本文未取得、タイトルからの推測) 。
+8. [AI に仕様書を書かせるベストプラクティス 2026](https://qiita.com/YushiYamamoto/items/484792459af3afcba1a8) (9 users)
+   - **サマリ**: 仕様書作成を LLM に任せる際のテンプレートと反復フロー、失敗パターンをまとめた 2026 年版のベストプラクティス集です (本文未取得、タイトルからの推測) 。
+
+#### AI・機械学習
+
+1. [Claude Code で日常のタスクを 45 個自動化した東大院生の全記録](https://zenn.dev/shunya_sudo/articles/claude-code-45-automation-tasks) (400 users)
+   - **サマリ**: 東大院生が Claude Code で 45 個の cron ジョブを実装し、メール処理で 1 日 20 ～ 30 分を節約。月 15,000 円の Claude Code Max 運用で「判断は AI、最終決定は人間」を徹底し、安定性を優先した設計を採っています。
+2. [プロンプトの再現性を AI に自動チューニングさせる方法](https://zenn.dev/mizchi/articles/empirical-prompt-tuning) (420 users)
+   - **サマリ**: 別の AI セッションにプロンプトを実行させ、不明瞭点・勝手な補完・手数をレポートさせて段階修正する手法。 8 スキルで検証した結果、初稿 50 点が 80 ～ 90 点に向上し、再現性 6/20 が最終 16/20 まで改善しました。
+3. [【Claude Code】アップデートされたデスクトップ版を触ってわかった CLI との違い](https://zenn.dev/solvio/articles/901772dcec88cc) (103 users)
+   - **サマリ**: 2026 年 4 月 14 日リデザインの Desktop 版は、マルチセッションサイドバー・統合ターミナル・Diff ビューアを搭載。CLI はシェル連携とトークン管理で強く、用途に応じた使い分けを推奨しています。
+4. [AI 時代にわざわざ Ruby on Rails を使う理由](https://zenn.dev/higakijin/articles/730a734b6b9009) (24 users)
+   - **サマリ**: Rails の「設定より規約」がアーキテクチャ一貫性を担保し、AI が生成する不適切コードを弾く。ソロプレナー向けに迅速ローンチできる特化が残っていると筆者は主張しています。
+5. [GitHub - forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) (35 users)
+   - **サマリ**: Andrej Karpathy 風のスキルを Claude / Cursor 等のエージェント向けにパッケージ化したコミュニティリポジトリです (本文未取得、タイトルからの推測) 。
+6. [ChatGPT の画像生成 AI が「Nano Banana」超え？　漫画や動画風カットが実用レベルに](https://ascii.jp/elem/000/004/396/4396252/) (4 users)
+   - **サマリ**: ChatGPT の画像生成が Google の Nano Banana を上回る品質に達したとの評価。漫画・動画風カットが実用レベルとされています (本文未取得、タイトルからの推測) 。
+
+#### セキュリティ
+
+1. [1 日で作るサプライチェーン攻撃対策！運用死しないコスト「ほぼゼロ」の通信監視](https://zenn.dev/aeyesec/articles/32fb05ddd1c3f7) (42 users)
+   - **サマリ**: Route 53 Resolver クエリログと VPC Flow Logs を突き合わせ、Athena でクエリ、DynamoDB でホワイトリスト管理。Lambda 定期実行で未承認の外向き通信を Slack 通知する実装案です。
+2. [サプライチェーンアタック対策と dependabot 活用](https://songmu.jp/riji/entry/2026-04-19-supply-chain-security-with-dependabot.html) (84 users)
+   - **サマリ**: Dependabot の `cooldown` で 7 日間の minimum release age を設定し、悪性依存を取り込まない運用。PR 上の CI 検証で秘匿情報にアクセスさせない隔離環境を組むパターンを提示しています。
+3. [Let's Encrypt の短期証明書はかなり厳しいので ARI 対応クライアントを使った方がよい](https://zenn.dev/catatsuy/articles/2ac24bccb4b7d1) (33 users)
+   - **サマリ**: 有効期限 160 時間の短期証明書は更新回数増でレート制限が厳しく、RSA + ECDSA 併用で枚数が倍に。ARI (ACME Renewal Information) 対応クライアント (lego など) を使えばレート制限から除外されます。
+4. [Vercel April 2026 security incident](https://vercel.com/kb/bulletin/vercel-april-2026-security-incident) (27 users)
+   - **サマリ**: 第三者 AI ツール Context.ai の侵害から Vercel 従業員の Google Workspace が乗っ取られ、機密フラグ未設定の環境変数が露出。Mandiant らと協調調査中で、認証情報ローテーションを推奨しています。
+5. [Spotify など、AI 乗っ取り問題が深刻化](https://www.musicman.co.jp/business/721835) (97 users)
+   - **サマリ**: ジェイソン・モラン等の有名ジャズ奏者の公式ストリーミングプロフィールへ、無関係の AI 生成楽曲が大量アップ。削除まで 72 時間かかり、Spotify のオプトインベータでは守り切れない実態が露呈しました。
+6. [安全なコンテナイメージを作るための新しい業界標準: Docker Hardened Images](https://www.docswell.com/s/tadashi0713/KR82N3-docker-3shake-webinar) (116 users)
+   - **サマリ**: DHI は CVE ほぼゼロの 1000 超イメージを提供し、シェル・パッケージマネージャーを除外して攻撃面を削減。無償版と、Critical/High 修正 SLA 7 日の有償版で提供されます。
+7. [Claude Code で実際に起きたセキュリティ事故 7 選と防止策](https://qiita.com/masa_ClaudeCodeLab/items/8c22966fbd3c125c53dc) (296 users)
+   - **サマリ**: 環境変数ファイル流出、本番 DB 削除、`rm -rf` による作業ツリー破壊など 7 事故を列挙。事故は AI 暴走ではなく設定後回しが原因と断じ、`.gitignore` 整備、`settings.json` の禁止コマンド、最小権限運用を対策に提示。
+8. [Google API キーの脆弱性により 13 時間で約 900 万円請求される事案が発生！](https://qiita.com/miruky/items/fde2d0747358cd7870d7) (262 users)
+   - **サマリ**: Firebase 向けに公開していた API キーが Gemini 有効化後に同キーで認証可能となり、「制限なし」既定で 13 時間で 900 万円が不正請求された事案。API 制限・利用額上限・用途別キー分離が必須と提言しています。
+9. [330 万 DL を記録した Zorin OS、15 年前の Core 2 Duo 機を最新セキュリティで蘇らせる](https://xenospectrum.com/zorin-os-windows-alternative/) (16 users)
+   - **サマリ**: 古い PC でも動く Zorin OS が 330 万 DL に到達、Windows 代替としてセキュアに延命できる選択肢を示した紹介記事です (本文未取得、タイトルからの推測) 。
+
+#### はてなブログ (テクノロジー)
+
+1. [個人 Web アプリの置き場所としての Render](https://takoratta.hatenablog.com/entry/2026/04/17/123020) (80 users)
+   - **サマリ**: 個人開発アプリのホスティング選定で Render を評価した記事。無料枠や Cold Start、 DB 付与の現実的な使用感をまとめています (本文未取得、タイトルからの推測) 。
+2. [Qwen3.6-35B-A3B でコーディングエージェントを試してみる](https://nowokay.hatenablog.com/entry/2026/04/17/135414) (47 users)
+   - **サマリ**: Qwen3.6-35B-A3B を用いたコーディングエージェント検証。変更指示・git コミットが安定動作し、 RTX 4060 Ti 16GB 環境でも動くとの結論。小規模用途なら十分と評価しています。
+3. [AI デーを半年運用して出てきた成果物の紹介](https://tacoms-inc.hatenablog.com/entry/ai-day) (9 users)
+   - **サマリ**: tacoms 社が半年運用した「AI デー」の成果物を紹介。業務改善ツールやプロトの実例をまとめています (本文未取得、タイトルからの推測) 。
+4. [待つツールを作って活用している (gh-wait / gh-copilot-review)](https://k1low.hatenablog.com/entry/2026/04/17/083000) (31 users)
+   - **サマリ**: Copilot レビューや CI の完了を待つだけの小さな CLI を自作して運用。非同期ワークフロー時代にマッチする補助ツールの発想を示しています (本文未取得、タイトルからの推測) 。
+5. [「個人で AI」から「一緒に AI」へ -- Devin を活用して案件の企画検討フェーズのデータ分析の進め方を見直した話](https://tech-blog.tabelog.com/entry/collaborative-data-analysis-with-devin) (32 users)
+   - **サマリ**: 食べログが Devin をチームデータ分析に組み込み、個人で閉じずに協調的に使う体制へ移行した事例です (本文未取得、タイトルからの推測) 。
+6. [デザイナーはアクセシビリティチェックツールの夢を見るか -- Claude Code でつくる 3 エンジン評価ツール](https://techblog.enechain.com/entry/a11ychecker-claudecode) (24 users)
+   - **サマリ**: enechain がデザイナー向けに Claude Code で 3 エンジン並列のアクセシビリティチェッカーを内製した過程を紹介しています (本文未取得、タイトルからの推測) 。
+
+#### エンジニア
+
+1. [OpenAI「Codex」週間 300 万ユーザー突破 -- 「ハーネスエンジニアリング」が示す AI コーディング最前線](https://codezine.jp/article/detail/23911) (29 users)
+   - **サマリ**: OpenAI Codex が週間 300 万ユーザーに到達、ハーネスエンジニアリングの観点から AI コーディングの現在地を解説する CodeZine 記事です (本文未取得、タイトルからの推測) 。
+2. [クソバズワード「ハーネスエンジニアリング」と向き合う](https://qiita.com/retore/items/3688cf515c14f7471ed4) (148 users)
+   - **サマリ**: LangChain 定義の「エージェント = モデル + ハーネス」に対し、筆者は「モデル以外の全て」は既存実務にすぎずバズワードと断じる一方、コーディング以外でエージェントを作る際の知見には価値があると位置付けています。
+3. [社内 SQL チューニングコンテストの開催にあたって得られた知見](https://zenn.dev/forcia_tech/articles/202604_devsemi_sql) (80 users)
+   - **サマリ**: フォルシアが開催した社内 SQL チューニングコンテストの設計・運営・得られた学びをまとめた記事です (本文未取得、タイトルからの推測) 。
+4. [【AI】Claude Code が劣化すると開発者の言葉遣いが悪くなる](https://qiita.com/rana_kualu/items/1d019f33fd59fcbf1494) (20 users)
+   - **サマリ**: Claude Code の応答品質が落ちると利用者の言葉遣いが攻撃的になるという皮肉混じりの観察記事です (本文未取得、タイトルからの推測) 。
+
+## Hacker News (グローバル)
+
+### 注目トピック
+
+| タイトル (日本語訳) | ポイント | 興味度 | カテゴリ | メモ |
+|---|---|---|---|---|
+| [Vercel 2026 年 4 月セキュリティインシデント](https://news.ycombinator.com/item?id=47824463) | 566pt | ★★★ | Web セキュリティ | はてブ側でも観測、Context.ai 経由の乗っ取りが HN でも大議論 |
+| [Claude Opus 4.6 と 4.7 のシステムプロンプト差分](https://news.ycombinator.com/item?id=47823270) | 231pt | ★★★ | AI 開発 | Opus 4.7 で子どもの安全指示拡張・PowerPoint ツール追加・cutoff 2026-01 |
+| [The Bromine Chokepoint (臭素チョークポイント)](https://news.ycombinator.com/item?id=47826100) | 165pt | ★★ | 地政学 / 半導体 | イスラエルが臭素の 97.5% を供給、中東情勢次第で DRAM/NAND 生産停止の可能性 |
+| [Show HN: TRELLIS.2 image-to-3D が Mac Silicon で動く -- NVIDIA GPU 不要](https://news.ycombinator.com/item?id=47828896) | 58pt | ★★★ | AI / OSS | ローカル 3D 生成、アップル純正環境で動くポータブル実装 |
+| [Prove you are a robot: CAPTCHA for agents](https://news.ycombinator.com/item?id=47781950) | 56pt | ★★★ | AI × セキュリティ | エージェント時代の CAPTCHA 設計論、browser-use による提案 |
+| [Show HN: context engineering のリファレンス実装](https://news.ycombinator.com/item?id=47808956) | 31pt | ★★★ | AI 開発 | context engineering を実装で見せる参考リポジトリ |
+
+### 全エントリー (score 順)
+
+1. [Vercel April 2026 security incident](https://news.ycombinator.com/item?id=47824463) (566pt, 328 comments)
+   - **翻訳**: Vercel 2026 年 4 月セキュリティインシデント
+   - **サマリ**: Vercel は第三者 AI ツール Context.ai の侵害から Google Workspace 認証が乗っ取られ、未 sensitive 環境変数と従業員情報が露出したと発表。ShinyHunters を名乗る脅威アクターが 200 万ドルの身代金を要求し窃取データ販売を主張、同集団は関与否定。HN では認証情報ローテーション手順と AI 供給元の信用リスクが議論されています。
+2. [Archive of BYTE magazine, starting with issue #1 in 1975](https://news.ycombinator.com/item?id=47806096) (540pt, 141 comments)
+   - **翻訳**: BYTE 誌のアーカイブ、 1975 年の第 1 号から
+   - **サマリ**: Internet Archive で BYTE 誌創刊号からのデジタル化が進んだことを紹介する投稿。黎明期のマイコン文化・広告・特集を読み返せる資料群として HN で話題になっています (本文未取得、タイトルからの推測) 。
+3. [Changes in the system prompt between Claude Opus 4.6 and 4.7](https://news.ycombinator.com/item?id=47823270) (231pt, 129 comments)
+   - **翻訳**: Claude Opus 4.6 から 4.7 へのシステムプロンプトの変更
+   - **サマリ**: Opus 4.7 (2026-04-16 リリース) では子どもの安全に関する指示の拡張、ユーザーへの詰問の削減、 Claude in PowerPoint 等の新ツール追加が入りました。 cutoff が 2026 年 1 月に更新され、トランプ大統領の一部記述が削除。コミュニティでは挙動差の体感と安全指示のトレードオフが議論されています。
+4. [The Bromine Chokepoint: How Strife in the Middle East Could Halt Production of the World's Memory Chips](https://news.ycombinator.com/item?id=47826100) (165pt, 76 comments)
+   - **翻訳**: 臭素のチョークポイント: 中東情勢が世界のメモリチップ生産を停止させかねない理由
+   - **サマリ**: イスラエルは世界のメモリチップ用臭素の 97.5% を供給しており、 ICL グループの抽出・変換施設が危機的状態。被害時には DRAM・NAND 生産停止で AI インフラ含む全領域に供給不足が波及しうると警告する War on the Rocks の分析です。
+5. [Turtle WoW classic server announces shutdown after Blizzard wins injunction](https://news.ycombinator.com/item?id=47825160) (136pt, 109 comments)
+   - **翻訳**: Blizzard が差し止めに勝訴、 Turtle WoW classic サーバーが停止を発表
+   - **サマリ**: Blizzard の差し止め訴訟勝訴により、非公式の WoW Classic サーバー Turtle WoW が停止を余儀なくされる件の報道です (本文未取得、タイトルからの推測) 。
+6. [Ex-CEO, ex-CFO of bankrupt AI company charged with fraud](https://news.ycombinator.com/item?id=47828225) (131pt, 54 comments)
+   - **翻訳**: 破綻 AI 企業の元 CEO・元 CFO が詐欺容疑で起訴
+   - **サマリ**: 破綻した AI 企業の旧経営陣が詐欺容疑で起訴された Reuters 報道。 AI バブル期の誇大表示・投資家欺瞞の典型事例として HN でも AI 投資の規律が論じられています (本文未取得、タイトルからの推測) 。
+7. [The insider trading suspicions looming over Trump's presidency](https://news.ycombinator.com/item?id=47829486) (98pt, 19 comments)
+   - **翻訳**: トランプ大統領時代に広がるインサイダー取引疑惑
+   - **サマリ**: トランプ政権下で広がるインサイダー取引疑惑を BBC が報じた記事です (本文未取得、タイトルからの推測) 。
+8. [A Brief History of Fish Sauce](https://news.ycombinator.com/item?id=47822734) (93pt, 40 comments)
+   - **翻訳**: フィッシュソース小史
+   - **サマリ**: フィッシュソース (魚醤) の東西交流史を辿るエッセイ。食品史と交易史を横断する読み物です (本文未取得、タイトルからの推測) 。
+9. [2,100 Swiss municipalities showing which provider handles their official email](https://news.ycombinator.com/item?id=47828420) (77pt, 20 comments)
+   - **翻訳**: スイス 2,100 自治体の公式メールプロバイダーを一覧化
+   - **サマリ**: スイス全自治体の公式メールが誰のインフラで動いているかを可視化する地図サイト。行政のクラウド依存度を俯瞰できる公共ダッシュボードです (本文未取得、タイトルからの推測) 。
+10. [Show HN: TRELLIS.2 image-to-3D running on Mac Silicon -- no Nvidia GPU needed](https://news.ycombinator.com/item?id=47828896) (58pt, 6 comments)
+    - **翻訳**: Show HN: TRELLIS.2 image-to-3D が Mac Silicon で動く -- NVIDIA GPU 不要
+    - **サマリ**: 画像から 3D モデルを生成する TRELLIS.2 を Mac Silicon 上で動かせるポートです。 NVIDIA 依存を外すことで、 Apple 環境の単機開発者でもローカル 3D 生成に参入できるようになります (本文未取得、タイトルからの推測) 。
+11. [Prove you are a robot: CAPTCHAs for agents](https://news.ycombinator.com/item?id=47781950) (56pt, 28 comments)
+    - **翻訳**: 自分がロボットであることを証明せよ: エージェント向け CAPTCHA
+    - **サマリ**: browser-use の提案で、エージェント時代には「人間でないこと」を証明する CAPTCHA が必要という逆転の発想。公式エージェントの署名と非公式の弾きを検討しています (本文未取得、タイトルからの推測) 。
+12. [Six Levels of Dark Mode (2024)](https://news.ycombinator.com/item?id=47826502) (55pt, 22 comments)
+    - **翻訳**: ダークモードの 6 段階 (2024)
+    - **サマリ**: 単純反転から CSS カラーレベル管理まで、ダークモード実装の成熟段階を 6 階層で整理した解説記事です (本文未取得、タイトルからの推測) 。
+13. [Show HN: A working reference implementation of context engineering](https://news.ycombinator.com/item?id=47808956) (31pt, 10 comments)
+    - **翻訳**: Show HN: コンテキストエンジニアリングの動作リファレンス実装
+    - **サマリ**: context engineering を具体コードで示す参考リポジトリ。プロンプト設計と情報注入の組み合わせをサンプルで提示します (本文未取得、タイトルからの推測) 。
+
+## Reddit (13 サブレッド)
+
+### 注目トピック
+
+| タイトル (日本語訳) | 投票数 | コメント | 興味度 | カテゴリ | サブレッド | メモ |
+|---|---|---|---|---|---|---|
+| [Vercel セキュリティインシデント公開: 何が確認済みか・何を回転すべきか](https://www.reddit.com/r/cybersecurity/comments/1spzcec/vercel_disclosed_a_security_incident_today_april/) | 45 | 10 | ★★★ | Security | r/cybersecurity | 攻撃連鎖が Context.ai → Google Workspace → 社内へ、鍵ローテ手順が議論 |
+| [Opus 4.7 vs 4.6 を 3 日使った実測比較](https://www.reddit.com/r/ClaudeCode/comments/1spxtut/opus_47_vs_46_after_3_days_of_real_coding_side_by/) | 291 | 69 | ★★★ | AI | r/ClaudeCode | 4.7 の one-shot 率 74.5% vs 4.6 の 83.8%、再試行率が約 2 倍 |
+| [Claude Code がオランダの税務処理を 1 日でこなした](https://www.reddit.com/r/ClaudeCode/comments/1spuza0/claude_code_just_did_my_taxes_for_me/) | 348 | 161 | ★★★ | AI × 個人活用 | r/ClaudeCode | 銀行取引取り込み〜レシート付き合わせまで自動化した具体プロンプト群 |
+| [SaaS の現実: $49/月より $500/日で自作した方がいい](https://www.reddit.com/r/ClaudeCode/comments/1sq3fre/reality_of_saas/) | 219 | 81 | ★★ | AI × SaaS | r/ClaudeCode | End of Software 論、コミュニティで SaaS 価値の再定義が議論 |
+| [Opus 4.7 から Qwen-35B-A3B に乗り換え](https://www.reddit.com/r/LocalLLaMA/comments/1spz0ck/switching_from_opus_47_to_qwen35ba3b/) | 224 | 165 | ★★★ | AI / ローカル LLM | r/LocalLLaMA | M5 Max 128GB でローカル運用の実使用感、Opus 比較 |
+| [17 年前の Excel 脆弱性が今も悪用されている (CISA 指摘)](https://www.reddit.com/r/cybersecurity/comments/1sqc89q/a_17yearold_excel_vulnerability_is_currently/) | 32 | 1 | ★★★ | Security | r/cybersecurity | 17 年ものの脆弱性が現役で悪用、旧資産の棚卸しが必要 |
+| [Vercel のセキュリティ: ホスティング利用者は鍵ローテーションを](https://www.reddit.com/r/webdev/comments/1sq3usz/vercel_security_incident_rotate_keys_if_you_use/) | 110 | 7 | ★★★ | Security | r/webdev | BleepingComputer のデータ販売主張を添えた注意喚起 |
+| [OpenAI Codex の広告が品が悪く不快](https://www.reddit.com/r/cscareerquestions/comments/1sq3sqw/openais_codex_advertisements_are_gross_offensive/) | 156 | 24 | ★★ | キャリア | r/cscareerquestions | $20/月で十分という実務家の反発、 AI 広告の表現倫理議論 |
+| [クリティカル案件を期日に届けた直後に別案件アサイン: 怒っていいか](https://www.reddit.com/r/cscareerquestions/comments/1spvcd7/i_successfully_delivered_a_high_profile_critical/) | 226 | 92 | ★★ | キャリア | r/cscareerquestions | 達成後に休む間もなく次案件、キャリア的な線の引き方を議論 |
+| [モチベーションよりエネルギーレベル](https://www.reddit.com/r/productivity/comments/1spl6n4/motivation_is_less_important_than_energy_levels/) | 195 | 44 | ★★ | 生産性 | r/productivity | 規律より休息と睡眠、エネルギー管理への軸足移動 |
+
+### カテゴリ別エントリー
+
+#### セキュリティ系 (r/netsec, r/cybersecurity)
+
+1. [Anonymous credentials: an illustrated primer (Part 2)](https://www.reddit.com/r/netsec/comments/1sobv0s/anonymous_credentials_an_illustrated_primer_part_2/) (14 ups, 2 comments) - r/netsec
+   - **翻訳**: 匿名クレデンシャル: 図解入門 (第 2 部)
+   - **サマリ**: Matthew Green による匿名クレデンシャルの連載第 2 部。BBS+ 系の署名方式とプライバシー保証を図解する暗号学ブログです (本文未取得、タイトルからの推測) 。
+2. [A 17-year-old Excel vulnerability is currently being exploited by threat actors](https://www.reddit.com/r/cybersecurity/comments/1sqc89q/a_17yearold_excel_vulnerability_is_currently/) (32 ups, 1 comment) - r/cybersecurity
+   - **翻訳**: 17 年前の Excel 脆弱性が現在脅威アクターに悪用されている
+   - **サマリ**: 米 CISA がフラグを立てた、 17 年前から存在する Excel の脆弱性が現在もフィッシング等で悪用されているという報道。旧 Office 依存資産の棚卸しが求められます (本文未取得、タイトルからの推測) 。
+3. [How much engineering do security engineers do?](https://www.reddit.com/r/cybersecurity/comments/1sq1yj0/how_much_engineering_do_security_engineers_do/) (50 ups, 38 comments) - r/cybersecurity
+   - **翻訳**: セキュリティエンジニアはどれくらい実際にエンジニアリングしているのか
+   - **サマリ**: 開発出身者がセキュリティエンジニアへ横移動後、採用時の期待とは裏腹にコーディングより評価・運用が中心だった実感を共有。コメントでは「組織規模によって割合が大きく違う」「ブルーチームは Python / Terraform が主戦場」といった議論が続いています。
+4. [Vercel disclosed a security incident today (April 19, 2026) - what's confirmed, what's reported, what to rotate](https://www.reddit.com/r/cybersecurity/comments/1spzcec/vercel_disclosed_a_security_incident_today_april/) (45 ups, 10 comments) - r/cybersecurity
+   - **翻訳**: Vercel が 2026 年 4 月 19 日セキュリティインシデントを開示 -- 確認済み・報告内容・回転対象
+   - **サマリ**: Vercel CEO が Context.ai を介した攻撃連鎖を詳細開示し、 Vercel Blob の署名付き URL と環境変数が影響対象。コミュニティでは「ローテ対象の網羅リスト」「本番運用時のキル手順」がまとめられています。
+5. [Vercel Says Internal Systems Hit in Breach](https://www.reddit.com/r/cybersecurity/comments/1spvwqs/vercel_says_internal_systems_hit_in_breach/) (36 ups, 1 comment) - r/cybersecurity
+   - **翻訳**: Vercel、内部システムが侵害されたと認める
+   - **サマリ**: BleepingComputer 記事をミラーした投稿。 ShinyHunters による 200 万ドル要求と販売主張の外形をカバーしています (本文未取得、タイトルからの推測) 。
+
+#### AI 系 (r/OpenAI, r/LocalLLaMA, r/ClaudeCode)
+
+1. [she doesn't use em dashes either!](https://www.reddit.com/r/OpenAI/comments/1sq5ypr/she_doesnt_use_em_dashes_either/) (275 ups, 32 comments) - r/OpenAI
+   - **翻訳**: 彼女も em ダッシュは使わない！
+   - **サマリ**: ChatGPT の文章に頻発する em ダッシュを抑える裏技的プロンプトが話題。「OpenAI にパッチ当てないでほしい」というミームとして盛り上がっています。
+2. [Doctor: "Over the past few weeks, I am truly feeling that our days are numbered because of AI."](https://www.reddit.com/r/OpenAI/comments/1spnata/doctor_over_the_past_few_weeks_i_am_truly_feeling/) (508 ups, 309 comments) - r/OpenAI
+   - **翻訳**: 医師の告白: 「ここ数週間、 AI のせいで自分たちの日は数えられていると本気で感じる」
+   - **サマリ**: 現役医師が AI への置き換えの現実感を告白、コミュニティでは AI の診断能力と制度・責任の所在が活発に議論されています (本文未取得、タイトルからの推測) 。
+3. [GPT 5.5 Spud incoming](https://www.reddit.com/r/OpenAI/comments/1spysr9/gpt_55_spud_incoming/) (277 ups, 17 comments) - r/OpenAI
+   - **翻訳**: GPT 5.5 "Spud" が来る
+   - **サマリ**: GPT 5.5 の内部コードネーム Spud とされるモデルの公開準備に関する噂投稿です (本文未取得、タイトルからの推測) 。
+4. [The accusation of using AI tools has become sufficient evidence to convict](https://www.reddit.com/r/OpenAI/comments/1spzjt6/the_accusation_of_using_ai_tools_has_become/) (33 ups, 49 comments) - r/OpenAI
+   - **翻訳**: AI ツール利用の「疑われた」こと自体が十分な証拠として扱われている
+   - **サマリ**: 大学講師 (兼 UX デザイナー) が、 AI 検出ツールの不正確さにもかかわらず告発だけで不利な立場になる不条理を訴える投稿。コミュニティは AI 検出のフォレンジック限界と倫理を議論しています。
+5. [To Beat China, Embrace Open-Source AI (WSJ)](https://www.reddit.com/r/LocalLLaMA/comments/1sqa40j/to_beat_china_embrace_opensource_ai_wsj/) (83 ups, 28 comments) - r/LocalLLaMA
+   - **翻訳**: 中国に勝つにはオープンソース AI を受け入れよ (WSJ)
+   - **サマリ**: 中国の OSS モデル躍進に対し、米国もオープンソース AI を戦略的に推進すべきとする WSJ 論説の共有。コミュニティでは輸出規制と OSS 公開のトレードオフが議論されています (本文未取得、タイトルからの推測) 。
+6. [Switching from Opus 4.7 to Qwen-35B-A3B](https://www.reddit.com/r/LocalLLaMA/comments/1spz0ck/switching_from_opus_47_to_qwen35ba3b/) (224 ups, 165 comments) - r/LocalLLaMA
+   - **翻訳**: Opus 4.7 から Qwen-35B-A3B へ乗り換える
+   - **サマリ**: M5 Max 128GB で Qwen-35B-A3B をローカル運用したユーザが、日常コーディングエージェント用途の乗り換えを相談。コミュニティは推論速度・品質・電気代のトレードオフを実測ベースで共有しています。
+7. [LLM Neuroanatomy III - LLMs seem to think in geometry, not language](https://www.reddit.com/r/LocalLLaMA/comments/1spy497/llm_neuroanatomy_iii_llms_seem_to_think_in/) (117 ups, 84 comments) - r/LocalLLaMA
+   - **翻訳**: LLM 神経解剖 III -- LLM は言語ではなく幾何で考えているようだ
+   - **サマリ**: LLM の内部表現を層ごとに解析するシリーズ第 3 弾。 Gemma-4 31B の結果を追加し、埋め込み空間の幾何が「思考」を形作っている示唆を提示しています。
+8. [Is anyone getting real coding work done with Qwen3.6-35B-A3B-UD-Q4_K_M on a 32GB Mac](https://www.reddit.com/r/LocalLLaMA/comments/1sq94qx/is_anyone_getting_real_coding_work_done_with/) (28 ups, 38 comments) - r/LocalLLaMA
+   - **翻訳**: 32GB Mac 上で Qwen3.6-35B-A3B-UD-Q4_K_M を使って実作業を進められている人はいるか
+   - **サマリ**: M2 MacBook Pro 32GB + llama.cpp + opencode で Opus 4.7 相当タスクを試した報告。 context を 32768 に制限せざるを得ず、実作業で壁があるとの実測共有です。
+9. [OK BOYS IT'S OVER.. No Subscription required.](https://www.reddit.com/r/ClaudeCode/comments/1spypte/ok_boys_its_over_no_subscription_required/) (2818 ups, 132 comments) - r/ClaudeCode
+   - **翻訳**: 諸君、終わりだ…サブスク不要
+   - **サマリ**: Claude Code をサブスクなしで使う小ネタ / ミームが爆伸び。コミュニティではスタンドアロン運用の可否とポリシー遵守が議論されています。
+10. [Reality of SaaS](https://www.reddit.com/r/ClaudeCode/comments/1sq3fre/reality_of_saas/) (219 ups, 81 comments) - r/ClaudeCode
+    - **翻訳**: SaaS の現実
+    - **サマリ**: 月額 $49 の SaaS より $500/日の Claude で自作した方がよいという「End of Software」論。コミュニティでは既製 SaaS の差別化軸と自作の保守コスト論が交わっています。
+11. [Opus 4.7 vs 4.6 after 3 days of real coding](https://www.reddit.com/r/ClaudeCode/comments/1spxtut/opus_47_vs_46_after_3_days_of_real_coding_side_by/) (291 ups, 69 comments) - r/ClaudeCode
+    - **翻訳**: Opus 4.7 と 4.6、 3 日間の実コーディング比較
+    - **サマリ**: 自身の利用ログ比較で、 4.7 の one-shot 率 74.5%、 4.6 は 83.8%、リトライ率が約 2 倍、コールあたり 800 トークン vs 372 と出力冗長化。まだ様子見と結論づけています。
+12. [Claude Code just did my taxes for me.](https://www.reddit.com/r/ClaudeCode/comments/1spuza0/claude_code_just_did_my_taxes_for_me/) (348 ups, 161 comments) - r/ClaudeCode
+    - **翻訳**: Claude Code に税務処理をやってもらった
+    - **サマリ**: 3 銀行口座の取引取り込み・レシートスクレイピング・控除仕訳を自動化し、 2 年分滞留の税務処理を 1 日で完了。オランダ税制の複雑さを Claude で乗り越えた事例です。
+
+#### コア技術系 (r/programming, r/technology)
+
+1. [Vercel reportedly breached by ShinyHunters, non sensitive secrets at risk](https://www.reddit.com/r/programming/comments/1spwg4r/vercel_reportedly_breached_by_shinyhunters_non/) (222 ups, 48 comments) - r/programming
+   - **翻訳**: Vercel が ShinyHunters により侵害されたと報じられる、非機密シークレットもリスク下に
+   - **サマリ**: r/programming 側の Vercel 侵害スレッド。コミュニティでは「sensitive としてフラグを付けていなかった環境変数が露出する設計」の是非が議論されています。
+2. [Making illegal state unrepresentable](https://www.reddit.com/r/programming/comments/1spwmis/making_illegal_state_unrepresentable/) (178 ups, 48 comments) - r/programming
+   - **翻訳**: 違法な状態を表現不可能にする
+   - **サマリ**: ピザビルダー例で、型システムで無効な状態遷移をコンパイル時に弾く設計を Python / Java / Kotlin / Rust / Gleam で比較。ファントム型 + 拡張関数で状態追加時の複雑性を線形化できるのが要点です。
+3. [The seven programming "ur-languages"](https://www.reddit.com/r/programming/comments/1spxms7/the_seven_programming_urlanguages/) (94 ups, 22 comments) - r/programming
+   - **翻訳**: 7 つのプログラミング「祖先言語」
+   - **サマリ**: 現代言語の系譜を 7 つの祖先言語にまで遡って整理する分類論。 FORTRAN・Lisp・ALGOL などから現代言語への影響を整理する読み物です (本文未取得、タイトルからの推測) 。
+4. [Migrating from DigitalOcean to Hetzner](https://www.reddit.com/r/programming/comments/1sprq34/migrating_from_digitalocean_to_hetzner/) (129 ups, 19 comments) - r/programming
+   - **翻訳**: DigitalOcean から Hetzner への移行
+   - **サマリ**: コスト圧縮を目的に DigitalOcean から Hetzner へ移行した実録。ネットワーク・監視・バックアップ移行の落とし穴を整理しています (本文未取得、タイトルからの推測) 。
+5. [US draft update: Major tech company Palantir urges universal national service](https://www.reddit.com/r/technology/comments/1sq6at4/us_draft_update_major_tech_company_palantir_urges/) (15355 ups, 2342 comments) - r/technology
+   - **翻訳**: 米徴兵アップデート: 大手テック Palantir が国民皆兵を提唱
+   - **サマリ**: Palantir が国民皆兵を主張したと報じられ、コミュニティでは政治的賛否が交錯。巨大テックの政策提言と政府調達の相関が議論されています (本文未取得、タイトルからの推測) 。
+6. [Thousands of CEOs admit AI had no impact on employment or productivity](https://www.reddit.com/r/technology/comments/1sq4v1x/thousands_of_ceos_admit_ai_had_no_impact_on/) (8974 ups, 662 comments) - r/technology
+   - **翻訳**: CEO 数千人が AI は雇用・生産性に無影響と認め、経済学者は 40 年前のパラドックス再考へ
+   - **サマリ**: 大規模調査で AI の雇用・生産性影響が小さいと多くの CEO が認めた結果を巡り、 Solow の生産性パラドックス再来が論じられています (本文未取得、タイトルからの推測) 。
+
+#### OSS / 個人開発系 (r/opensource, r/indiehackers, r/webdev, r/javascript)
+
+1. [an ai generated test suite you can't read isn't really open source](https://www.reddit.com/r/opensource/comments/1sq5fpp/an_ai_generated_test_suite_you_cant_read_isnt/) (5 ups, 16 comments) - r/opensource
+   - **翻訳**: 読めない AI 生成テストスイートは OSS とは言えない
+   - **サマリ**: AI 生成テストのうち、標準 Playwright・読める locator・普通の assertion を出すものと、 proprietary YAML を出すものを対比。可読性の担保こそが OSS 精神と主張しています。
+2. [A good open-source CMS with capabilities of Ghost?](https://www.reddit.com/r/opensource/comments/1spm1s5/a_good_opensource_cms_with_capabilities_of_ghost/) (15 ups, 12 comments) - r/opensource
+   - **翻訳**: Ghost 並みの OSS CMS を探している
+   - **サマリ**: 静的サイト運営者が Ghost 相当の OSS CMS を探すスレッド。コミュニティからは記事ごとの CSS 切替や静的生成互換性の論点が共有されています。
+3. [Just hit $17 MRR, 36 users, and 1 week since launch 🎉](https://www.reddit.com/r/indiehackers/comments/1spnx02/just_hit_17_mrr_36_users_and_1_week_since_launch/) (33 ups, 85 comments) - r/indiehackers
+   - **翻訳**: ローンチ 1 週間で $17 MRR、 36 ユーザー到達 🎉
+   - **サマリ**: 静かなローンチから 1 週間で初収益・初 5 つ星レビューの投稿。インディー界隈では地味な初速と Product Hunt 正式ローンチ後の期待が共有されています。
+4. [Vercel Security Incident - rotate keys if you use their hosting](https://www.reddit.com/r/webdev/comments/1sq3usz/vercel_security_incident_rotate_keys_if_you_use/) (110 ups, 7 comments) - r/webdev
+   - **翻訳**: Vercel セキュリティインシデント -- ホスティング利用者は鍵をローテーションせよ
+   - **サマリ**: BleepingComputer のデータ販売主張を引き、 Vercel 利用者に即時の鍵ローテと監査を呼びかける注意喚起です。
+5. [How I say no to a client request without losing the relationship](https://www.reddit.com/r/webdev/comments/1spqwcf/how_i_say_no_to_a_client_request_without_losing/) (140 ups, 34 comments) - r/webdev
+   - **翻訳**: クライアントの要望に関係を壊さず No と言う方法
+   - **サマリ**: Drizz 創業者が、「それは当人固有の悩みか、多数が抱える悩みか」を基準に要望を受け入れるか判断する運用を共有。断り方もテンプレ化してロードマップ議論に昇華する技法です。
+6. [Sveltekit Great DX!](https://www.reddit.com/r/webdev/comments/1sqapfo/sveltekit_great_dx/) (7 ups, 3 comments) - r/webdev
+   - **翻訳**: SvelteKit は DX がすごい！
+   - **サマリ**: Express から SvelteKit に移行して、ボイラープレートや手動ルーティングが激減し、 load 関数・サーバーエンドポイントの整理された設計が気に入ったという感想。 Adonis と並ぶ DX だと評しています。
+7. [Should frontend engineers transition to fullstack in this AI era?](https://www.reddit.com/r/webdev/comments/1sqcw8a/should_frontend_engineers_transition_to_fullstack/) (4 ups, 4 comments) - r/webdev
+   - **翻訳**: AI 時代、フロントエンドエンジニアはフルスタックに移るべきか
+   - **サマリ**: 5 年フロントエンド経験者がキャリア相談。コミュニティでは「AI で敷居が下がった今こそフルスタック拡張の好機」「専門深化も選択肢」と両論が出ています。
+8. [Show r/javascript: pretext-flow, embed shapes and animated objects in text flow](https://www.reddit.com/r/javascript/comments/1sqaws7/show_rjavascript_pretextflow_embed_shapes_and/) (3 ups, 1 comment) - r/javascript
+   - **翻訳**: Show r/javascript: pretext-flow -- テキストフローに図形とアニメーションを埋め込み、衝突計算を書かずに済む
+   - **サマリ**: 円の区間数学や列挙型の衝突計算を毎回書き直していた筆者が、 `flowLayout` 1 関数で抽象化したライブラリ pretext-flow を公開。 200 ～ 300 行の幾何コードを関数呼び出し 1 行に縮めました。
+9. [Web Bro: Full in-browser AI agent with WebGPU, ONNX, and File System Access API](https://www.reddit.com/r/javascript/comments/1sq9ild/web_bro_full_inbrowser_ai_agent_with_webgpu_onnx/) (0 ups, 2 comments) - r/javascript
+   - **翻訳**: Web Bro: WebGPU・ONNX・File System Access API で完全ブラウザ内動作の AI エージェント
+   - **サマリ**: Gemma 4 E2B-it を WebGPU 上で動かし、ローカルフォルダを直接読み書き、 IndexedDB で自動スナップショットを取るオールインブラウザのエージェントです。サーバー送信ゼロで動作する設計です。
+
+#### キャリア / 実践系 (r/cscareerquestions, r/productivity)
+
+1. [OpenAI's Codex advertisements are gross & offensive](https://www.reddit.com/r/cscareerquestions/comments/1sq3sqw/openais_codex_advertisements_are_gross_offensive/) (156 ups, 24 comments) - r/cscareerquestions
+   - **翻訳**: OpenAI の Codex 広告は品が悪く不快だ
+   - **サマリ**: 9 年の FAANG 経験をもつ開発者が、 $20/月で十分仕事になるのに「もう手書きしない」系の広告は実務を舐めていると批判。 AI を加速器として尊重する姿勢を主張しています。
+2. [I successfully delivered a high profile critical project on the day that it was due](https://www.reddit.com/r/cscareerquestions/comments/1spvcd7/i_successfully_delivered_a_high_profile_critical/) (226 ups, 92 comments) - r/cscareerquestions
+   - **翻訳**: 納期当日に高プロファイルなクリティカル案件を成功させたが、安全確認直後に別のクリティカル案件へアサインされた。過剰反応だろうか
+   - **サマリ**: 投稿者は 2 本同時のハード納期案件を乗り切った直後、休む間もなく次案件へ。リソース追加要求を拒否された経緯を含め、マネジメントの搾取と境界線の引き方が議論されています。
+3. [Linq startup records putting someone into a PIP](https://www.reddit.com/r/cscareerquestions/comments/1sq5noa/linq_startup_records_putting_someone_into_a_pip/) (44 ups, 13 comments) - r/cscareerquestions
+   - **翻訳**: スタートアップ Linq が PIP 付与の瞬間を YouTube 公開
+   - **サマリ**: Linq 社が PIP 付与の場面を顔や声を隠さずに YouTube 公開したことに批判集中。スタートアップ文化と人事倫理の境界が議論されています。
+4. [All You Need to Know is the Right People](https://www.reddit.com/r/cscareerquestions/comments/1sq9hyr/all_you_need_to_know_is_the_right_people/) (14 ups, 13 comments) - r/cscareerquestions
+   - **翻訳**: 結局、知るべきは「正しい人」だけ
+   - **サマリ**: エントリーレベルのポストが縮小していく中で、人脈がいかに重要かを論じる投稿。コメントでは紹介以外の現実的ルートも議論されています。
+5. [Motivation is less important than energy levels](https://www.reddit.com/r/productivity/comments/1spl6n4/motivation_is_less_important_than_energy_levels/) (195 ups, 44 comments) - r/productivity
+   - **翻訳**: モチベーションよりエネルギーレベルの方が大事
+   - **サマリ**: 低エネルギー時は意志より先に疲労が勝つと観察。休息・睡眠・食事でエネルギー管理をすることが、自己規律よりも生産性に効くと主張する投稿です。
+
+## 日本テック企業ブログ
+
+### スマートバンク Tech Blog
+
+1. [Navigation 2 → 3 を段階移行する -- 共存アーキテクチャの設計と AI による自動化](https://blog.smartbank.co.jp/entry/2026/04/09/115605) (2026-04-09)
+   - **サマリ**: 83 個の NavGraph を段階移行するため、 Nav2 と Nav3 を共存させる独自アーキを設計。移行パターンを体系化して Claude Code スキルに落とし込み、判断と変換を自動化する段階的リファクタリングのベストプラクティスを提示しました。
+2. [RubyKaigi 2026 でスマートバンクのメンバーと握手](https://blog.smartbank.co.jp/entry/2026/04/17/200000) (2026-04-17)
+   - **サマリ**: RubyKaigi 2026 出展の告知記事。 Board43 ワークショップなどオフライン接点の企画情報をまとめています (本文未取得、タイトルからの推測) 。
+
+### LINE ヤフー Tech Blog
+
+1. [エンジニア以外にも Coding Agent 活用を広げる架け橋に -- Codex × Electron 製 GUI エージェント誕生秘話](https://techblog.lycorp.co.jp/ja/20260420b) (2026-04-20)
+   - **サマリ**: 板井俊樹氏が個人開発から社内展開した LY MCP Agent は、 MCP Server × Coding Agent を非エンジニア向けに使える Electron GUI。リリース 3 ヶ月で 2300 人超が利用し、職種横断の業務自動化を実現しました。
+2. [Slack MCP でインシデント対応と FAQ 生成を加速する: 社内ワークショップの実践](https://techblog.lycorp.co.jp/ja/20260415a) (2026-04-15)
+   - **サマリ**: Slack 問い合わせチャンネルから FAQ を自動生成して Confluence に投稿するユースケースと、インシデント時のスレッド集約による状況サマリー・レポート生成の 2 本立て。スキル化して再現性を担保しています。
+3. [数行の改修、テストは山奥！？ あなたのアプリを衛星通信に対応させよう！](https://techblog.lycorp.co.jp/ja/20260414a) (2026-04-14)
+   - **サマリ**: 衛星通信対応のためのモバイルアプリ数行改修と、山奥での実地テストの体験記。物理的な帯域制約下での挙動検証の実務知見です (本文未取得、タイトルからの推測) 。
+
+## PM / 個人ブログ
+
+### 田所雅之氏ブログ
+
+1. [ソフトウェアや知能が安くなったときに起きること](https://blog.takaumada.com/entry/ai-and-deeptech) (2026-04-14)
+   - **サマリ**: 照明の歴史を引き合いに、価格が下がるとそれまでコスト的に見合わなかった場所で使い始めることで価値が稀少領域へ移ると論じる評論。 AI 時代のボトルネックはソフト単体ではなく、現実実装を担うディープテックへ移行すると展望しています。
+2. [少子化時代に問われる「教育の加速」](https://blog.takaumada.com/entry/2026/03/03/170950) (2026-03-03)
+   - **サマリ**: 限られた人口で高度人材をどう育てるか、教育の加速をテーマにした論考です (本文未取得、タイトルからの推測) 。
+
+### PM × LLM STUDIO
+
+1. [機能追加で失われたプロダクトのコンセプトを取り戻すリサーチ設計](https://pm-ai-insights.com/concept-gap/) (2025-05-25)
+   - **サマリ**: 機能が増えるほどプロダクトコンセプトが霞むコンセプトギャップを、リサーチ設計で取り戻すプロセスを提案する記事です (本文未取得、タイトルからの推測) 。
+2. [プロジェクト管理の型がない PdM へ。PMBOK を「道具箱」として使いこなし、開発の混沌を収める](https://pm-ai-insights.com/pmbok/) (2025-05-25)
+   - **サマリ**: PMBOK を型ではなく道具箱として使い、開発の混沌を収める PdM 向けの運用指針です (本文未取得、タイトルからの推測) 。
+
+## Zenn トレンド
+
+### Zenn 全体
+
+1. [プロンプトの再現性を AI に自動チューニングさせる方法](https://zenn.dev/mizchi/articles/empirical-prompt-tuning) (2026-04-19)
+   - **サマリ**: mizchi 氏による別 AI 評価を用いたプロンプト改善の実証記事。注目トピックでも取り上げた通り、初稿 50 点が 80 ～ 90 点、再現性 6/20 が 16/20 に改善しています。
+2. [ローカル LLM 用の簡易版スキルとしてトリガーという機能を考えてみました](https://zenn.dev/karaage0703/articles/89631872ca5a86) (2026-04-19)
+   - **サマリ**: ローカル LLM でもスキル的な起動制御を行うためのトリガー概念の提案記事です (本文未取得、タイトルからの推測) 。
+3. [Rust 製の事前コンパイル型 Neovim プラグインマネージャー rvpm を作った](https://zenn.dev/yukimemi/articles/2026-04-19-rvpm) (2026-04-19)
+   - **サマリ**: Neovim のプラグインを Rust で事前コンパイルして高速起動を狙う rvpm の開発記です (本文未取得、タイトルからの推測) 。
+4. [管理者目線で GitHub Copilot の方が優れていること](https://zenn.dev/ncdc/articles/ee35ef7974d279) (2026-04-19)
+   - **サマリ**: 管理者視点で GitHub Copilot の組織統制・監査面の優位性を整理した記事です (本文未取得、タイトルからの推測) 。
+5. [AI 時代にわざわざ Ruby on Rails を使う理由](https://zenn.dev/higakijin/articles/730a734b6b9009) (2026-04-19)
+   - **サマリ**: Rails の「設定より規約」が AI 生成コードの逸脱を抑え、一貫アーキテクチャを保つ。ソロプレナー向けの迅速ローンチ特化が残っていると論じています。
+6. [自作キーボードに機械学習モデルを仕込む](https://zenn.dev/bilzard/articles/29e91678ae98c7) (2026-04-19)
+   - **サマリ**: 自作キーボードに軽量 ML モデルを載せてキーストローク動態認識などを試みる実験記事です (本文未取得、タイトルからの推測) 。
+7. [Async React 時代の宣言的 UI 2: トランジション対応の useDebounced フックを作る](https://zenn.dev/uhyo/articles/async-react-debounce-2) (2026-04-18)
+   - **サマリ**: uhyo 氏による React トランジションと Debounce を組み合わせた宣言的 UI の実装パターン連載第 2 回です (本文未取得、タイトルからの推測) 。
+8. [ざっくり Claude Design を触ってみたので共有する](https://zenn.dev/yokomachi/articles/202604_claude_design_chottodake) (2026-04-17)
+   - **サマリ**: Claude Design (Web デザイナー向け Claude 派生) を触った第一印象レポートです (本文未取得、タイトルからの推測) 。
+9. [gh skill が登場。 GitHub 公式のスキル管理ツールに npx skills から乗り換えた](https://zenn.dev/ubie_dev/articles/gh-skill-install-agent-skills) (2026-04-17)
+   - **サマリ**: Ubie Dev が npx skills から `gh skill` へ移行した運用記。 GitHub 公式管理により、サプライチェーン対策と再現性が改善すると評価しています (本文未取得、タイトルからの推測) 。
+10. [設計書・コード・テストを全部 AI に書かせて半年間開発してみたよ](https://zenn.dev/nttdata_tech/articles/8a010aff542625) (2026-04-17)
+    - **サマリ**: NTT データが GitHub Copilot で設計書・コード・テストを生成し、社員がレビューする体制で開発完遂。設計・製造は成功したが、テスト観点抽出が不足して単体〜総合テストでバグ検出が多く強化試験が必要になった、という率直な振り返りです。
+11. [Hono の Node.js アダプタが最大 2.3 倍速くなります](https://zenn.dev/yusukebe/articles/9dce6cf7dc6e41) (2026-04-17)
+    - **サマリ**: Hono の Node.js アダプタの最適化により、スループットが最大 2.3 倍に改善した改修内容の解説です (本文未取得、タイトルからの推測) 。
+
+### Zenn 松尾研究所
+
+1. [質問と回答から LLM の思考過程を合成できる手法、 REER の紹介](https://zenn.dev/mkj/articles/852b68c5ef9747) (2026-04-16)
+   - **サマリ**: REER は段落ごとの書き換えで回答生成 perplexity を最小化する段落組み合わせを探索し、自然で探索的な reasoning を逆算合成する手法。正解が 1 つに定まらない創作・文章生成で reasoning 合成に有効です。
+2. [AI エージェントの「できる」と「任せられる」の間にある壁](https://zenn.dev/mkj/articles/782275ebd8fc5c) (2026-04-13)
+   - **サマリ**: デモで「できる」ことと実務で「任せられる」ことの乖離を論じ、信頼性と責任の設計に踏み込む論考です (本文未取得、タイトルからの推測) 。
+3. [世は大環境時代 - エージェントハーネスと RL 環境の展開から見えてくるもの](https://zenn.dev/mkj/articles/d700c07675d7b1) (2026-04-10)
+   - **サマリ**: エージェントハーネスと RL 環境の発展から、強化学習を取り巻く産業構造の変化を読み解く論考です (本文未取得、タイトルからの推測) 。
+
+## 国・官公庁
+
+### 金融庁
+
+1. [「国内運用会社の運用パフォーマンスを示す代表的な指標 (KPI) の測定と国内公募投信についての諸論点に関する分析」](https://www.fsa.go.jp/common/about/research/20260420/20260420.html) (2026-04-20)
+   - **サマリ**: 金融庁が国内運用会社の KPI と国内公募投信の論点を分析したレポートを公表しました。資産運用立国政策の根拠資料として実務的に重要です (本文未取得、タイトルからの推測) 。
+2. [「企業のリスクマネジメントの高度化に向けた検討会」報告書について公表しました。](https://www.fsa.go.jp/news/r7/singi/20260417-2.html) (2026-04-17)
+   - **サマリ**: 同検討会の報告書公表。企業 ERM の高度化に関する論点と提言の取りまとめです (本文未取得、タイトルからの推測) 。
+3. [株式会社バディキャピタルに対する行政処分について公表しました。](https://www.fsa.go.jp/news/r7/shouken/20260417.html) (2026-04-17)
+   - **サマリ**: バディキャピタルに対する行政処分の発出。具体的な不適切行為とそれに対する処分内容が示されています (本文未取得、タイトルからの推測) 。
+
+### 金融庁 入札公告 (研究・調査委託系)
+
+1. [海外における再保険キャプティブ制度に関する調査](https://www.fsa.go.jp/choutatu/choutatu_j/R8/20260417.pdf) (2026-04-17)
+   - **サマリ**: 海外の再保険キャプティブ制度を対象とした調査委託の入札。保険制度設計の政策関心の兆候です (本文未取得、タイトルからの推測) 。
+2. [インパクトファイナンス推進・拡大に向けたシステムの構築等業務](https://www.fsa.go.jp/choutatu/choutatu_j/R8/20260406-1.pdf) (2026-04-06)
+   - **サマリ**: インパクトファイナンスの推進拡大に向けたシステム構築業務の入札。実装段階の政策投資の兆候です (本文未取得、タイトルからの推測) 。
+
+### 内閣府
+
+1. [第 3 回人工知能 (AI) 技術の利用と消費者問題に関する専門調査会 (4 月 23 日開催)](https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/003/kaisai/index.html) (2026-04-16)
+   - **サマリ**: AI 技術と消費者問題を扱う専門調査会の第 3 回開催案内。生成 AI の消費者保護論点の検討状況を追う糸口です (本文未取得、タイトルからの推測) 。
+2. [第 487 回消費者委員会本会議 (4 月 24 日開催)](https://www.cao.go.jp/consumer/iinkai/2026/487/kaisai/index.html) (2026-04-17)
+   - **サマリ**: 消費者委員会本会議の開催案内。議題・配布資料のアップデートが予定されています (本文未取得、タイトルからの推測) 。
+
+### ジェトロ ビジネス短信 (抜粋)
+
+1. [米サニーバ、サウスカロライナ州で 3.5 億ドルを投じ太陽電池製造施設を建設へ](https://www.jetro.go.jp/biznews/2026/04/75b92571860ce810.html) (2026-04-17)
+   - **サマリ**: 米 Sunnova がサウスカロライナで太陽電池の製造施設に 3.5 億ドルを投資する動き。米国の製造回帰と太陽光サプライチェーンの再編の一例です (本文未取得、タイトルからの推測) 。
+2. [欧州委、中東情勢によるエネルギー価格高騰への対応方針を提示](https://www.jetro.go.jp/biznews/2026/04/c2a4e475f10bd886.html) (2026-04-17)
+   - **サマリ**: 欧州委員会が中東情勢起因のエネルギー価格上昇への対応方針を提示。欧州のエネルギー政策動向を追う記事です (本文未取得、タイトルからの推測) 。
+3. [サウジアラビア公共投資基金 (PIF)、 2026 ～ 2030 年戦略を発表](https://www.jetro.go.jp/biznews/2026/04/14726e5a11de3198.html) (2026-04-17)
+   - **サマリ**: PIF の新中期戦略発表。中東ソブリンウェルスの投資方針変化は、日本ベンチャー・運用業界にも影響し得る情報です (本文未取得、タイトルからの推測) 。
+4. [IMF の 2026 年成長率見通し、中東・北アフリカは 1.1%、 GCC 諸国は 2.0%](https://www.jetro.go.jp/biznews/2026/04/a9160721d4fd0377.html) (2026-04-17)
+   - **サマリ**: IMF が中東北アフリカ地域の 2026 年成長見通しを引き下げた内容の要約です (本文未取得、タイトルからの推測) 。
+
+## 金融・経済系ニュース (Goodway 抜粋)
+
+1. [【金融庁】フィッシング耐性のある多要素認証等に係る官民一体・業界横断的な広報について](https://goodway.co.jp/news/30258) (2026-04-17)
+   - **サマリ**: 金融庁が業界横断で、フィッシング耐性のある多要素認証の普及広報を進める動きです (本文未取得、タイトルからの推測) 。
+2. [【経済産業省】デジタルスキル標準 ver.2.0 (DSS ver.2.0) を公表します](https://goodway.co.jp/news/30259) (2026-04-17)
+   - **サマリ**: 経産省がデジタルスキル標準の ver.2.0 を公表。 AI 時代に合わせた職務別のスキル定義アップデートです (本文未取得、タイトルからの推測) 。
+3. [【経済産業省】起業家主導型カーブアウトの実践をより具体的に後押しするガイドブック](https://goodway.co.jp/news/30260) (2026-04-17)
+   - **サマリ**: 起業家主導カーブアウトの Why 編・How 編のガイドブックを公表。大企業発スタートアップ支援の具体的な実務指針です (本文未取得、タイトルからの推測) 。
+4. [【野村 HD】デジタルアセットの投資動向に関する機関投資家調査 2026](https://goodway.co.jp/news/30262) (2026-04-17)
+   - **サマリ**: 野村 HD による機関投資家のデジタルアセット投資動向調査 2026 の公表。暗号資産・トークン化資産への機関投資家の姿勢を把握できる資料です (本文未取得、タイトルからの推測) 。
+
+## Researchmap (抜粋)
+
+1. [便秘の診断を変える新技術 -- X 線画像から「便」と「ガス」を AI が自動で見分ける世界初のシステム](https://researchmap.jp/press_releases/press_releases/view/633014/8165db88c95d331cc725b8ee88b73fdf?page_id=388285) (2026-04-12)
+   - **サマリ**: X 線画像から便とガスを自動判別する AI システムを世界初公開、医療の診断支援 AI の研究事例です (本文未取得、タイトルからの推測) 。
+2. [【名城大学】世界初！タンパク質構造決定を劇的に加速させる「ROCKET」法を開発](https://researchmap.jp/press_releases/press_releases/view/633014/9feece6c80f7cb4b7855328b83d7f5ed?page_id=388285) (2026-04-12)
+   - **サマリ**: 名城大学が AI 予測と実験データを融合した ROCKET 法を開発、タンパク質構造決定の大幅高速化を報告。創薬・構造生物分野の話題です (本文未取得、タイトルからの推測) 。
+
+## リサーチ・シンクタンク (Playwright)
+
+### 日本総研 (JRI)
+
+1. [生成 AI と日本の雇用 -- 若年層の技能形成をどう確保するか](https://www.jri.co.jp/report/jrireview/detail/16641/)
+   - **サマリ**: 生成 AI が新入社員のエントリー業務を自動化することで、「就職はできたが仕事を学べなかった世代」が生まれる懸念を提起。簡単な業務から始める OJT 前提の育成モデルが崩れるため、人的資本投資の開示義務化や財政支援など公的対策が不可欠と論じています。
+2. [地方銀行における「越境再編」と今後の課題](https://www.jri.co.jp/report/economistcolumn/detail/16640/)
+   - **サマリ**: 地域・業種を超えた競争下で、地方銀行が越境再編と攻めの戦略へ舵を切る必要性を論じるコラムです (本文未取得、タイトルからの推測) 。
+3. [インドの中国との経済関係改善に向けた動きをどう見るか](https://www.jri.co.jp/report/researchfocus/detail/16639/)
+   - **サマリ**: インドが中国との経済関係改善に動く背景と日本企業への影響を分析するリサーチフォーカスです (本文未取得、タイトルからの推測) 。
+4. [求められる給付付き税額控除の早期導入、事業所得の把握向上にも努めよ](https://www.jri.co.jp/report/economistcolumn/detail/16637/)
+   - **サマリ**: 所得再分配の観点で給付付き税額控除の早期導入を提言し、事業所得捕捉の改善も合わせて求めるコラムです (本文未取得、タイトルからの推測) 。
+5. [わが国の温室効果ガス排出量の減少と今後の課題](https://www.jri.co.jp/report/research/detail/16629/)
+   - **サマリ**: GX・脱炭素電源強化によるエネルギー転換の加速を、わが国の温室効果ガス排出減少の延長線上で論じるリサーチです (本文未取得、タイトルからの推測) 。
+
+### 三菱 UFJ リサーチ&コンサルティング (MURC)
+
+1. [2026 年夏のボーナス見通し](https://www.murc.jp/news/news_release/news_release_260409/) (2026-04-09)
+   - **サマリ**: 2026 年夏のボーナス見通しを発表したニュースリリース。民間主要企業の支給額推計がマクロの個人消費見通しに連動する点で注目です (本文未取得、タイトルからの推測) 。
+2. [日銀短観 (2026 年 3 月調査) 予測](https://www.murc.jp/news/news_release/news_release_260318/) (2026-03-18)
+   - **サマリ**: 3 月日銀短観の事前予測リリース。業況判断 DI と設備投資計画の読みを提示しています (本文未取得、タイトルからの推測) 。
+3. [2025/2026 年度短期経済見通し (2026 年 3 月)](https://www.murc.jp/news/news_release/news_release_260310/) (2026-03-10)
+   - **サマリ**: 2 次 QE 反映後の短期経済見通しのアップデート。実質 GDP 成長率・インフレ経路の改定幅が焦点です (本文未取得、タイトルからの推測) 。
+
+### One Capital Perspectives
+
+1. [AI に「選ばれる」新時代の SaaS の条件](https://onecapital.jp/perspectives/V8-qNHEG) (2026-02-20)
+   - **サマリ**: AI エージェントに参照・利用される側として「選ばれる」 SaaS の条件を整理する記事です (本文取得失敗、タイトルからの推測) 。
+2. [Figma の IPO から読み解くパワーロー](https://onecapital.jp/perspectives/Figma_power_law) (2025-12-30)
+   - **サマリ**: Figma の IPO を題材に VC リターンのパワーロー構造を読み解く分析記事です (本文未取得、タイトルからの推測) 。
+3. [海外 VC の CFO はどのような SaaS を使っているのか？戦略的なファンド運営を支えるツールスタック](https://onecapital.jp/perspectives/CFO_tool_stack) (2025-12-29)
+   - **サマリ**: 海外 VC の CFO が使う SaaS ツールスタックをまとめ、ファンド運営業務の自動化ポイントを紹介する記事です (本文未取得、タイトルからの推測) 。
+4. [次世代型ロケット「Rockoon」を開発する AstroX](https://onecapital.jp/news/astrox) (2026-02-07)
+   - **サマリ**: One Capital の投資先、次世代型ロケット「Rockoon」を開発する AstroX のニュースです (本文未取得、タイトルからの推測) 。
+5. [小規模建設会社のためのオールインワン業務管理クラウド Concrew](https://onecapital.jp/news/concrew) (2025-11-03)
+   - **サマリ**: Concrew の投資発表ニュース。建設業向け垂直 SaaS の例として参照できます (本文未取得、タイトルからの推測) 。
+
+### PitchBook News (英語、日本語サマリ)
+
+1. [AI chipmaker Cerebras の S-1 を読み解く](https://pitchbook.com/news/articles/breaking-down-ai-chipmaker-cerebras-s-1)
+   - **翻訳**: AI チップメーカー Cerebras の S-1 を読み解く
+   - **サマリ**: AI 専用チップの Cerebras が S-1 を提出、収益構造・顧客集中度・成長性を整理した記事です (本文未取得、タイトルからの推測、 403 ブロック) 。
+2. [AI ディスラプションでソフトウェア業界のディストレストローン残高が急増](https://pitchbook.com/news/articles/distressed-volume-of-software-sector-leveraged-loans-swells-amid-ai-disruption)
+   - **翻訳**: AI ディスラプションの中、ソフトウェアセクターのレバレッジドローンのディストレスト残高が膨らむ
+   - **サマリ**: SaaS / ソフトウェア企業のディストレスト (債務不履行間近) レバレッジドローン残高が AI による需要構造変化で拡大しているとするレポート記事です (本文未取得、タイトルからの推測、 403 ブロック) 。
+3. [mega-IPO 候補の従業員、 tender offer を見送る「シャンパン問題」](https://pitchbook.com/news/articles/employees-at-mega-ipo-candidates-are-opting-out-of-tender-offers-in-a-champagne-problem)
+   - **翻訳**: 超大型 IPO 候補企業の従業員がテンダーオファーを見送る「シャンパン問題」
+   - **サマリ**: 上場期待値が高い企業の従業員が売出し枠をあえて使わない動きが広がっていると伝える記事です (本文未取得、タイトルからの推測) 。
+4. [OpenAI の生命科学参入が VC を刺激](https://pitchbook.com/news/articles/openais-gpt-rosalind-heats-up-ai-competition-in-life-sciences)
+   - **翻訳**: OpenAI の生命科学参入が VC を刺激、競争が過熱
+   - **サマリ**: OpenAI の GPT-Rosalind 系の生命科学特化モデルが VC の AI × バイオ投資を加熱させているとする記事です (本文未取得、タイトルからの推測) 。
+5. [Meridian Arc がデータセンター建設向けに 57 億ドルの高利回り債を 6.25% で発行](https://pitchbook.com/news/articles/meridian-arc-inks-5-7b-of-high-yield-bonds-for-data-center-build-at-6-25)
+   - **翻訳**: Meridian Arc、データセンター建設向けに 57 億ドルの高利回り債を 6.25% で発行
+   - **サマリ**: AI 需要を背景にデータセンター建設ファイナンスの規模と条件が話題。インフラ投資への民間資金流入の裏付け事例です (本文未取得、タイトルからの推測) 。
+
+### Wired (英語、日本語サマリ)
+
+1. [Gazing Into Sam Altman's Orb Now Proves You're Human on Tinder](https://www.wired.com/story/gazing-into-sam-altmans-orb-now-proves-youre-human-on-tinder/)
+   - **翻訳**: Sam Altman の Orb を覗くと、 Tinder で人間であると証明できる時代
+   - **サマリ**: World が提供する Orb の虹彩スキャンが Tinder の人間確認に組み込まれたことを扱う記事。 AI 時代の本人認証と生体認証の倫理論点を提起します (本文未取得、タイトルからの推測) 。
+2. [Musk v. Altman Is a Battle for OpenAI's Soul](https://www.wired.com/story/musk-v-altman-trial-openai-xai/)
+   - **翻訳**: Musk 対 Altman: OpenAI の「魂」を巡る戦い
+   - **サマリ**: Elon Musk と Sam Altman の訴訟を、 OpenAI のミッションをめぐる支配権争いとして掘り下げる記事です (本文未取得、タイトルからの推測) 。
+3. [The Deepfake Nudes Crisis in Schools Is Much Worse Than You Thought](https://www.wired.com/story/deepfake-nudify-schools-global-crisis/)
+   - **翻訳**: 学校におけるディープフェイクヌード危機は想像以上に深刻
+   - **サマリ**: 生徒間の「nudify」系アプリ被害が世界で急拡大しているルポです。 AI 倫理・未成年保護・各国法制の論点を含みます (本文未取得、タイトルからの推測) 。
+4. [The Shocking Secrets of Madison Square Garden's Surveillance Machine](https://www.wired.com/story/madison-square-garden-jim-dolan-surveillance-machine/)
+   - **翻訳**: MSG の監視マシンの衝撃的な秘密
+   - **サマリ**: マジソン・スクエア・ガーデンが顔認証で個別の来場者を特定・排除している運用実態を暴いた記事。公的空間の顔認証運用について議論の材料になります (本文未取得、タイトルからの推測) 。
+
+## Techmeme (抜粋、日本語サマリ)
+
+1. [NSA が Anthropic の Mythos Preview を利用、 DoD でも広く使用 (Axios)](https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon)
+   - **翻訳**: 情報筋: 米 NSA は Mythos Preview を利用、 DoD 内でも広く使われている -- Anthropic がサプライチェーンリスク指定をしているにもかかわらず
+   - **サマリ**: NSA と国防総省が Anthropic の Mythos Preview を運用しており、 Anthropic 自身がサプライチェーンリスク指定を付している点とのズレが論点。政府の生成 AI 採用の統制問題を示す事例です (本文未取得、タイトルからの推測) 。
+2. [Anthropic の Mythos は OSS メンテナの負荷懸念を助長 (Bloomberg)](https://www.bloomberg.com/news/articles/2026-04-17/anthropic-s-mythos-adds-strain-on-cybersecurity-teams-facing-ai-threats)
+   - **翻訳**: Anthropic の Mythos が OSS メンテナの負担増加懸念を助長、すでに「尋常でない」数のバグ報告への対応に追われる中で
+   - **サマリ**: AI が生成する大量の曖昧なバグ報告に OSS メンテナが疲弊する問題を、 Mythos がさらに悪化させうると警鐘を鳴らす記事です (本文未取得、タイトルからの推測) 。
+3. [Apple WWDC 招待状の光る「26」は Siri 刷新を示唆、メモリ不足で Mac Studio / Touch MacBook Pro は遅延の可能性 (Bloomberg)](https://www.bloomberg.com/news/newsletters/2026-04-19/apple-ios-27-siri-interface-ios-27-details-mac-studio-touch-macbook-release-mo5u23o7)
+   - **翻訳**: Apple WWDC 招待状の光る「26」は Siri 刷新のティザー、メモリ不足で Mac Studio と Touch MacBook Pro は数ヶ月遅延の可能性
+   - **サマリ**: Apple が WWDC で Siri の大幅刷新を示唆する一方、メモリ供給難で Mac Studio と Touch MacBook Pro は数ヶ月遅延しうるとの観測です (本文未取得、タイトルからの推測) 。
+4. [App Store と Google Play のリリース数が前年比 60% 増、 iOS 単独で 80% 増 -- AI コーディングツールが背景か](https://techcrunch.com/2026/04/18/the-app-store-is-booming-again-and-ai-may-be-why/)
+   - **翻訳**: Appfigures: App Store と Google Play のアプリリリースは Q1 で前年同期比 60% 増、 App Store 単独では 80% 増。 AI コーディングツールが原動力の可能性
+   - **サマリ**: 2026 Q1 のアプリリリースが前年比 60% 増 (iOS 80% 増) 。非エンジニアが AI コーディングツールでアプリ市場に参入している可能性が指摘されます。
+5. [OpenAI の実存的問い](https://techcrunch.com/2026/04/19/openais-existential-questions/)
+   - **翻訳**: OpenAI が抱える実存的な問い
+   - **サマリ**: OpenAI は個人金融スタートアップ Hiro とメディア企業 TBPN を買収し、チャットボット超の持続的プロダクトと公開イメージという 2 つの課題を浮き彫りに。 Anthropic の Claude 台頭でエンタープライズ AI の競争が激化しています。
+6. [Polymarket が 400M ドルを ~$15B ポスト評価で調達交渉中、 Kalshi の $22B を下回る (The Information)](https://www.theinformation.com/articles/polymarket-talks-raise-money-15-billion-valuation)
+   - **翻訳**: 情報筋: Polymarket は 150 億ドルのポスト評価で 4 億ドル調達を交渉中、 2025 年 10 月の 90 億ドルから上昇も、 2026 年 3 月の Kalshi の 220 億ドルには及ばず
+   - **サマリ**: 予測市場 2 大プレイヤーの評価額格差が広がり、 Kalshi が先行する構図。規制対応と米国市場参入の差が効いています (本文未取得、タイトルからの推測) 。
+7. [Kelp DAO の LayerZero 経由 rsETH ブリッジが攻撃で約 2.92 億ドルを流出 (The Block)](https://www.theblock.co/post/397988/kelp-daos-rseth-bridge-apparently-exploited-for-roughly-292-million-in-layerzero-based-attack)
+   - **翻訳**: Kelp DAO の LayerZero ベースのクロスチェーンブリッジが攻撃で約 2.92 億ドル相当の rsETH を流出させ、 Kelp は全 rsETH コントラクトを停止
+   - **サマリ**: LayerZero 経由のクロスチェーン橋で 2.92 億ドル規模の rsETH が流出、 Kelp は全コントラクト一時停止で対応。 DeFi ブリッジの設計検証がまた問われる事案です (本文未取得、タイトルからの推測) 。
+
+## コンサル・アグリゲータ (追加)
+
+### アビームコンサルティング
+
+1. [令和 7 年度 老人保健健康増進等事業の実施報告](https://abeam.com/jp/ja/news/2026/0415/) (2026-04-15)
+   - **サマリ**: 老人保健健康増進等事業の実施結果報告の受託・公表。 AI ・行政・ヘルスケアの交点での実務を追う資料になります (本文未取得、タイトルからの推測) 。
+2. [東京都八丈町の「八丈町災害復興計画」の策定を支援](https://abeam.com/jp/ja/news/2026/0413/) (2026-04-13)
+   - **サマリ**: 八丈町の災害復興計画策定を支援。地方自治体の BCP / 災害対応高度化の事例です (本文未取得、タイトルからの推測) 。
+3. [アビームコンサルティング、 Salesforce Japan Partner Award 2026 を受賞](https://abeam.com/jp/ja/news/2026/0410/) (2026-04-10)
+   - **サマリ**: Salesforce パートナー領域での受賞。エンタープライズ SaaS 導入市場のプレイヤー勢力図の指標です (本文未取得、タイトルからの推測) 。
+
+## セキュリティ追加ソース
+
+### Aikido Blog (英語、日本語サマリ)
+
+1. [Mailcow に複数の XSS 脆弱性](https://www.aikido.dev/blog/xss-vulnerabilities-in-mailcow) (2026-04-17)
+   - **翻訳**: Mailcow に複数のクロスサイトスクリプティング (XSS) 脆弱性
+   - **サマリ**: Aikido の AI ペンテストで Mailcow に XSS 脆弱性 3 件を発見。特に未認証攻撃者が管理者のログ閲覧時にアカウントを乗っ取れる深刻な問題で、 2026-03b で修正済みです。
+2. [NIST NVD 縮小時代に頼れる CVE ソース](https://www.aikido.dev/blog/nist-nvd-changes-2026) (2026-04-16)
+   - **翻訳**: NIST NVD の縮小時代における、信頼できる CVE ソース
+   - **サマリ**: NIST がリスクベースアプローチで米国政府関連 CVE のみに分析を絞り、その他は放置される方針。 CVE 提出が 263% 増えた背景事情のもと、コミットメッセージやリリースノートを AI 監視する Aikido 型の代替が重要と提言。「 67% の脆弱性が公式 DB に未報告」との数字を提示しています。
+3. [Axios CVE-2026-40175: 重大バグだが実際は悪用不能](https://www.aikido.dev/blog/axios-cve-2026-40175-a-critical-bug-thats-not-exploitable) (2026-04-14)
+   - **翻訳**: Axios CVE-2026-40175: critical だが実際には悪用不能なバグ
+   - **サマリ**: 広く使われる Axios の critical 評価 CVE が、条件を満たす実攻撃が成立しない「ペーパータイガー」だと解説する技術記事です (本文未取得、タイトルからの推測) 。
+
+### Wiz Blog (英語、日本語サマリ)
+
+1. [IaC Inventory: コード、デプロイ、クラウド横断の統合ビュー](https://www.wiz.io/blog/wiz-iac-inventory) (2026-04-17)
+   - **翻訳**: IaC Inventory: コード・デプロイ・クラウドを横断する統一ビュー
+   - **サマリ**: IaC モジュール・デプロイ・実リソースを紐付けて可視化する Wiz の新機能。セキュリティとプラットフォームチームがコードから本番までリスクとドリフトを一貫追跡できるようになります。
+2. [Securing AI Applications From Inception to Deployment](https://www.wiz.io/blog/securing-ai-application-from-inception-to-deployment) (2026-04-16)
+   - **翻訳**: AI アプリケーションを構想からデプロイまで一貫して守る
+   - **サマリ**: AI アプリ開発ライフサイクル全体のセキュリティ設計ガイド。モデル・データ・インフラ・実行時の各層の論点を整理する記事です (本文未取得、タイトルからの推測) 。
+3. [GitHub Actions をハードニングする最新ガイド](https://www.wiz.io/blog/github-actions-security-guide) (2026-04-15)
+   - **翻訳**: GitHub Actions のハードニング最新ガイド
+   - **サマリ**: ワークフロートークンを読み取り専用に、サードパーティアクションをハッシュピン、シークレットを最小スコープ化、 `pull_request_target` など高権限トリガーは慎重に。組織レベルのポリシーと組み合わせる指針を提示しています。
+
+## 日本ポータル (追加)
+
+### Qiita トレンド
+
+1. [【こわい】Google API キーの脆弱性により 13 時間で約 900 万円請求される事案が発生！](https://qiita.com/miruky/items/fde2d0747358cd7870d7) -- はてブ側で既出、 Qiita トレンドでも 1 位
+2. [Claude Code で実際に起きたセキュリティ事故 7 選と防止策](https://qiita.com/masa_ClaudeCodeLab/items/8c22966fbd3c125c53dc) -- はてブ側で既出
+3. [クソバズワード「ハーネスエンジニアリング」と向き合う](https://qiita.com/retore/items/3688cf515c14f7471ed4) -- はてブ側で既出
+4. [Chrome DevTools MCP の全ツールをまとめて理解する](https://qiita.com/softbase/items/fe445a318846fd6a364d) (softbase)
+   - **サマリ**: `chrome-devtools-mcp` は AI エージェントから Chrome を操作・観測・解析できる MCP サーバー。 UI 操作・ページ管理・ネットワーク監視・パフォーマンス計測など 29 ツールを 6 カテゴリで整理し、「操作 → 待つ → ログ → 通信 → 性能」までを AI から一貫して回せるのが特徴です。
+5. [Claude × Codex × Gemini を「併用」する設計 -- セカンドオピニオン運用フレーム](https://qiita.com/nogataka/items/b2b4a84ba611ccaf8447) (nogataka)
+   - **サマリ**: 3 つの AI コーディングツールを「どれが最強か」ではなく「どう役割分担させるか」で設計する運用提案。セカンドオピニオンを呼ぶ必須・推奨条件を明確化し、 Claude Code を主に Codex / Gemini を補完的に使うルール化の重要性を論じています。
+
+### PR TIMES (IT / AI 系抜粋)
+
+1. [AI エージェント入門研修を新たにリリース -- MyGPT・Gems・NotebookLM を使った実践カリキュラム](https://prtimes.jp/main/html/rd/p/000000018.000123658.html) (インターネット・アカデミー)
+   - **サマリ**: MyGPT・Gems・NotebookLM を使って社員が自分でプロトを作る実践型の AI エージェント研修を新設したリリースです (本文未取得、タイトルからの推測) 。
+2. [SINIS for X: Grok × テテマーチ監修プロンプトで伸びる理由を理解して投稿を自動生成する「AI アシスト投稿企画」](https://prtimes.jp/main/html/rd/p/000000267.000017171.html) (テテマーチ)
+   - **サマリ**: Grok を活用した X アカウント運用支援の新機能リリース。伸びる要因を分析してプロンプトで再現可能にする仕組みを提供します (本文未取得、タイトルからの推測) 。
+3. [株式会社 AI INNOVATION × Polyscape: 売上・利益に直結する AI 活用ウェビナー](https://prtimes.jp/main/html/rd/p/000000003.000171584.html) (AI INNOVATION)
+   - **サマリ**: 生成 AI 導入の経営インパクトを題材にしたウェビナー告知リリースです (本文未取得、タイトルからの推測) 。
+
+## 金融専門メディア
+
+### ニッキン ONLINE
+
+1. [埼玉県信保協、ウェブで保証残高照会 全国初「空き枠」も算出](https://www.nikkinonline.com/article/383953/) (2026-04-20)
+   - **サマリ**: 埼玉県信用保証協会が全国初で保証残高照会を Web 化、空き枠を算出する機能を実装。中小企業の信用保証枠運用の DX 事例として参照できます (本文未取得、 301 リダイレクト先の再取得未完了) 。
+2. [変動の最優遇金利は SBI 新生銀の 0.640%【ニッキンレポート】](https://www.nikkinonline.com/article/383815/) (2026-04-20)
+   - **サマリ**: 変動金利住宅ローンの最優遇水準を SBI 新生銀行が 0.640% でリードする旨の金利調査レポートです (本文未取得、タイトルからの推測) 。
+3. [いよぎん HD、事業ポートフォリオ再構築 経営資源を最適配分](https://www.nikkinonline.com/article/383851/) (2026-04-20)
+   - **サマリ**: いよぎん HD が事業ポートフォリオを再構築し経営資源を最適配分する動き。地方金融機関の事業再編トレンドの一例です (本文未取得、タイトルからの推測) 。
+4. [甲府信金、でんさい移行に「画面共有」 時短効果が最大 5 分の 1](https://www.nikkinonline.com/article/383921/) (2026-04-20)
+   - **サマリ**: 甲府信金がでんさい移行を画面共有で支援、所要時間を最大 5 分の 1 に短縮した運用改善事例です (本文未取得、タイトルからの推測) 。
+
+## グローバルニュース (追加)
+
+### TechCrunch
+
+1. [OpenAI's existential questions](https://techcrunch.com/2026/04/19/openais-existential-questions/)
+   - **翻訳**: OpenAI の実存的問い
+   - **サマリ**: OpenAI は Hiro (個人金融 SaaS) と TBPN (メディア) を買収、持続可能なプロダクトと公開イメージの 2 問題を露呈。 Anthropic Claude 台頭で企業向け AI 市場の競争が激化しています。
+2. [The 12-month window](https://techcrunch.com/2026/04/19/the-12-month-window/)
+   - **翻訳**: 12 ヶ月のウィンドウ
+   - **サマリ**: 生成 AI 企業が収益モデルを確立すべきタイムウィンドウを論じる記事です (本文未取得、タイトルからの推測) 。
+3. [Palantir posts mini-manifesto denouncing inclusivity and 'regressive' cultures](https://techcrunch.com/2026/04/19/palantir-posts-mini-manifesto-denouncing-regressive-and-harmful-cultures/)
+   - **翻訳**: Palantir、包摂性と「後退的」文化を批判する小冊子風の宣言を投稿
+   - **サマリ**: Palantir が Alex Karp の書籍要約 22 項目を公開し、ハードパワー・ AI 兵器・抑止を推進、多元主義・「後退的」文化を非難。巨大テックと政治文化の距離が問われる話題です (本文未取得、タイトルからの推測) 。
+4. [Blue Origin's New Glenn put a customer satellite in the wrong orbit during its third launch](https://techcrunch.com/2026/04/19/blue-origins-new-glenn-put-a-customer-satellite-in-the-wrong-orbit-during-its-third-launch/)
+   - **翻訳**: Blue Origin の New Glenn、 3 回目の打ち上げで顧客衛星を誤った軌道に投入
+   - **サマリ**: New Glenn の 3 回目打ち上げで軌道投入エラー。商業宇宙市場で Blue Origin の信頼性が再検証される事案です (本文未取得、タイトルからの推測) 。
+
+### Indie Hackers
+
+1. [I want to build an AI support agent for Shopify stores -- am I solving a real problem?](https://www.indiehackers.com/post/i-want-to-build-an-ai-support-agent-for-shopify-stores-am-i-solving-a-real-problem-d009ab93b3)
+   - **翻訳**: Shopify ストア向けの AI サポートエージェントを作りたい -- これは本物の課題を解いているのか？
+   - **サマリ**: Shopify 向け AI サポートエージェントを作ろうとする個人開発者が、コミュニティに課題検証を問う投稿。仮説検証の壁打ちの典型例です (本文未取得、タイトルからの推測) 。
+2. [Clear Mail for Gmail](https://www.indiehackers.com/product/clear-mail-for-gmail)
+   - **翻訳**: Gmail 向け Clear Mail
+   - **サマリ**: Gmail のタブ分類で税務通知を見逃した体験から生まれた、タブを無効化する個人プロダクト Clear Mail の紹介です (本文未取得、タイトルからの推測) 。
+3. [SaasOffers: Reddit だけで 2,000 ユーザーまで育てた](https://www.indiehackers.com/product/saasoffers)
+   - **翻訳**: SaasOffers: Reddit だけで 2,000 ユーザーまでスタートアップ特典プラットフォームを伸ばした方法
+   - **サマリ**: Reddit を主要チャネルに 2,000 ユーザーまで伸ばしたスタートアップ特典プラットフォームの成長ストーリーです (本文未取得、タイトルからの推測) 。
+
+### Product Hunt (Today Top)
+
+1. [Vantage in Google Labs](https://www.producthunt.com/products/google)
+   - **サマリ**: AI シミュレートチームで将来求められるスキルを練習・評価できる Google Labs のプロダクト (本文未取得、タイトルからの推測) 。
+2. [Gemini app for Mac](https://www.producthunt.com/products/gemini-6)
+   - **サマリ**: Option + Space で Gemini を呼び出せる Mac 向けアプリ。 OS レベルでの AI 呼び出し体験を提供します (本文未取得、タイトルからの推測) 。
+3. [Verdent 2.0 -- Your AI Technical Cofounder](https://www.producthunt.com/products/verdent-deck)
+   - **サマリ**: 技術的な共同創業者役を担う AI エージェントを標榜するプロダクトの 2.0 リリース (本文未取得、タイトルからの推測) 。
+4. [Perplexity Personal Computer](https://www.producthunt.com/products/perplexity-ai)
+   - **サマリ**: ローカルファイル・ネイティブアプリ・音声操作・常時稼働を謳う Perplexity のパーソナル AI プロダクト (本文未取得、タイトルからの推測) 。
+
+## 国・官公庁 (追加分)
+
+### 官邸 長官会見
+
+1. [内閣官房長官記者会見 令和 8 年 4 月 20 日 (午前)](https://www.kantei.go.jp/jp/tyoukanpress/202604/20_a.html)
+   - **サマリ**: 定例の官房長官午前会見。日々の政府立場表明の一次資料です。
+2. [内閣官房長官記者会見 令和 8 年 4 月 17 日 (午後)](https://www.kantei.go.jp/jp/tyoukanpress/202604/17_p.html)
+   - **サマリ**: 4 月 17 日午後の会見。金融政策・AI 関連の質疑がある場合に抑えるべき一次資料です (本文未取得、タイトルからの推測) 。
+3. [内閣官房長官記者会見 令和 8 年 4 月 17 日 (午前)](https://www.kantei.go.jp/jp/tyoukanpress/202604/17_a.html)
+   - **サマリ**: 4 月 17 日午前の会見 (本文未取得、タイトルからの推測) 。
+
+### 三菱総合研究所 (追加)
+
+1. [ビジネス映像メディア「PIVOT」出演のお知らせ](https://www.mri.co.jp/news/info/20260417.html) (2026-04-17)
+   - **サマリ**: MRI のプロフェッショナルが PIVOT に出演する告知。研究者のメディア露出情報として参照できます (本文未取得、タイトルからの推測) 。
+
+## X (参考情報、 grok MCP `search_x` 経由)
+
+個別投稿 URL (`https://x.com/i/status/...`) をそのまま転記しています。時刻は GMT。
+
+### @takapon_jp (堀江貴文)
+1. [「カレーだしっ！」緊急経営改善会議にリアルバリュー青木も参戦！](https://x.com/i/status/2046087446212092184) (2026-04-20 04:43 GMT)
+   - **サマリ**: 売上横ばいのカレー店のリアル経営状況を題材に、ホリエモン × リアルバリュー青木の緊急経営改善会議動画を告知した投稿です。飲食店単品ビジネスの経営論としての注目度が高い話題です。
+2. [未上場株軸の投信、政府が新制度検討 (Voicy 解説)](https://x.com/i/status/2045680259908173885) (2026-04-19)
+   - **サマリ**: 未上場株を中心とした投信の新制度を政府が検討しているニュースを Voicy で解説する告知です。個人投資家の未上場アクセス拡大の論点につながります。
+3. [【ビジネスに繋がる濃厚な 3 日間】HIU 春合宿 in 沖縄](https://x.com/i/status/2045074566926545180) (2026-04-17)
+   - **サマリ**: 堀江貴文イノベーション大学校の春合宿スケジュール告知。起業家向けの濃いネットワーキングイベントです。
+
+### @mr_grayhair (コンサルマン)
+1. [他エージェント対策不足相談、徹底対策で長期関係構築](https://x.com/i/status/2046082458567974917) (2026-04-20 04:24 GMT)
+   - **サマリ**: 他エージェント経由で応募したが対策が手薄、あるいはコンサルに詳しくないという相談を受ける実態を紹介し、徹底対策と長期関係構築を強調するコンサル転職発信です。
+2. [KPMG パートナー佐渡氏「ラストマンシップ」記事紹介](https://x.com/i/status/2046051573005250936) (2026-04-20 02:21 GMT)
+   - **サマリ**: KPMG コンサルティング パートナー佐渡氏の日経ビジネス記事「ラストマンシップが優秀なビジネスパーソンの共通点」を紹介する投稿。コンサル・マネジメント層のキーワードとして参考になります。
+3. [「営業で結果を出せば企画職に行ける」キャリア相談の突破戦略](https://x.com/i/status/2046030330809974870) (2026-04-20 00:56 GMT)
+   - **サマリ**: 営業から企画職への横移動を期待するキャリア相談が多いとして、突破戦略を note にまとめた旨を投稿。キャリアパス設計の観点で参考になります。
+4. [AI コンサル転職の壁と攻略法 (note 記事)](https://x.com/i/status/2045785676583706943) (2026-04-19)
+   - **サマリ**: 生成 AI 時代のコンサル転職で何が求められるか、専門性の築き方を解説する note を共有。 AI 未経験者の AI コンサル参入を支援する内容です。
+
+### @ryoppippi
+1. [毒親エピソード: 中学受験テキストを風呂場に沈められた](https://x.com/i/status/2046044301000393033) (2026-04-20 01:52 GMT)
+   - **サマリ**: 中学受験中のテキストを親に風呂場へ沈められた辛い思い出を共有する個人エピソード投稿です (技術系ではなく日常系) 。
+2. [AI コーディングの民主化、個人開発に AI チューターと無限のリソース](https://x.com/i/status/2045546626891100386) (2026-04-18)
+   - **サマリ**: AI コーディングが個人開発者にチューターと無限のリソースをもたらすという民主化の効用を評価する投稿。 AI × 個人開発の肯定派の声として参考になります。
+3. [GitHub Actions YAML 批判、 TypeScript で定義できる型付き言語が欲しい](https://x.com/i/status/2044351878385852785) (2026-04-15)
+   - **サマリ**: GitHub Actions の YAML が辛いので、 pulumi 対 terraform のように TypeScript で CI/CD を記述できる言語が欲しいとする提案。型付き CI/CD DSL の需要を示す発信です。
+4. [oxlint + react-hooks-js プラグインで速度低下](https://x.com/i/status/2043495335780036844) (2026-04-13)
+   - **サマリ**: oxlint (Rust 製高速 ESLint 代替) で react-hooks-js プラグインを使うと明確に遅くなるという実測レポート。 JS プラグインのオーバーヘッドを示すデータ点です。
+
+### @uemura_HR
+1. [@takarasan28 への退院お祝いリプライ](https://x.com/i/status/2046070727812731333) (2026-04-20 03:37 GMT)
+   - **サマリ**: 退院報告への祝いリプライ。人事・HR 系の発信者らしい温度感の個人投稿です (技術的内容は無し) 。
+2. [『3 時間で身につく Claude 活用術』の推薦](https://x.com/i/status/2045674831287669066) (2026-04-19)
+   - **サマリ**: Claude 活用入門書の紹介投稿。 AI × 実務の入門教材として参考になります。
+3. [第 4 回「積読を語る会」開催報告、 4 冊共有](https://x.com/i/status/2045834000326119783) (2026-04-19)
+   - **サマリ**: 読書コミュニティ「積読を語る会」第 4 回の開催報告。学習コミュニティの運営知見として見られる発信です。
+
+### @mozumasu
+1. [Mergiraf を「人類に必要なもの」と絶賛](https://x.com/i/status/2045673958503309416) (2026-04-19)
+   - **サマリ**: Git コンフリクトを構文認識で自動解決する Mergiraf を「人類に必要なもの」と絶賛した一言投稿。はてブ IT の注目トピックと接続します。
+
+### @digital_jpn (デジタル庁)
+1. [松本大臣会見: 源内の大規模実証状況報告](https://x.com/i/status/2045049630228963539) (2026-04-17)
+   - **サマリ**: 松本大臣会見での源内大規模実証の進捗報告を共有する公式投稿です。
+2. [北九州市: アナログ規制見直しと遠隔臨場の実証](https://x.com/i/status/2045023199981863369) (2026-04-17)
+   - **サマリ**: 北九州市でのアナログ規制見直し × 遠隔臨場実証を紹介。公的 DX の現場実装事例です。
+3. [三重県名張市: 防災 DX 避難者受付アプリ実証](https://x.com/i/status/2044656028076445708) (2026-04-16)
+   - **サマリ**: 三重県名張市の避難者受付アプリ実証動画を紹介する公式投稿。防災 DX の具体事例です。
+
+### @horiemon_cross
+- 直近 3 日 (2026-04-17 ～ 2026-04-20) の投稿なし。
+
+## 取得不能 / 本日スキップしたソース
+
+- **Playwright 系 (完了)**: JRI / MURC / OneCapital / PitchBook / Wired は取得済み
+- **官邸・ MRI (部分取得)**: 上記「追加分」に反映
+- **METI**: 全試行で接続タイムアウト (`curl` でも 28)。次回は別経路 (RSS 探索 / proxy) を検討
+- **SOUMU**: Shift_JIS のページ構造が複雑で当セッションのパーサーでは抽出失敗。タイトル断片のみ観測、本日掲載は次回対応
+- **CAS**: `https://www.cas.go.jp/jp/topics.html` は 404、 `/jp/other/topics.html` は 404。正式 URL を再調査
+- **NCB Library**: 未試行。次回対応
+- **The Verge**: WebFetch ブロック (`Claude Code is unable to fetch from www.theverge.com`)
+- **Boring Cash Cow / Bootstrappers / HubSpot Trends / Tiny Startups / MicroSaaS HQ / Crunchbase / Kickstarter**: 興味領域優先度の観点から今回スキップ
