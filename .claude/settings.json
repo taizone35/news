@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch",
+      "WebSearch",
+      "Bash(curl:*)",
+      "Bash(node:*)",
+      "Bash(jq:*)",
+      "Bash(python3:*)"
+    ]
+  }
+}
