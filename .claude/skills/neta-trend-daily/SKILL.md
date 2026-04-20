@@ -35,10 +35,12 @@ description: "トレンドネタ収集"
 - https://www.cas.go.jp/topics.html - **WebFetch**で取得 (内閣官房新着情報、RSS なし。政府横断テーマの政策動向)
 
 **X関連（参考情報）**
-- 以下のアカウントの最新投稿は **必ず grok MCP** (`mcp__grok__search_posts`) を使って取得する。WebSearch は投稿本文の抜粋しか取れず、日付フィルタも効かないため X 収集には使用しない
+- 以下のアカウントの最新投稿は **必ず grok MCP** (`mcp__Grok__search_x`) を使って取得する。WebSearch は投稿本文の抜粋しか取れず、日付フィルタも効かないため X 収集には使用しない
 - grok MCP が未接続 / 利用不可の場合は **収集を行わず**、出力レポートの X セクションに「grok MCP 未接続のため本日はスキップ」と明記するにとどめる (WebSearch でのフォールバックは禁止)
-- 推奨呼び出し: `handles=["mr_grayhair"]`, `start_date` と `end_date` で直近 1 週間程度に絞り込む。個別投稿本文が必要な場合は `mcp__grok__search_threads` も併用する
-- クエリ例: `query="from:mr_grayhair"`, `handles=["mr_grayhair"]`, `start_date="YYYY-MM-DD"`, `end_date="YYYY-MM-DD"`
+- 当リポジトリの grok MCP 実装では `search_posts` / `search_threads` は提供されていないため `search_x` を正とする。 `search_x` が使えないときに限り `mcp__Grok__ask` に `search=true` を付けてフォールバックして良いが、その旨を出力にも明記する
+- 推奨呼び出し: `allowed_x_handles=["mr_grayhair"]` でアカウントを絞り、 `from_date` と `to_date` で直近 1 週間程度を指定する。検索できなかったアカウントは X セクションにその旨を明示 (例: 「直近 1 週間にヒットなし」)
+- クエリ例: `query="AI セキュリティ キャリア の投稿"`, `allowed_x_handles=["mr_grayhair"]`, `from_date="YYYY-MM-DD"`, `to_date="YYYY-MM-DD"`
+- 取得した個別投稿 URL は `https://x.com/i/status/...` 形式で得られることがあるため、本文に転記する際はそのまま残しても、アカウントトップで集約しても良い
 - [@mr_grayhair](https://x.com/mr_grayhair)
 - [@horiemon_cross](https://x.com/horiemon_cross)
 - [@takapon_jp](https://x.com/takapon_jp)
