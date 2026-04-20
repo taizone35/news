@@ -43,6 +43,8 @@ description: "トレンドネタ収集"
 - [@takapon_jp](https://x.com/takapon_jp)
 - [@digital_jpn](https://x.com/digital_jpn)
 - [@uemura_HR](https://x.com/@uemura_HR)
+- [@ryoppippi](https://x.com/ryoppippi)
+- [@mozumasu](https://x.com/mozumasu)
 - **注意**: X は個別投稿 URL を正確に取得できないため、URL はアカウントページ (`https://x.com/アカウント名`) で代替してよい。投稿内容の概要が把握できればよい
 - grok MCP が利用できない場合のフォールバックとして **WebSearch** を使用する
 
