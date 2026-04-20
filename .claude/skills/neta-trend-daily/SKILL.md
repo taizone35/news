@@ -35,7 +35,8 @@ description: "トレンドネタ収集"
 - https://www.cas.go.jp/topics.html - **WebFetch**で取得 (内閣官房新着情報、RSS なし。政府横断テーマの政策動向)
 
 **X関連（参考情報）**
-- 以下のアカウントの最新投稿を **grok MCP** (`mcp__grok__search_posts`) で把握する。grok MCP は X (旧 Twitter) のリアルタイム情報取得に強く、WebSearch より投稿本文を正確に取得できる
+- 以下のアカウントの最新投稿は **必ず grok MCP** (`mcp__grok__search_posts`) を使って取得する。WebSearch は投稿本文の抜粋しか取れず、日付フィルタも効かないため X 収集には使用しない
+- grok MCP が未接続 / 利用不可の場合は **収集を行わず**、出力レポートの X セクションに「grok MCP 未接続のため本日はスキップ」と明記するにとどめる (WebSearch でのフォールバックは禁止)
 - 推奨呼び出し: `handles=["mr_grayhair"]`, `start_date` と `end_date` で直近 1 週間程度に絞り込む。個別投稿本文が必要な場合は `mcp__grok__search_threads` も併用する
 - クエリ例: `query="from:mr_grayhair"`, `handles=["mr_grayhair"]`, `start_date="YYYY-MM-DD"`, `end_date="YYYY-MM-DD"`
 - [@mr_grayhair](https://x.com/mr_grayhair)
@@ -46,7 +47,6 @@ description: "トレンドネタ収集"
 - [@ryoppippi](https://x.com/ryoppippi)
 - [@mozumasu](https://x.com/mozumasu)
 - **注意**: X は個別投稿 URL を正確に取得できないため、URL はアカウントページ (`https://x.com/アカウント名`) で代替してよい。投稿内容の概要が把握できればよい
-- grok MCP が利用できない場合のフォールバックとして **WebSearch** を使用する
 
 **リサーチ**
 - みずほリサーチ&テクノロジーズ: **WebSearch**で「みずほリサーチ&テクノロジーズ 最新レポート site:mizuho-rt.co.jp」を検索して取得（WAFでWebFetch/curl不可）
