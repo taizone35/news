@@ -25,7 +25,7 @@ description: "トレンドネタ収集"
 以下のサイトから最新のトレンド情報を取得：
 **国関連**
 - https://www.cao.go.jp/press/houdou.html - **RSSフィード**で取得: `curl https://www.cao.go.jp/rss/news.rdf` (内閣府 報道発表新着情報)
-- https://www.meti.go.jp/press/index.html
+- https://www.meti.go.jp/press/index.html - **直接取得は全手段 (WebFetch / curl / Playwright) で接続遮断される**ため、次の 2 経路で代替する: (A) `mcp__Grok__search_x` で `allowed_x_handles=["meti_NIPPON"]` を指定し公式 X 投稿からリリース URL と公表事実を取得、 (B) WebSearch で個別リリースの二次解説記事を検索し本文の論点・数値を抽出。 Wayback Machine は METI をほぼアーカイブしないため当てにしない
 - https://www.soumu.go.jp/menu_kyotsuu/whatsnew/index.html
 - https://www.kantei.go.jp/jp/tyoukanpress/index.html
 - https://www.fsa.go.jp/ - **RSSフィード**で取得: `curl https://www.fsa.go.jp/fsaNewsListAll_rss2.xml` (金融庁、金融行政・監督指針・行政処分・審議会等)
