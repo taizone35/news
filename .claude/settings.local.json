@@ -21,13 +21,12 @@
       "Read(//usr/bin/**)",
       "Read(//usr/local/bin/**)",
       "Read(//tmp/**)",
-      "mcp__grok-search__web_search",
-      "mcp__grok-search__switch_model",
-      "mcp__grok__search_posts"
+      "mcp__grok__search_posts",
+      "mcp__grok__search_threads"
     ]
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
-    "grok-search"
+    "grok"
   ]
 }
