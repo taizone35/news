@@ -7,7 +7,12 @@
       "Bash(curl:*)",
       "Bash(node:*)",
       "Bash(jq:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Curl *",
+      "Mcp__grok__search_posts",
+      "Mcp__grok__search_threads",
+      "For *",
+      "Python3 -c *"
     ]
   }
 }
