@@ -246,9 +246,85 @@ const SITES = {
     },
   },
 
-  // NCB Library: 会員ログイン必須のため Playwright でも記事一覧取得不可
+  // みずほリサーチ&テクノロジーズ (www.mizuho-rt.co.jp): WebFetch / Playwright いずれも
+  // 403 Access Denied が返る CDN 硬ブロックを確認。自動化対象から外し、
+  // PDF 直 URL や RSS 経由の収集に切り替える運用とする
+  ncb_library: {
+    name: "NCB Library",
+    url: "https://www.ncblibrary.com/",
+    waitUntil: "domcontentloaded",
+    timeout: 45000,
+    extract: async (page) => {
+      await page.waitForTimeout(3000);
+      return page.evaluate(() => {
+        const items = [];
+        const links = document.querySelectorAll("a");
+        for (const a of links) {
+          const title = (a.innerText || a.textContent || "")
+            .trim()
+            .replace(/\s+/g, " ");
+          const href = a.href;
+          if (
+            title &&
+            title.length > 8 &&
+            title.length < 200 &&
+            href &&
+            !href.includes("javascript:") &&
+            // 個別投稿ページ /posts/NNNNNN
+            /\/posts\/\d+$/.test(href)
+          ) {
+            items.push({ title, url: href });
+          }
+        }
+        const seen = new Set();
+        return items.filter((item) => {
+          if (seen.has(item.url)) return false;
+          seen.add(item.url);
+          return true;
+        }).slice(0, 10);
+      });
+    },
+  },
+
+  mri: {
+    name: "三菱総合研究所",
+    url: "https://www.mri.co.jp/knowledge/opinion/",
+    waitUntil: "domcontentloaded",
+    timeout: 45000,
+    extract: async (page) => {
+      await page.waitForTimeout(3000);
+      return page.evaluate(() => {
+        const items = [];
+        const links = document.querySelectorAll("a");
+        for (const a of links) {
+          const title = (a.innerText || a.textContent || "")
+            .trim()
+            .replace(/\s+/g, " ");
+          const href = a.href;
+          if (
+            title &&
+            title.length > 10 &&
+            title.length < 200 &&
+            href &&
+            !href.includes("javascript:") &&
+            // 個別コラム: /knowledge/opinion/YYYY/YYYYMM_N.html 等
+            /\/knowledge\/(opinion|column|insight)\/\d{4}\//.test(href)
+          ) {
+            items.push({ title, url: href });
+          }
+        }
+        const seen = new Set();
+        return items.filter((item) => {
+          if (seen.has(item.url)) return false;
+          seen.add(item.url);
+          return true;
+        }).slice(0, 10);
+      });
+    },
+  },
+
   // METI (www.meti.go.jp): curl / WebFetch / Playwright すべて接続段階で遮断され取得不可
-  // これらは自動化対象から外し、 WebSearch 等で URL / タイトルのみを収集する運用とする
+  // 自動化対象から外し、 WebSearch 等で URL / タイトルのみを収集する運用とする
 };
 
 async function fetchSite(browser, siteKey) {
