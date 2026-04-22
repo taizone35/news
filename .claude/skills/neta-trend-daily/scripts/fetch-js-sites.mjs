@@ -323,6 +323,80 @@ const SITES = {
     },
   },
 
+  morningpitch: {
+    name: "Morning Pitch",
+    url: "https://morningpitch.com/news/",
+    waitUntil: "domcontentloaded",
+    timeout: 45000,
+    extract: async (page) => {
+      await page.waitForTimeout(3000);
+      return page.evaluate(() => {
+        const items = [];
+        const links = document.querySelectorAll("a");
+        for (const a of links) {
+          const title = (a.innerText || a.textContent || "")
+            .trim()
+            .replace(/\s+/g, " ");
+          const href = a.href;
+          if (
+            title &&
+            title.length > 8 &&
+            title.length < 200 &&
+            href &&
+            !href.includes("javascript:") &&
+            // 個別記事: morningpitch.com/NNNNN/ (5 桁の記事 ID)
+            /morningpitch\.com\/\d{4,6}\/?$/.test(href)
+          ) {
+            items.push({ title, url: href });
+          }
+        }
+        const seen = new Set();
+        return items.filter((item) => {
+          if (seen.has(item.url)) return false;
+          seen.add(item.url);
+          return true;
+        }).slice(0, 10);
+      });
+    },
+  },
+
+  ivs: {
+    name: "IVS (Infinity Ventures Summit)",
+    url: "https://www.ivs.events/news",
+    waitUntil: "domcontentloaded",
+    timeout: 45000,
+    extract: async (page) => {
+      await page.waitForTimeout(3000);
+      return page.evaluate(() => {
+        const items = [];
+        const links = document.querySelectorAll("a");
+        for (const a of links) {
+          const title = (a.innerText || a.textContent || "")
+            .trim()
+            .replace(/\s+/g, " ");
+          const href = a.href;
+          if (
+            title &&
+            title.length > 8 &&
+            title.length < 200 &&
+            href &&
+            !href.includes("javascript:") &&
+            // 個別記事: ivs.events/news/YYYYMMDD または /news/YYYYMMDD-キーワード
+            /ivs\.events\/news\/\d{8}(-[a-z0-9-]+)?$/.test(href)
+          ) {
+            items.push({ title, url: href });
+          }
+        }
+        const seen = new Set();
+        return items.filter((item) => {
+          if (seen.has(item.url)) return false;
+          seen.add(item.url);
+          return true;
+        }).slice(0, 10);
+      });
+    },
+  },
+
   // METI (www.meti.go.jp): curl / WebFetch / Playwright すべて接続段階で遮断され取得不可
   // 自動化対象から外し、 WebSearch 等で URL / タイトルのみを収集する運用とする
 };
