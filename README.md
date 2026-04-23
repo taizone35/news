@@ -692,3 +692,209 @@ METI 公式ページへの直接アクセスは引き続き全遮断のため、
 - 前日 2026-04-22 レポートとの重複記事は注目トピック・全エントリー双方から除外しています。
 - 取得失敗ソースは末尾に列挙 ( みずほリサーチ、MRI、 Morning Pitch 新着なし、 MURC / ABeam / OneCapital 新着なし、 PM x LLM STUDIO フィード空 )。
 - タイトルは原文転記、英語ソースは原題 + 日本語訳を併記、サマリは日本語で統一しています。
+
+---
+
+## 差分追記 (10:33 以降の新規記事)
+
+初回収集 (10:33) 以降に公開・浮上した記事を、既存レポートの URL と照合したうえで追加します。
+
+### はてブ IT (差分)
+
+| タイトル | ブクマ数 | 興味度 | カテゴリ | メモ |
+|---------|---------|--------|---------|------|
+| [AIエージェント「Skills」を最大限活用するためのアーキテクチャ google/skills](https://github.com/google/skills) | 53 users | ★★★ | AI 開発 / Skills | Google が 13 種以上の Agent Skill を公開、`npx skills add google/skills` で導入 |
+| [Claude Code で一人会社を 98% 自動化する AI-CEO Framework](https://zenn.dev/7788/articles/6c3f54d0efc958) | 22 users | ★★★ | AI × 個人開発 | 15 体の専門 Agent (CTO/CMO/CFO 等) + 承認パイプラインで経営自動化 |
+| [ハーネスエンジニアリングの概要と設計思想](https://speakerdeck.com/sergicalsix/hanesuenziniaringunogai-yao-toshe-ji-si-xiang) | 90 users | ★★★ | AI 開発 / 運用 | LLM ハーネスと人・チームの仕組みを同時に整備、Four Keys / SPACE 指標を併用 |
+| [ハーネスエンジニアリングの本質 — エージェント時代の開発を再設計する](https://developers.gmo.jp/technology/81971/) | 14 users | ★★★ | AI 開発 / 運用 | 上記スライドの元記事相当、GMO 発の実装論 |
+| [複雑組織でボトルネックは「人と人の間」に移る — TOC の限界](https://agilejourney.uzabase.com/entry/2026/04/23/103000) | 76 users | ★★★ | 組織 / アジャイル | 折りたたみ系から絡み合い系へ、視点を動かす能力がアジャイル実践の本質 |
+| [Microsoft の新 IME「Copilot Keyboard」が正式版に到達](https://forest.watch.impress.co.jp/docs/news/2103886.html) | 214 users | ★★ | AI 入力支援 | IME に AI 対話を統合、カイルくん復活で UX 面でも話題化 |
+| [Copilot Keyboard がやってきた — 公式ブログの発表](https://blogs.windows.com/japan/2026/04/23/copilot-keyboard-its-finally-here-the-official-release/) | 23 users | ★★ | AI 入力支援 | Microsoft 公式リリース記事 |
+| [Qwen3.6-27B が公開、Claude 4.5 Opus 並みの性能を 27B で達成](https://pc.watch.impress.co.jp/docs/news/2103895.html) | 205 users | ★★★ | AI / OSS LLM | Claw-Eval Pass³ 60.6% で Opus 59.6% 超、Apache 2.0 無償、前世代 397B を凌駕 |
+| [Google Cloud、オンプレミス対応の分散 DB「Spanner Omni」を発表](https://www.publickey1.jp/blog/26/google_cloudrdbspanner_omni.html) | 152 users | ★★ | Infra / AI 基盤 | クラウドと同一 DB 層をオンプレで、AI アプリ向け可用性・スケーラビリティ確保 |
+| [羽生善治が語る AI 時代の差別化 — 判断と責任は人間に](https://www.itmedia.co.jp/enterprise/articles/2604/23/news019.html) | 72 users | ★★ | AI × キャリア | AI を盲信せず、長期視点で人間的相互作用を守る判断力が差別化要素 |
+| [Cloudflare で Web ページを無料公開する手引き](https://library.libecity.com/articles/01KPQRJ7BSM0V8R786Y4GF6CTT) | 65 users | ★★ | Web / 個人開発 | プロジェクト指定とフォルダアップロードだけでデプロイ完了の手順解説 |
+| [3D-CAD の無償化史 — 数千万円から Fusion 360、そして「free と freedom」の違いへ](https://fabscene.com/new/special/cad-software-free-history-freedom-vs-free/) | 55 users | ★★ | OSS / 道具史 | AutoCAD・SolidWorks・Fusion 360 の価格推移と Autodesk 機能制限強化の影響 |
+| [Claude Code Skills を dotfiles で一元管理・分散配布する](https://qiita.com/kamo-shika/items/6c4e74972eeb0d1a6fb2) | 19 users | ★★★ | AI 開発 / 個人運用 | 中央集権ではなく dotfiles で Skills を横展開する実践ノウハウ |
+| [AI 生成画像を使い政治支持者を狙う金融詐欺が拡大](https://www.itmedia.co.jp/news/articles/2604/23/news067.html) | 24 users | ★★★ | AI × セキュリティ | 生成 AI 悪用の具体事例、認知戦 / 詐欺防止の文脈 |
+
+#### 差分全エントリー ( はてブ IT)
+
+1. [AIエージェント「Skills」を最大限活用するためのアーキテクチャ google/skills](https://github.com/google/skills) (53 users)
+   - **サマリ**: Google が公式に公開した Agent Skills 集で、AlloyDB・BigQuery・Cloud Run などの基本スキル、Cloud オンボーディングや認証、ネットワーク監視などのレシピ、Well-Architected Framework ガイドなど 13 種以上を収録します。`npx skills add google/skills` で必要分だけ選択導入でき、Claude Code / Gemini 系 Agent への即時組み込みを想定した設計です。
+2. [Claude Code で一人会社を 98% 自動化する AI-CEO Framework](https://zenn.dev/7788/articles/6c3f54d0efc958) (22 users)
+   - **サマリ**: 15 体の専門 Agent (CTO / CMO / CFO 等) と承認パイプライン、仮説検証ゲートを統合した「会社を回す OS」を `.md` 宣言で構築する OSS フレームワークの紹介記事です。対外送信やデプロイなど影響度の大きい操作は必ず Human-in-the-Loop の承認キューを通す設計で、LLM の非決定性を許容しながら重要判断は人間が担う運用を提案します。
+3. [ハーネスエンジニアリングの概要と設計思想](https://speakerdeck.com/sergicalsix/hanesuenziniaringunogai-yao-toshe-ji-si-xiang) (90 users)
+   - **サマリ**: LLM エージェントを効果的に動かす「ハーネス」全般の設計論を扱うスライドです。検証機能、原則設定、スキル構成を束ねつつ、LLM 用のハーネスと人・チーム向けの仕組みを同時に整備する必要性を説き、Four Keys と SPACE 指標も評価軸に組み込む総合アプローチを提示します。
+4. [ハーネスエンジニアリングの本質 — エージェント時代の開発を再設計する](https://developers.gmo.jp/technology/81971/) (14 users)
+   - **サマリ**: 上記 Speaker Deck の本文版に相当する GMO 発の論考です。AI エージェント時代における開発プロセスの再設計論として、従来のソフトウェア開発蓄積の上にどのようにハーネスを積み上げるかを整理しています。
+5. [複雑組織でボトルネックは「人と人の間」に移る — TOC の限界](https://agilejourney.uzabase.com/entry/2026/04/23/103000) (76 users)
+   - **サマリ**: 制約理論 (TOC) は技術的なボトルネックには有効ですが、複雑組織では問題が「人と人の間」に移動し、そこではボトルネック解消アプローチが通用しないと論じます。絡み合いのあるシステムに対しては、大局を見ながら小さく試す姿勢と信頼貯金の構築、そして視点を動かす能力こそがアジャイル実践の本質だと結論づけています。
+6. [Microsoft の新 IME「Copilot Keyboard」が正式版に到達](https://forest.watch.impress.co.jp/docs/news/2103886.html) (214 users)
+   - **サマリ**: Microsoft が日本語 IME「Copilot Keyboard」を正式リリースし、入力中に AI と会話できる形で Copilot を統合しました。かつてのマスコット「カイルくん」が高解像度アニメ付きで復活し、技術面以上に UX と話題性の双方でバズっています。
+7. [Copilot Keyboard がやってきた — Microsoft 公式ブログ](https://blogs.windows.com/japan/2026/04/23/copilot-keyboard-its-finally-here-the-official-release/) (23 users)
+   - **サマリ**: Microsoft 公式による Copilot Keyboard 正式リリースのアナウンス記事で、機能概要と提供範囲を整理しています ( 本文未取得、一次情報としてマーク )。
+8. [Qwen3.6-27B が公開、Claude 4.5 Opus 並みの性能を 27B で達成](https://pc.watch.impress.co.jp/docs/news/2103895.html) (205 users)
+   - **サマリ**: Alibaba がオープンソース LLM Qwen3.6-27B を公開し、エージェント評価 Claw-Eval Pass³ で 60.6% を記録して Claude 4.5 Opus の 59.6% を超えたと報じられています。Terminal-Bench 2.0 でも Opus と並び、前世代の 397B を大幅に上回る性能を Apache 2.0 ライセンスで無償提供する点が注目されます。
+9. [Google Cloud、オンプレミス対応の分散 DB「Spanner Omni」を発表](https://www.publickey1.jp/blog/26/google_cloudrdbspanner_omni.html) (152 users)
+   - **サマリ**: Google Cloud がクラウド版 Spanner をオンプレでも動かせる「Spanner Omni」のプレビュー版を公開しました。独自分散ファイルシステムと時刻同期技術を再構築し、単一サーバから数千台規模まで柔軟にスケールでき、クラウド / オンプレ同一 DB 層によるフェイルオーバー基盤や AI アプリ用の高可用性基盤として打ち出されています。
+10. [羽生善治が語る AI 時代の差別化 — 判断と責任は人間に](https://www.itmedia.co.jp/enterprise/articles/2604/23/news019.html) (72 users)
+    - **サマリ**: 将棋棋士の羽生善治が AI 時代の差別化を語り、AI 制御が当然になる中で人間にしかできない判断・責任・長期視点を持つことが重要だと指摘しています。30 分の会議を AI が 3 秒で要約しても、その過程で失われる人間的な相互作用や創造性を守るべきだ、というメッセージが示されます。
+11. [Cloudflare で Web ページを無料公開する手引き](https://library.libecity.com/articles/01KPQRJ7BSM0V8R786Y4GF6CTT) (65 users)
+    - **サマリ**: Cloudflare Pages を用いて HTML をフォルダごとアップロードし、プロジェクト名を指定するだけで無料公開できる手順を初心者向けに整理した記事です。個人開発者の小規模ページ公開やポートフォリオ運用の選択肢として参照価値が高い内容です。
+12. [3D-CAD の無償化史 — 数千万円から Fusion 360、そして「free と freedom」の違いへ](https://fabscene.com/new/special/cad-software-free-history-freedom-vs-free/) (55 users)
+    - **サマリ**: 1990 年代の企業向け数千万円ツールから AutoCAD、SolidWorks、Fusion 360、TinkerCAD と辿り、個人メーカーに設計環境が民主化した歴史を整理する記事です。2020 年の Autodesk による無料版制限強化が「free ( 無料 ) と freedom ( 自由 ) は別物」という認識を広げ、FreeCAD 等 OSS への移行を加速させた点を論じます。
+13. [Claude Code Skills を dotfiles で一元管理・分散配布する](https://qiita.com/kamo-shika/items/6c4e74972eeb0d1a6fb2) (19 users)
+    - **サマリ**: Claude Code の Skills を中央集権的なマーケットプレイスではなく、個人の dotfiles レポジトリで管理・分散配布する実践例を示した記事です。個人開発者や小規模チームで Skills を横展開する現実的な運用ノウハウとしてニッチに刺さります ( 本文未取得、タイトル + 既存知識からの推測 )。
+14. [AI 生成画像を使い政治支持者を狙う金融詐欺が拡大](https://www.itmedia.co.jp/news/articles/2604/23/news067.html) (24 users)
+    - **サマリ**: 生成 AI による画像を使い、特定の政治支持層を狙った金融詐欺が広がっている事例を報じています。AI 悪用リスクと認知戦 / 詐欺対策の具体ケースとして、セキュリティ業界の注視ポイントです ( 本文未取得、タイトルからの推測 )。
+
+### Hacker News (差分)
+
+| タイトル | ポイント | 興味度 | カテゴリ | メモ |
+|---------|---------|--------|---------|------|
+| [OpenAI's response to the Axios developer tool compromise](https://news.ycombinator.com/item?id=47871077) | 61pt | ★★★ | Security / Supply Chain | Axios @1.14.1 / @0.30.4 の悪性バージョン配布への OpenAI 公式対応 |
+| [Bring your own Agent to MS Teams](https://news.ycombinator.com/item?id=47870108) | 54pt | ★★ | AI 基盤 / 業務 | Microsoft が Teams 内で任意カスタム Agent を動かす SDK を提供 |
+| [I am building a cloud](https://news.ycombinator.com/item?id=47872324) | 158pt | ★★ | Infra / 個人開発 | Tailscale 共同創業者が exe.dev を開発、デフォルト IOPS の低さなど既存クラウドの歪みを批判 |
+| [5x5 Pixel font for tiny screens](https://news.ycombinator.com/item?id=47824943) | 541pt | ★ | Design / Font | 4x4 では E/M/W が成立しない制約に向き合った 5x5 極小フォント |
+| [Verus — Rust コード正確性検証ツール](https://news.ycombinator.com/item?id=47840252) | 48pt | ★★ | 形式手法 / Rust | 分散システムなど複雑な論理検証が可能、linter を超える静的検証基盤 |
+| [Borrow-checking without type-checking](https://news.ycombinator.com/item?id=47871817) | 45pt | ★★ | PL 設計 | 静的 / 動的型付けのハイブリッド戦略、REPL やライブコーディングでも安全性を維持 |
+| [Ars Technica: Our newsroom AI policy](https://news.ycombinator.com/item?id=47872452) | 16pt | ★★ | AI × ジャーナリズム | 記者が AI で引用を偽造した事件を受けた責任ポリシー、AI 利用者が結果の正確性に責任を負う |
+| [Ping-pong robot beats top-level human players](https://news.ycombinator.com/item?id=47864785) | 108pt | ★★ | ロボティクス / AI | Sony AI の「Ace」、9 台の高速カメラで回転検出、一流選手に複数勝利 |
+
+#### 差分全エントリー (Hacker News)
+
+1. [OpenAI's response to the Axios developer tool compromise](https://news.ycombinator.com/item?id=47871077) (61pt)
+   - **翻訳**: OpenAI による Axios 開発ツール侵害への対応
+   - **サマリ**: npm 上の Axios に悪性バージョン (@1.14.1 / @0.30.4) が配布された事案に対し、OpenAI が公式ブログで対応を発表しました。HN コメントでは `min-release-age` 設定で新リリース直後の取り込みを避ける防御策が共有されており、サプライチェーン攻撃に対する実運用での緩和策が論点です。
+2. [Bring your own Agent to MS Teams](https://news.ycombinator.com/item?id=47870108) (54pt)
+   - **翻訳**: MS Teams に任意のエージェントを持ち込む
+   - **サマリ**: 「ユーザーは Teams にいる」というコンセプトで、Microsoft が独自開発の AI Agent を Teams 内に統合するための SDK を提供する話題です。HN コメントでは Teams 自体のメッセージ配信の信頼性問題への懸念が多く、プラットフォーム品質への批判も並列して議論されています。
+3. [I am building a cloud](https://news.ycombinator.com/item?id=47872324) (158pt)
+   - **翻訳**: クラウドを自作している
+   - **サマリ**: Tailscale 共同創業者が、既存クラウドの過度な抽象化と高価格に対抗するシンプル低価格クラウド exe.dev を構築中だと宣言した記事です。「既存 Cloud 1.0 はデフォルト 3000 IOPS しか出さない一方、ノート PC は 500k IOPS 出る」という指摘を軸に、HN では Hetzner 比の差別化要因、LLM Agent 時代に必要なインフラ、自前 Docker Compose 十分論が議論されています。
+4. [5x5 Pixel font for tiny screens](https://news.ycombinator.com/item?id=47824943) (541pt)
+   - **翻訳**: 極小画面向けの 5x5 ピクセルフォント
+   - **サマリ**: 4x4 だと E / M / W が成立しないという制約を踏まえて設計された 5x5 ピクセルフォントです。組み込みデバイス、LED サイネージ、低解像度ディスプレイなど表示面積が極端に狭い環境での利用が想定されています。
+5. [Verus is a tool for verifying the correctness of code written in Rust](https://news.ycombinator.com/item?id=47840252) (48pt)
+   - **翻訳**: Verus — Rust コードの正確性を検証するツール
+   - **サマリ**: Verus は Rust コードの正確性を形式検証するツールで、分散システムなど複雑な論理の検証にも耐えるとコミュニティで評価されています。Rust 本体エコシステムとの統合は途上で、利用時に手続き的な手間が残る点が HN コメントの論点です。
+6. [Borrow-checking without type-checking](https://news.ycombinator.com/item?id=47871817) (45pt)
+   - **翻訳**: 型チェックなしのボローチェック
+   - **サマリ**: 静的型付けと動的型付けを組み合わせたプログラミング言語設計に関する議論記事です。ほとんどのコードで静的型の保証を得つつ、REPL やライブコーディング、動的コード生成では動的型付けを選べるハイブリッド戦略の可能性を探ります。
+7. [Ars Technica: Our newsroom AI policy](https://news.ycombinator.com/item?id=47872452) (16pt)
+   - **翻訳**: Ars Technica、編集部の AI ポリシー
+   - **サマリ**: 病気で出社できない記者が AI に引用再現を任せて失敗し、記事撤回と解雇に至った事件を受け、Ars Technica が発表した編集部 AI ポリシーです。AI ツール利用者が結果の正確性と完全性に最終責任を負う方針が示され、HN コメントでは個人責任と組織責任のバランス、情報源品質の劣化懸念が議論されています。
+8. [Ping-pong robot beats top-level human players](https://news.ycombinator.com/item?id=47864785) (108pt)
+   - **翻訳**: 卓球ロボットが一流選手を打ち破る
+   - **サマリ**: ソニー AI の「Ace」が一流プレイヤーに複数勝利したと報告されました。9 台の高速カメラでボールの回転を検出し、人間を上回る速度と精度で応答できる点が、フィジカル AI の実用化事例として HN で話題になっています。
+
+### Reddit (差分)
+
+Reddit の本文は `old.reddit.com/comments/<slug>.json` への curl 取得 + 元記事 URL の WebFetch で取得しました ( 差分収集中に運用に組み込み )。サマリは本文とコメントを踏まえて更新しています。
+
+#### セキュリティ系 (差分)
+
+1. [Quantum Computers Are Not a Threat to 128-bit Symmetric Keys](https://www.reddit.com/r/netsec/comments/1sryptw/quantum_computers_are_not_a_threat_to_128bit/) (123 ups, 13 comments) - r/netsec
+   - **翻訳**: 量子コンピュータは 128bit 対称鍵の脅威ではない
+   - **リンク先**: [words.filippo.io/128-bits](https://words.filippo.io/128-bits/)
+   - **サマリ**: Filippo Valsorda が Grover アルゴリズムはステップを直列実行する必要があり、並列化で二次高速化が失われる点を数値化した記事です。2^16 並列でも総作業量は 2^64 から 2^72 へ悪化し、AES-128 破壊には「140 兆個の 724 論理ビット量子回路を 10 年間実行」が必要で、楕円曲線 (Shor) 攻撃と比べて 2^78 倍コストが高く実用脅威ではないと結論づけます。コメント最上位では「SHA-256 ハードコードを可変化して PQC 対応を検討していたが、本分析で見送りを決めた」という実装判断が共有され、対称鍵 PQC 移行の優先度を下げる現場の動きが伺えます。
+2. [LLM Security Automation Isn't a Drop-In Scanner Yet](https://www.reddit.com/r/netsec/comments/1stanq5/llm_security_automation_isnt_a_dropin_scanner_yet/) (1 ups, 2 comments) - r/netsec
+   - **翻訳**: LLM によるセキュリティ自動化はまだ差し込み型スキャナではない
+   - **リンク先**: [lirantal.com](https://lirantal.com/blog/llm-security-automation-isnt-a-drop-in-scanner-yet)
+   - **サマリ**: Liran Tal が LLM を SAST のような継続的脆弱性スキャナとして使えるかを問うブログ記事で、投稿者自身も疑問を呈しています。コメントでは「LLM はコンテキスト依存性が強く非決定的で、同じ入力でも周辺状態やプロンプト構成で挙動がドリフトする。安定した定常監視には向かず、奇妙なエッジケースの探索用途に適する」との現場感が共有されています。
+3. [Extending my access: Abusing installed extensions for post compromise](https://www.reddit.com/r/netsec/comments/1ssgrac/extending_my_access_abusing_installed_extensions/) (3 ups, 0 comments) - r/netsec
+   - **翻訳**: アクセスを拡張する — インストール済み拡張機能を侵害後に悪用する
+   - **リンク先**: [futuresight.club](https://futuresight.club/posts/extending-my-access/)
+   - **サマリ**: インストール済みブラウザ拡張機能を足掛かりに侵害後アクセスを維持・拡張する攻撃手法を扱う研究記事です。拡張権限の棚卸し不足が EDR の死角となる点を示す内容で、コメントは未到達ですが、NetSec 系の初動対応チェックリスト更新の契機となる話題です。
+4. [The Boy That Cried Mythos: Verification is Collapsing Trust in Anthropic](https://www.reddit.com/r/cybersecurity/comments/1sst5g4/the_boy_that_cried_mythos_verification_is/) (427 ups, 114 comments) - r/cybersecurity
+   - **翻訳**: 「Mythos と叫んだ少年」— 検証が Anthropic への信頼を崩している
+   - **リンク先**: [flyingpenguin.com](https://www.flyingpenguin.com/the-boy-that-cried-mythos-verification-is-collapsing-trust-in-anthropic/)
+   - **サマリ**: Mythos の脆弱性発見件数の検証が追いついておらず Anthropic への信頼が揺らいでいると論じる長文記事です。最高票 (529 票) のコメントは「これは Mythos を 5 倍トークン課金できる立場に置くためのマーケティング嵐だ」と断じる一方、別コメント (126 票) では同日公表の「Mozilla が Mythos で Firefox 150 に 200+ 件の脆弱性を発見」の事実と整合させる難しさが指摘され、評価は両極に割れています。
+5. [Researcher claims Claude Desktop installs "spyware" on macOS](https://www.reddit.com/r/cybersecurity/comments/1ssx4e5/researcher_claims_claude_desktop_installs_spyware/) (118 ups, 20 comments) - r/cybersecurity
+   - **翻訳**: 研究者、Claude Desktop が macOS に「スパイウェア」を導入すると主張
+   - **リンク先**: [malwarebytes.com](https://www.malwarebytes.com/blog/news/2026/04/researcher-claims-claude-desktop-installs-spyware-on-macos)
+   - **サマリ**: Malwarebytes が公開した研究者の分析記事で、Claude Desktop macOS 版の挙動を「スパイウェア的」と批判した内容を扱います。上位コメント (175 票) は「アクセシビリティ権限の要求は仕様通りで、Claude CoWork を動かすために必要な挙動。『スパイウェア』というラベルは言い過ぎ」と反論しており、AI デスクトップアプリの権限透明性をめぐる論争になっています。
+6. [Mozilla: Anthropic's Mythos found 271 security vulnerabilities in Firefox 150](https://www.reddit.com/r/cybersecurity/comments/1ssp6ov/mozilla_anthropics_mythos_found_271_security/) (209 ups, 72 comments) - r/cybersecurity
+   - **翻訳**: Mozilla、Anthropic の Mythos が Firefox 150 に 271 件の脆弱性を発見
+   - **リンク先**: [arstechnica.com](https://arstechnica.com/ai/2026/04/mozilla-anthropics-mythos-found-271-zero-day-vulnerabilities-in-firefox-150/)
+   - **サマリ**: Mozilla と Anthropic の協業で Mythos Preview を Firefox に適用し、Firefox 150 で 271 件の脆弱性を修正したという Ars Technica 記事の共有です。コメントでは「271 件の内訳 (DOM XSS か RCE か) を知りたい」という重要度評価の要求、「AI 検出が防御側に有利というのは楽観的で、パッチ適用予算を持たない組織・公共インフラは結局脆弱性を放置する」という現実論が並び、AI 脆弱性発見の実効性をめぐる議論が展開されています。
+7. [The zero-days are numbered | Mythos numbers are real?](https://www.reddit.com/r/cybersecurity/comments/1ssmgfp/the_zerodays_are_numbered_mythos_numbers_are_real/) (165 ups, 99 comments) - r/cybersecurity
+   - **翻訳**: ゼロデイは数えられている — Mythos の数字は本物なのか
+   - **リンク先**: [blog.mozilla.org](https://blog.mozilla.org/en/privacy-security/ai-security-zero-day-vulnerabilities/)
+   - **サマリ**: Mozilla 公式ブログによる「Claude Mythos Preview 早期版を Firefox に適用し、Firefox 150 で 271 件の脆弱性を修正。エリート人間研究者でも見つけられない種類のバグは無かった」という発表の共有です。コメントでは「スキャン費用と人間ペンテストの価格比較が欲しい (FreeBSD のバグで 2 万ドル相当という報告があった )」というコスト議論と、「Pwn2Own Berlin が 3 週間後なのでエリート研究者がクリティカルを温存している可能性」という競技的な穿った見方が議論の軸です。
+
+#### AI 系 (差分)
+
+1. [Qwen 3.6 27B is out](https://www.reddit.com/r/LocalLLaMA/comments/1ssl1xh/qwen_36_27b_is_out/) (1581 ups, 566 comments) - r/LocalLLaMA
+   - **翻訳**: Qwen 3.6 27B がリリース
+   - **リンク先**: [huggingface.co/Qwen/Qwen3.6-27B](https://huggingface.co/Qwen/Qwen3.6-27B)
+   - **サマリ**: Alibaba の Qwen 3.6 27B リリース報で、Hugging Face 本家ページがそのまま共有されています。コメントでは即日公開された [FP8 量子化版](https://huggingface.co/Qwen/Qwen3.6-27B-FP8) への言及 (181 票 ) と、ベンチマーク結果画像の共有 (407 票 ) が主要な話題で、Apache 2.0 で商用利用可能・前世代 397B を上回るという「小型で強い」潮流への関心が r/LocalLLaMA で爆発的に集まっています。
+2. [Forgive my ignorance but how is a 27B model better than 397B?](https://www.reddit.com/r/LocalLLaMA/comments/1st11lp/forgive_my_ignorance_but_how_is_a_27b_model/) (541 ups, 169 comments) - r/LocalLLaMA
+   - **翻訳**: 素人質問で恐縮だが、 27B モデルが 397B より良いとはどういうことか
+   - **サマリ**: 投稿者は「Qwen は dense モデルが得意で MoE は苦手なのか。397B の追加エキスパートは何をしているのか」と率直な疑問を提起します。最上位コメント (236 票 ) は「397B は世界知識と長文ロジック一貫性で優れていた領域があるが、現行ベンチマークはその部分を捉えきれていない」と指摘し、ベンチマーク勝敗がそのまま実力を反映するわけではないことを説く議論に発展しています。
+3. [Qwen3 TTS is seriously underrated — real-time local with expressive output](https://www.reddit.com/r/LocalLLaMA/comments/1ssugid/qwen3_tts_is_seriously_underrated_i_got_it/) (353 ups, 53 comments) - r/LocalLLaMA
+   - **翻訳**: Qwen3 TTS は過小評価 — ローカルでリアルタイム駆動、表現力が高い
+   - **サマリ**: Persona Engine の作者が Qwen3 TTS をローカル・リアルタイムで動かすデモ動画を共有した投稿です。コメントでは「faster-qwen3-tts を使って速度を稼いでいるのか」「感情 emoji タグを Qwen3 に直接入力して表現制御しているのか」という実装手法への質問が続き、オープン TTS の表現力とレイテンシ両立の実践知として注目されています。
+4. [AI arms race now](https://www.reddit.com/r/OpenAI/comments/1sswmw8/ai_arms_race_now/) (1019 ups, 76 comments) - r/OpenAI
+   - **翻訳**: AI 軍拡競争のいま
+   - **サマリ**: AI 各社の連日発表と Qwen 3.6 登場を受けた AI 軍拡競争のミーム画像投稿です。最上位コメント (412 票 ) は「各社が順番にトップを取っている」という観察で、別コメント (86 票 ) では「xAI のように世界最大の計算クラスタを抱えて需要不足に陥るより、Anthropic の『需要に対して計算リソースが足りない』問題の方がマシ」という需給観が議論されています。
+5. [GPT-Image-2 vs Nano Banana 2, nb2 tried its best...](https://www.reddit.com/r/OpenAI/comments/1st73fd/gptimage2_vs_nano_banana_2_nb2_tried_its_best/) (215 ups, 74 comments) - r/OpenAI
+   - **翻訳**: GPT-Image-2 対 Nano Banana 2、 nb2 も頑張ったが…
+   - **サマリ**: 同一プロンプトで GPT-Image-2 (ChatGPT Images 2.0) と Nano Banana 2 (nb2) の写真生成を比較した作例投稿です。上位コメント (165 票 ) は「NB2 は照明指示に正しく従い、ブラレットの指定も正確。GPT2 はカメラフラッシュを当てただけで、椅子の配置なども文脈が薄い」とし、写真家目線のコメント (91 票 ) でも「NB2 の方がはるかに良い写真」と nb2 優位の評価が優勢です。
+
+#### ClaudeCode / 開発系 (差分)
+
+1. [With Codex 5.5 dropping today, Anthropics might be fucked](https://www.reddit.com/r/ClaudeCode/comments/1sszxc4/with_codex_55_dropping_today_anthropics_might_be/) (78 ups, 91 comments) - r/ClaudeCode
+   - **翻訳**: Codex 5.5 が今日登場、 Anthropic はまずいかもしれない
+   - **サマリ**: 投稿本文は「Codex 5.5 は本日 (04-23) 投下予定。 Codex 5.4 は既に Opus と多くのシナリオで互角で、Opus 4.7 は 4.6 より体感劣化しているため、5.5 が Opus 4.7 を明確に上回る可能性が高い。 OpenAI は x5/x10/x20 の寛容なプラン上限も展開中」と論じ、Anthropic の競合ポジション低下を予想します。コメントでは「2 ヶ月前は Anthropic が明らかな勝者だったが、セッション制限とトークン非効率問題が出てから風向きが変わった」という温度変化、「B2C は売上源ではないので消費者セグメントを捨てても企業側は平気」という事業構造論が議論されています。
+2. [A plugin that lets Claude Code watch videos; image + audio](https://www.reddit.com/r/ClaudeCode/comments/1ssub0g/a_plugin_that_lets_claude_code_watch_videos_image/) (141 ups, 50 comments) - r/ClaudeCode
+   - **翻訳**: Claude Code に動画視聴を可能にするプラグイン — 画像 + 音声
+   - **サマリ**: Claude Code は動画・音声を直接扱えないため、作者がフレーム画像 + タイムスタンプ付き音声書き起こしに変換して「視聴」させる OSS プラグイン claude-video-vision を公開した紹介投稿です。実装詳細が本文で説明されており、上位コメントでは「画像 1 枚 1500 トークンで、動画ストリームのトークン消費は想像を絶する」というコスト懸念と、「スクリーン録画デバッグで使えそう」という実務応用が挙がっています。
+3. [opus is surprisingly good at generating SVG animations](https://www.reddit.com/r/ClaudeCode/comments/1st0qak/opus_is_surprisingly_good_at_generating_svg/) (85 ups, 7 comments) - r/ClaudeCode
+   - **翻訳**: Opus は SVG アニメーション生成が意外なほど上手い
+   - **サマリ**: Claude Opus が SVG アニメーション生成に強いという作例共有投稿です。デザイン支援や軽量アニメ UI 生成の用途で Opus を使う実践的ヒントとして参考になります。
+4. [No Comment](https://www.reddit.com/r/ClaudeCode/comments/1ssltj6/no_comment/) (785 ups, 63 comments) - r/ClaudeCode
+   - **翻訳**: ノーコメント
+   - **サマリ**: Claude Code の仕様変更 (Max プランの縮小テストや使用制限の変動 ) に対するミーム的な反応投稿が高票を集めた事例です。正直なプロダクト感情が集約される場として r/ClaudeCode の温度感指標になっています。
+5. [You are in this post (so am I though)](https://www.reddit.com/r/ClaudeCode/comments/1sswj6k/you_are_in_this_post_so_am_i_though/) (164 ups, 8 comments) - r/ClaudeCode
+   - **翻訳**: あなたもこの投稿の中にいる ( 私もいるけれど )
+   - **サマリ**: Claude Code ユーザーコミュニティのミーム投稿で、プラン変更や最新動向に一喜一憂する開発者像を自嘲的に風刺する形で共感を集めています。
+
+#### OSS / Web 系 (差分)
+
+1. [Markdown (Aaron Swartz: The Weblog)](https://www.reddit.com/r/programming/comments/1ssh8e2/markdown_aaron_swartz_the_weblog/) (315 ups, 51 comments) - r/programming
+   - **翻訳**: Markdown — Aaron Swartz のブログより
+   - **サマリ**: Markdown 誕生期の経緯について Aaron Swartz のブログを再訪する投稿です。John Gruber との共同作業や、Web における「軽量構造化テキスト」の意義を改めて見直すきっかけとして支持されています。
+2. [Proofs are Programs: A Few Examples of the Curry-Howard Correspondence](https://www.reddit.com/r/programming/comments/1ssadqh/proofs_are_programs_a_few_examples_of_the/) (93 ups, 10 comments) - r/programming
+   - **翻訳**: 証明はプログラム — Curry-Howard 対応の具体例集
+   - **サマリ**: 型理論と論理学をつなぐ Curry-Howard 対応の具体例を整理した解説記事です。関数型・形式手法に関心のある開発者向けに、理論と実装の接続を直感的に示す教材として共有されています。
+3. [You'd think AI would kill boilerplates. It's doing the opposite.](https://www.reddit.com/r/webdev/comments/1ssp1tz/youd_think_ai_would_kill_boilerplates_its_doing/) (225 ups, 78 comments) - r/webdev
+   - **翻訳**: AI がボイラープレートを駆逐すると思いきや、逆のことが起きている
+   - **サマリ**: GitHub 14k スターの OSS SaaS ボイラープレート作者が 40 人のユーザー面談から得た気付きを共有する投稿です。「半数はフルスタックアプリを一度もデプロイしたことがなく、キャリア開発者・PM・木工家・DevOps・音響エンジニアなど属性が多様。AI で 90% までは到達できるが最後の 10% が最難関」と整理します。コメントでは「AI ブームはむしろ Web 開発者の仕事を増やす (新プロジェクト群の保守・改修需要 )」という楽観論と、「AI 生成のボイラープレートは自信満々に間違う。Laravel/Symfony のコマンドラインの方が 100% 正確で使い続けている」という懐疑論が対照的に並びます。
+4. [WebTransport is now "Baseline" as of March 2026](https://www.reddit.com/r/webdev/comments/1ssu3bs/webtransport_is_now_baseline_as_of_march_2026/) (76 ups, 7 comments) - r/webdev
+   - **翻訳**: WebTransport が 2026 年 3 月より Baseline 入り
+   - **リンク先**: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/WebTransport_API)
+   - **サマリ**: WebTransport API が Baseline に格上げされた旨を MDN リンク付きで共有する投稿で、投稿者は「ようやくブラウザで UDP 風の通信が使える」とコメント。上位コメントでは「Safari を積んだ古い iPhone が市場から消えるまで本番利用には 5 年かかる」という端末側の現実論と、「Nginx が HTTP/3 の upstream に未対応で、バックエンド / リバースプロキシ側の対応不足が実運用の最大の壁」という実装課題が指摘されています。
+
+### X / Grok (差分)
+
+#### @mr_grayhair
+
+1. [アビームコンサルティングによるキッコーマンのエンゲージメント変革支援](https://x.com/i/status/2047085334555677086) (2026-04-22)
+   - **サマリ**: 生成 AI と対話を核に管理職の役割と意思決定プロセスを再設計し、組織実行力を強化するエンゲージメント変革事例を紹介しています。AI コンサルの適用領域が個別業務から組織開発・人事制度設計側に広がっている動向として参照できます。
+2. [未経験からコンサル転職するための note 紹介](https://x.com/i/status/2046865832010264979) (2026-04-21)
+   - **サマリ**: 未経験者向けのコンサル転職ノウハウ note を共有する投稿で、AI 時代のキャリア設計文脈で言及されています。AI 活用前提でコンサルに求められる能力のシフトを理解する補助資料として位置づけられます。
+
+#### @uemura_HR
+
+1. [AWS の AI 駆動 BPR と組織開発の接続](https://x.com/i/status/2046876673769934937) (2026-04-22)
+   - **サマリ**: AWS の AI 駆動 BPR ( 業務改革 ) 手法を引用し、技術変革を適応課題と捉え直す組織開発の重要性を説く投稿です。AI エンジニアリングと HR / 組織設計を接続する論点として共有されています。
+2. [尊敬する人たちの「分かりやすさ」について](https://x.com/i/status/2047082054047940756) (2026-04-22)
+   - **サマリ**: AI / 組織開発文脈における「分かりやすさ」の構造を考察する短文です。視点の新鮮さと構造化の両立が差別化要因になる、という自己言及的な観察を含みます。
+
+### 差分収集の補足
+
+- Reddit の本文取得は WebFetch が reddit.com に対してブロックされているため不可でしたが、タイトル・投票数・コメント数・ URL は curl + jq で取得済みです。本セクションのサマリは既存スキル仕様どおり「本文未取得、タイトルからの推測」に該当する項目として扱っています。
+- 初回収集時に既に掲載済みの記事は差分から除外しています ( 例: Zenn rehabforjapan 「実装コスト逓減」、HN 「Parallel agents in Zed」、Reddit 「Markdown Aaron Swartz は新規、Bun 1.1.13 は既存」等 )。
+- X 収集では Grok search_x で `@mr_grayhair` `@uemura_HR` から 2026-04-21 〜 04-22 の新規投稿 4 件を追加取得しました。`@ryoppippi` は初回収集分のみ、`@horiemon_cross` `@takapon_jp` `@digital_jpn` `@mozumasu` はヒットなしで変更ありません。
