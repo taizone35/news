@@ -4,15 +4,23 @@
       "WebFetch",
       "WebSearch",
       "Fetch(*)",
-      "Bash(curl:*)",
-      "Bash(node:*)",
-      "Bash(jq:*)",
-      "Bash(python3:*)",
-      "Curl *",
-      "Mcp__grok__search_posts",
-      "Mcp__grok__search_threads",
-      "For *",
-      "Python3 -c *"
+      "Bash(*)",
+      "mcp__Grok__search_x",
+      "mcp__Grok__ask",
+      "mcp__playwright__*"
+    ],
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(rmdir:*)",
+      "Bash(:* rm *)",
+      "Bash(:* rm -*)",
+      "Bash(find:* -delete*)",
+      "Bash(find:* -exec rm*)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean -f*)",
+      "Bash(git branch -D*)"
     ]
   }
 }
