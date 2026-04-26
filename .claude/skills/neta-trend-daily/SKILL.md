@@ -43,6 +43,9 @@ description: "トレンドネタ収集"
 - 推奨呼び出し: `allowed_x_handles=["mr_grayhair"]` でアカウントを絞り、 `from_date` と `to_date` で直近 1 週間程度を指定する。検索できなかったアカウントは X セクションにその旨を明示 (例: 「直近 1 週間にヒットなし」)
 - クエリ例: `query="AI セキュリティ キャリア の投稿"`, `allowed_x_handles=["mr_grayhair"]`, `from_date="YYYY-MM-DD"`, `to_date="YYYY-MM-DD"`
 - 取得した個別投稿 URL は `https://x.com/i/status/...` 形式で得られることがあるため、本文に転記する際はそのまま残しても、アカウントトップで集約しても良い
+- **X article 形式 (長文投稿) の二段取得ルール**: `search_x` のリスト取得モードでは、長文投稿 (X article 形式) の本文が展開されず、 status の本文欄に `https://x.com/i/article/{article_id}` という article 参照 URL のみが返るケースがある。 この挙動を検出したら、当該 status を単体指定で `search_x` を再呼び出しし (例: `query="@account の status {status_id} の本文を全文引用してください"`、対象 status の前後 1 日に絞った `from_date` / `to_date` を指定)、 article 本体の本文を取得し直すこと。 リスト取得時の URL 一行のままレポートに転記してはいけない。 主な検出パターンは次の通り。
+  - 本文欄が `https://x.com/i/article/...` URL のみで構成されている
+  - 本文欄が極端に短く (1 行未満)、 article URL を含んでいる
 - [@mr_grayhair](https://x.com/mr_grayhair)
 - [@horiemon_cross](https://x.com/horiemon_cross)
 - [@takapon_jp](https://x.com/takapon_jp)
