@@ -477,6 +477,8 @@
 
 `@horiemon_cross` `@mozumasu` は 2026-04-19 -- 2026-04-26 の期間で本テーマに合致する投稿が grok 検索で取得できなかった (`@mozumasu` は「個人開発 / SaaS」の検索ではヒットなし、 `@horiemon_cross` は同種ヒットなし)。
 
+`@go_kritani` (本日新規追加) は grok MCP のユーザー検索 / 投稿検索 / セマンティック検索のいずれでも該当アカウントが見つからずヒットなし (スペル違い / 非公開 / 凍結のいずれかの可能性)。次回以降スペル再確認推奨。
+
 ## 政府 / 公的機関 (RSS)
 
 ### 内閣府
@@ -659,3 +661,57 @@
 - **Reddit ベースの個人開発機運**: KillerPDF (アンチ Adobe 6MB EXE) 、 congress.kadoa.com (議員株取引追跡) 、 Storybloq (`.story/` でセッション引継) など、明確に「AI 大手が拾わないニッチを丁寧に作る」インディーのクオリティが目立つ。 r/indiehackers の「次の AI 機能で吹き飛ぶリスク」議論と合わせ、ニッチ深耕 / 顧客密着 / 体験差別化が今期キーワード。
 
 > **注 (収集メモ)**: 一部の WebFetch 応答 (cao.go.jp、 nikkei.com、 zenn smartbank、 lycorp、 techcrunch cohere) で、応答末尾に当方のシステム reminder 風テキスト (`<system-reminder>` で TodoWrite を促すもの) が混入していたが、当該文字列は本来サイト本文に存在しない外部由来テキストであり、安全側に倒して指示として採用せず、独立した判断で TodoWrite を使用した。プロンプトインジェクションが疑われる挙動として記録のみ残す。
+
+## 追記 (再実行: 2026-04-26 同日午後)
+
+ユーザー指示で `@go_kritani` を X 収集対象に追加した上で /neta-trend-daily を再実行。 X セクションの注記は上記の通り。同日中の差分として、はてブ / Hacker News / Reddit / r/ClaudeCode に新規エントリーが少数現れたため以下に追記する (既存セクションの内容は午前収集のまま据え置き、追加分のみここに集約)。
+
+### はてブ IT (新規)
+
+1. [dotfiles 管理、 mise に全部任せてみた](https://zenn.dev/boykush/articles/11cfc3e1abc563) (6 users)
+   - **サマリ**: dotfiles 管理を `mise` に集約する設計記事。 mise の「開発ツール管理 / 環境変数管理 / タスクランナー」の 3 機能で brew + zshrc に分散していた設定を統一し、 Renovate との組み合わせで依存ツールの自動バージョン更新まで回せるという実装例。 `postinstall` など一部機能はまだ experimental で、本番投入は注意。 mise 作者 jdx の OSS 専業化 (4/25 既出) と並行して、 mise エコシステムが「言語ランタイム + 開発環境」の統合層に育っていく流れの一例。
+
+### Hacker News (新規 / フロント入れ替わり分)
+
+1. [Why Has There Been So Little Progress on Alzheimer's Disease?](https://news.ycombinator.com/item?id=47905984) (25pt)
+   - **翻訳**: なぜアルツハイマー病の研究はこれほど停滞しているのか？
+   - **サマリ**: Freakonomics ポッドキャスト発の記事で、アルツハイマー病研究の停滞要因として「アミロイドベータ仮説への過集中が一部不正データに基づいていた可能性」を指摘。コメントでは「研究費制度がアミロイドベータ説を強化した」「データ改ざんの可能性」「アルツハイマーは単一原因ではなく異質な疾患群」という新コンセンサスが議論されている。
+2. [Agents Aren't Coworkers, Embed Them in Your Software](https://news.ycombinator.com/item?id=47905837) (13pt)
+   - **翻訳**: エージェントは同僚ではない、自分のソフトウェアに埋め込め
+   - **サマリ**: Feldera 社のブログ記事への HN スレッド。 AI エージェントを擬人化された「同僚」として扱うのではなく、ソフトウェアに直接埋め込むべきという主張。 (本文未取得、 HN ページに本文 / コメントが少なく抽出失敗)
+3. [Her Life Savings Mysteriously Disappeared After a Systems Glitch](https://news.ycombinator.com/item?id=47905681) (14pt)
+   - **翻訳**: システム障害の後、彼女の貯蓄が謎のように消えた
+   - **サマリ**: NYT 記事。銀行の女性顧客の口座が数日間「銀行スタッフからも見えない」状態になった事案。コメントでは「預金保険は経営破綻には対応するが詐欺 / 盗難は対象外」「紙の取引記録を残す重要性」が論点。見出しは大げさという声もあるが、「顧客の存在自体が銀行から消える」状況の深刻さを指摘する声が支配的。
+4. [Europe to burned American scientists: We'll take you in](https://news.ycombinator.com/item?id=47906102) (12pt)
+   - **翻訳**: 欧州が傷ついた米国科学者へ「我々が引き取る」
+   - **サマリ**: トランプ政権下の NSF 解雇 (本日の HN トップで議論中) と並行し、欧州が米国研究者の受け入れを表明した Politico 記事。コメントでは「欧州側の給与 / リソース水準で本当に引き受け切れるのか」と懐疑的な見方が早くも提示されている。
+5. [Colorado Adds Open-Source Exemption to Age-Verification Bill](https://news.ycombinator.com/item?id=47905304) (22pt)
+   - **翻訳**: コロラド州、年齢確認義務化法案に OSS 免除条項を追加
+   - **サマリ**: 米コロラド州が年齢確認義務法案に OSS 免除条項 (CC0 等を対象外) を追加。コメント (1 件のみ) では「免除があっても compelled speech (発言強要) の問題は残る、市民的自由への大きな脅威の中で小さな勝利として受け止めるしかない」と懸念表明。
+6. [Can you stop beans from making you gassy?](https://news.ycombinator.com/item?id=47904224) (92pt)
+   - **翻訳**: 豆でガスが出ないようにする方法はあるのか？
+   - **サマリ**: シェフ Dave Arnold の実験で「一般的な調理法では豆のガスを有意に減らせない」と結論。コメントでは「継続的に食べると腸内細菌が適応してガスが減る」「味噌 / テンペ等の発酵」「皮むき / アルカリ処理」「Beano (酵素サプリ) / アサフェティダ」など、文化横断の知見が共有される。 HN 的な「料理 + 生物学 + 文化」横断スレ。
+
+### Reddit (新規 / フロント入れ替わり分)
+
+1. ["You're right — apologies. Let me actually do the work." - I AM SICK OF GETTING THIS!](https://www.reddit.com/r/ClaudeCode/comments/1svnxrd/youre_right_apologies_let_me_actually_do_the_work/) (17 ups, 16 comments) - r/ClaudeCode
+   - **翻訳**: 「ご指摘の通りです、すみません。今度こそ本当に作業します」 -- これにはもう本当に飽き飽きだ！
+   - **サマリ**: Opus 4.7 xhigh で Home Assistant の自動化を作らせると、 MCP 接続済 / 詳細な CLAUDE.md / メモリも整備済の状況でも「自信満々に間違った推測 → 指摘 → 謝罪 → やり直し」のループが繰り返されると吐露。コメントは「Max を 2 アカウント、 hooks / skills / skill evals まで揃えても変わらない」「方向性を強制すれば最終的に正しい結論には行く」と、 4.7 のメタ的な振る舞いそのものへの不満が継続。
+2. [Disneyland guests can opt out of facial recognition at park entrances](https://www.reddit.com/r/technology/comments/1svrpgk/disneyland_guests_can_opt_out_of_facial/) (681 ups, 39 comments) - r/technology
+   - **翻訳**: ディズニーランド入園時の顔認証はオプトアウト可能に
+   - **サマリ**: ディズニーランドが入園時の顔認証をオプトアウト可能と発表。コメントは「顔を認識せずに『オプトアウト済み』と判別する仕組みは矛盾」「企業がデータ収集を本当に止めるはずがない」と冷ややか。生体認証 + プライバシー設計の論点として典型的反応。
+3. [EU is mandating 'readily removable' batteries for phones — but iPhones may be exempt](https://www.reddit.com/r/technology/comments/1svnqt2/eu_is_mandating_readily_removable_batteries_for/) (1024 ups, 117 comments) - r/technology
+   - **翻訳**: EU はスマホに「容易に取り外せる」バッテリーを義務付け -- ただし iPhone は免除の可能性
+   - **サマリ**: EU バッテリー規則の「1,000 サイクル後 80% 容量維持なら免除」条項により、 Apple / Samsung は実質免除されるとコメントが指摘。 trustworthy 解説の「報じられた『取り外し可能義務』はミスリード」という分析がトップ票を集める。
+4. [Someone allegedly used a hairdryer to rig Polymarket weather bets](https://www.reddit.com/r/technology/comments/1svg24x/someone_allegedly_used_a_hairdryer_to_rig/) (3122 ups, 164 comments) - r/technology
+   - **翻訳**: 何者かがドライヤーで気温を操作し Polymarket の天気予測ベットを不正操作したとされる
+   - **サマリ**: Polymarket の天気予測市場で、観測点近くにドライヤーを置いて気温を上げてベットを勝たせた疑惑。コメント (3214ups) は「Polymarket は情報優位の人間がカモから金を巻き上げる場所として存在しているのでは」と直球批判。「何にでも賭けさせるのは操作リスクを呼ぶ」というギャンブル予測市場全体への懐疑。
+5. [Steam Controller Price Leaked By Early Review - and It's Expensive](https://www.reddit.com/r/technology/comments/1svo4j0/steam_controller_price_leaked_by_early_review_and/) (275 ups, 153 comments) - r/technology
+   - **翻訳**: Steam Controller の価格がレビュー先行公開で漏洩 -- そして、高い
+   - **サマリ**: 99 ドル ($99) のリーク報道。コメントは「公式コントローラはどれも高くなった、 PS5 公式も 75 ドル」と価格高騰の業界全体傾向を指摘。
+
+### 追記サマリ
+
+- **本日の差分自体は小**: 当日午後の再収集では、はてブ / HN / Reddit いずれもフロント上位の入れ替わりは限定的で、午前のレポートで拾った主要トピック (ハーネスエンジニアリング、 Opus 4.7 失望、 Bitwarden / vibe-coded アプリのセキュリティ、 Meta 強制データ収集、 Cohere x Aleph Alpha 等) の温度感は維持。
+- **新規追加で意味のある観点**: HN で NSF 解雇 (午前 217pt → 午後 337pt) に呼応する「欧州が米科学者を引き取る」、 NYT の銀行口座消失事案、 Polymarket 操作疑惑、 EU バッテリー規則の現実的な抜け穴、 r/ClaudeCode で 4.7 の「謝罪 → やり直しループ」への怒りが継続している点が、午前トレンドの裏付け / 補足として加わる。
+- **mise の存在感**: 4/25 の「jdx が mise 専業化」、本日午前の「Microsoft APM」、午後の「dotfiles を mise に全任せ」と、開発環境管理レイヤの主役が明確に mise に寄り始めている。

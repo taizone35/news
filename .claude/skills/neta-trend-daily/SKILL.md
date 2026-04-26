@@ -50,6 +50,7 @@ description: "トレンドネタ収集"
 - [@uemura_HR](https://x.com/@uemura_HR)
 - [@ryoppippi](https://x.com/ryoppippi)
 - [@mozumasu](https://x.com/mozumasu)
+- [@go_kritani](https://x.com/go_kritani)
 - **URL の扱い**: grok MCP `search_x` は `https://x.com/i/status/XXXXXX` 形式の個別投稿 URL を返す。この URL をそのまま転記すること。アカウントトップ URL (`https://x.com/アカウント名`) での代替は情報価値が下がるため禁止
 - 当該期間に投稿がないアカウントは「直近 N 日の投稿なし」とだけ記載し、空の URL を作らないこと
 
